@@ -344,7 +344,6 @@ Building toward a career in Red Team operations. Open to learning from experienc
 ### Tech Stack & Tools
 
 <img src="https://skillicons.dev/icons?i=python,mysql,linux,kali,bash,vim,tor&theme=dark&perline=8" alt="Tech Stack" />
-<img src="https://www.nicepng.com/png/detail/875-8750625_nmap-project-logo-nmap-logo.png" width="48" /> 
-<img src="https://www.wireshark.org/assets/images/wireshark_logo.png" width="48" /> 
+<img src="https://www.nicepng.com/png/detail/875-8750625_nmap-project-logo-nmap-logo.png" width="48" />  
 <img src="https://portswigger.net/content/images/logos/portswigger-twittercardlogo.png" width="48" /> 
 <img src="https://www.torproject.org/static/images/tor-logo.svg" width="48" />
