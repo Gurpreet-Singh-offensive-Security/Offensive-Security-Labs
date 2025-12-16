@@ -54,47 +54,51 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 
 ## 📂 Repository Structure
 
-Offensive-Security-Labs/
-│
-├── Server-Side-Vulnerabilities/
-│   ├── 01-SQL-Injection/          [0/18 labs]
-│   ├── 02-Authentication/         [0/14 labs] 🎯 NEXT
-│   ├── 03-Path-Traversal/         [0/6 labs]
-│   ├── 04-Access-Control/         [0/13 labs]
-│   ├── 05-Information-Disclosure/ [0/5 labs]
-│   ├── 06-Business-Logic/         [0/11 labs]
-│   ├── 07-Command-Injection/      [0/5 labs]
-│   ├── 08-SSRF/                   [0/7 labs]
-│   ├── 09-XXE-Injection/          [0/9 labs]
-│   ├── 10-NoSQL-Injection/        [0/4 labs]
-│   ├── 11-API-Testing/            [0/5 labs]
-│   ├── 12-File-Upload/            [0/7 labs]
-│   ├── 13-Race-Conditions/        [0/6 labs]
-│   └── 14-Web-Cache-Deception/    [0/5 labs]
-│
-├── Client-Side-Vulnerabilities/
-│   ├── 01-XSS/                    [0/30 labs]
-│   ├── 02-CSRF/                   [0/12 labs]
-│   ├── 03-Clickjacking/           [0/5 labs] 🔥 NOW
-│   ├── 04-CORS/                   [0/3 labs]
-│   ├── 05-DOM-Based/              [0/7 labs]
-│   └── 06-WebSockets/             [0/3 labs]
-│
-├── Advanced-Techniques/
-│   ├── 01-HTTP-Request-Smuggling/ [0/21 labs]
-│   ├── 02-Web-Cache-Poisoning/    [0/13 labs]
-│   ├── 03-Insecure-Deserialization/ [0/10 labs]
-│   ├── 04-SSTI/                   [0/7 labs]
-│   ├── 05-JWT/                    [0/8 labs]
-│   ├── 06-OAuth/                  [0/6 labs]
-│   ├── 07-Prototype-Pollution/    [0/10 labs]
-│   ├── 08-GraphQL/                [0/5 labs]
-│   ├── 09-Host-Header-Attacks/    [0/7 labs]
-│   ├── 10-Web-LLM-Attacks/        [0/4 labs]
-│   └── 11-Essential-Skills/       [0/2 labs]
-│
-└── README.md
+### Server-Side Vulnerabilities
 
+| Folder # | Category                | Progress    | Note       |
+|:---------|:------------------------|:------------|:-----------|
+| 01       | SQL Injection           | 0/18 labs   |            |
+| 02       | Authentication          | 0/14 labs   | 🎯 NEXT   |
+| 03       | Path Traversal          | 0/6 labs    |            |
+| 04       | Access Control          | 0/13 labs   |            |
+| 05       | Information Disclosure  | 0/5 labs    |            |
+| 06       | Business Logic          | 0/11 labs   |            |
+| 07       | Command Injection       | 0/5 labs    |            |
+| 08       | SSRF                    | 0/7 labs    |            |
+| 09       | XXE Injection           | 0/9 labs    |            |
+| 10       | NoSQL Injection         | 0/4 labs    |            |
+| 11       | API Testing             | 0/5 labs    |            |
+| 12       | File Upload             | 0/7 labs    |            |
+| 13       | Race Conditions         | 0/6 labs    |            |
+| 14       | Web Cache Deception     | 0/5 labs    |            |
+
+### Client-Side Vulnerabilities
+
+| Folder # | Category         | Progress    | Note       |
+|:---------|:-----------------|:------------|:-----------|
+| 01       | XSS              | 0/30 labs   |            |
+| 02       | CSRF             | 0/12 labs   |            |
+| 03       | Clickjacking     | 0/5 labs    | 🔥 NOW    |
+| 04       | CORS             | 0/3 labs    |            |
+| 05       | DOM-Based        | 0/7 labs    |            |
+| 06       | WebSockets       | 0/3 labs    |            |
+
+### Advanced Techniques
+
+| Folder # | Category                  | Progress    |
+|:---------|:--------------------------|:------------|
+| 01       | HTTP Request Smuggling    | 0/21 labs   |
+| 02       | Web Cache Poisoning       | 0/13 labs   |
+| 03       | Insecure Deserialization  | 0/10 labs   |
+| 04       | SSTI                      | 0/7 labs    |
+| 05       | JWT                       | 0/8 labs    |
+| 06       | OAuth                     | 0/6 labs    |
+| 07       | Prototype Pollution       | 0/10 labs   |
+| 08       | GraphQL                   | 0/5 labs    |
+| 09       | Host Header Attacks       | 0/7 labs    |
+| 10       | Web LLM Attacks           | 0/4 labs    |
+| 11       | Essential Skills          | 0/2 labs    |
 
 
 ## 🎓 Lab Categories Overview
