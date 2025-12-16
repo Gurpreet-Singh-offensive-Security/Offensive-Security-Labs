@@ -74,22 +74,22 @@ Offensive-Security-Labs/
 
 ### 🔴 Server-Side Vulnerabilities (125 labs)
 
-| Category               | Labs | Difficulty | Impact | Status |
+| Category                | Labs | Difficulty | Impact | Status |
 |----------|--------------------|---------|--------|
-| SQL Injection          | 18 | ⭐⭐⭐ | Critical | Planned |
-| Access Control         | 13 | ⭐⭐ | High | Planned |
-| Authentication         | 14 | ⭐⭐ | Critical | Next Up |
-| Business Logic         | 11 | ⭐⭐⭐ | High | Planned |
-| XXE Injection          | 9 | ⭐⭐⭐ | High | Planned |
-| SSRF                   | 7 | ⭐⭐⭐ | High | Planned |
-| File Upload            | 7 | ⭐⭐ | High | Planned |
-| Path Traversal         | 6 | ⭐⭐ | Medium | Planned |
-| Race Conditions        | 6 | ⭐⭐⭐ | Medium | Planned |
-| Command Injection      | 5 | ⭐⭐⭐ | Critical | Planned |
-| Information Disclosure | 5 | ⭐ | Low-Medium | Planned |
-| API Testing            | 5 | ⭐⭐ | Medium | Planned |
-| Web Cache Deception    | 5 | ⭐⭐⭐ | Medium | Planned |
-| NoSQL Injection        | 4 | ⭐⭐⭐ | High | Planned |
+| SQL Injection           | 18 | ⭐⭐⭐ | Critical | Planned |
+| Access Control          | 13 | ⭐⭐ | High | Planned |
+| Authentication          | 14 | ⭐⭐ | Critical | Next Up |
+| Business Logic          | 11 | ⭐⭐⭐ | High | Planned |
+| XXE Injection           | 9 | ⭐⭐⭐ | High | Planned |
+| SSRF                    | 7 | ⭐⭐⭐ | High | Planned |
+| File Upload             | 7 | ⭐⭐ | High | Planned |
+| Path Traversal          | 6 | ⭐⭐ | Medium | Planned |
+| Race Conditions         | 6 | ⭐⭐⭐ | Medium | Planned |
+| Command Injection       | 5 | ⭐⭐⭐ | Critical | Planned |
+| Information Disclosure  | 5 | ⭐ | Low-Medium | Planned |
+| API Testing             | 5 | ⭐⭐ | Medium | Planned |
+| Web Cache Deception     | 5 | ⭐⭐⭐ | Medium | Planned |
+| NoSQL Injection         | 4 | ⭐⭐⭐ | High | Planned |
 
 ### 🟡 Client-Side Vulnerabilities (60 labs)
 
@@ -104,19 +104,19 @@ Offensive-Security-Labs/
 
 ### 🟣 Advanced Techniques (93 labs)
 
-| Category               | Labs | Difficulty | Impact | Status |
-|----------|--------------------|---------|--------|
+| Category                 | Labs | Difficulty | Impact | Status |
+|--------------------------|------|---------|--------|
 | HTTP Request Smuggling   | 21 | ⭐⭐⭐⭐ | Critical | Future |
 | Web Cache Poisoning      | 13 | ⭐⭐⭐⭐ | High | Future |
 | Insecure Deserialization | 10 | ⭐⭐⭐⭐ | Critical | Future |
 | Prototype Pollution      | 10 | ⭐⭐⭐⭐ | High | Future |
-| JWT                       | 8 | ⭐⭐⭐ | High | Future |
-| SSTI                      | 7 | ⭐⭐⭐⭐ | Critical | Future |
-| Host Header Attacks       | 7 | ⭐⭐⭐ | Medium-High | Future |
-| OAuth                     | 6 | ⭐⭐⭐ | High | Future |
-| GraphQL                   | 5 | ⭐⭐⭐ | Medium-High | Future |
-| Web LLM Attacks           | 4 | ⭐⭐⭐⭐ | High | Future |
-| Essential Skills          | 2 | ⭐⭐ | N/A | Future |
+| JWT                      | 8 | ⭐⭐⭐ | High | Future |
+| SSTI                     | 7 | ⭐⭐⭐⭐ | Critical | Future |
+| Host Header Attacks      | 7 | ⭐⭐⭐ | Medium-High | Future |
+| OAuth                    | 6 | ⭐⭐⭐ | High | Future |
+| GraphQL                  | 5 | ⭐⭐⭐ | Medium-High | Future |
+| Web LLM Attacks          | 4 | ⭐⭐⭐⭐ | High | Future |
+| Essential Skills         | 2 | ⭐⭐ | N/A | Future |
 
 ---
 
