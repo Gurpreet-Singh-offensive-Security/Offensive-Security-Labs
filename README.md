@@ -343,4 +343,4 @@ Building toward a career in Red Team operations. Open to learning from experienc
 
 ### Tech Stack & Tools
 
-[![Tech Stack](https://skillicons.dev/icons?i=python,mysql,linux,kali,bash,vim,tor&theme=dark&perline=8)](https://skillicons.dev)
+<img src="https://skillicons.dev/icons?i=python,mysql,linux,kali,bash,vim,tor&theme=dark&perline=8" alt="Tech Stack" />
