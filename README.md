@@ -340,3 +340,7 @@ Building toward a career in Red Team operations. Open to learning from experienc
 **Next Update:** After completing first 5 Clickjacking labs
 
 **🚀 Journey to 150+ Labs Starts Now 🚀**
+
+### Tech Stack & Tools
+
+[![Tech Stack](https://skillicons.dev/icons?i=python,mysql,linux,kali,bash,vim,tor&theme=dark&perline=8)](https://skillicons.dev)
