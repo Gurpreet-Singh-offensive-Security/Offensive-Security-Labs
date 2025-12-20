@@ -13,35 +13,6 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Metric                  | Value                              |
 |:------------------------|:-----------------------------------|
 | Total Labs Available    | 278                                |
-| Labs Completed          | 1 (0.36%)(since  1/278             |
-| Current Focus           | Clickjacking & Client-Side Attacks |
-| Next Up                 | Authentication Vulnerabilities     |
-
-### Currently Working On 🔄
-
-| Topic                            | Progress | Status           | Priority |
-|:---------------------------------|:--------:|:-----------------|:---------|
-| **Clickjacking (Web Deception)** | 1/5      | 🔥 In Progress  | High     |
-
-## 📂 Repository Structure
-
-Markdown
-
-# 🛡️ Offensive Security Labs
-**Mission:** Master web application security through systematic, hands-on exploitation of 150+ practical labs. Every vulnerability documented with detailed writeups, screenshots, and professional analysis.
-
-## 📋 About This Repository
-This repository chronicles my journey to becoming a Red Team Engineer through comprehensive documentation of offensive security techniques. Each lab represents real-world vulnerabilities with step-by-step exploitation methodology, mitigation strategies, and lessons learned.
-
-**Learning Philosophy:** Quality documentation over quantity. Every lab includes detailed analysis, screenshots, and professional security writeups.
-
-## 🎯 Current Progress
-
-### Overall Statistics
-
-| Metric                  | Value                              |
-|:------------------------|:-----------------------------------|
-| Total Labs Available    | 278                                |
 | Labs Completed          | 1 (0.36%)                          |
 | Current Focus           | Clickjacking & Client-Side Attacks |
 | Next Up                 | Authentication Vulnerabilities     |
