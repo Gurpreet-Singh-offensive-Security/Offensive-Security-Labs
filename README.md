@@ -13,7 +13,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Metric                  | Value                              |
 |:------------------------|:-----------------------------------|
 | Total Labs Available    | 278                                |
-| Labs Completed          | 0 (0%)                             |
+| Labs Completed          | 1 (0.36%)(since  1/278             |
 | Current Focus           | Clickjacking & Client-Side Attacks |
 | Next Up                 | Authentication Vulnerabilities     |
 
@@ -21,7 +21,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 
 | Topic                            | Progress | Status           | Priority |
 |:---------------------------------|:--------:|:-----------------|:---------|
-| **Clickjacking (Web Deception)** | 0/5      | 🔥 In Progress  | High     |
+| **Clickjacking (Web Deception)** | 1/5      | 🔥 In Progress  | High     |
 
 ## 📂 Repository Structure
 
@@ -42,7 +42,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Metric                  | Value                              |
 |:------------------------|:-----------------------------------|
 | Total Labs Available    | 278                                |
-| Labs Completed          | 0 (0%)                             |
+| Labs Completed          | 1 (0.36%)                          |
 | Current Focus           | Clickjacking & Client-Side Attacks |
 | Next Up                 | Authentication Vulnerabilities     |
 
@@ -50,7 +50,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 
 | Topic                            | Progress | Status           | Priority |
 |:---------------------------------|:--------:|:-----------------|:---------|
-| **Clickjacking (Web Deception)** | 0/5      | 🔥 In Progress  | High     |
+| **Clickjacking (Web Deception)** | 1/5      | 🔥 In Progress  | High     |
 
 ## 📂 Repository Structure
 
@@ -89,7 +89,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Folder # | Category                  | Progress    |
 |:---------|:--------------------------|:------------|
 | 01       | HTTP Request Smuggling    | 0/21 labs   |
-| 02       | Web Cache Poisoning       | 0/13 labs   |
+| 02       | Web Cache Poisoning       | 1/13 labs   |
 | 03       | Insecure Deserialization  | 0/10 labs   |
 | 04       | SSTI                      | 0/7 labs    |
 | 05       | JWT                       | 0/8 labs    |
@@ -208,7 +208,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 
 | Topic            | Progress | Note                |
 |:-----------------|:--------:|:--------------------|
-| Clickjacking     | 0/5      | 🔥 Starting Here   |
+| Clickjacking     | 1/5      | 🔥 Starting Here   |
 | Authentication   | 0/14     | 🎯 Next             |
 | XSS              | 0/30     |                     |
 | CSRF             | 0/12     |                     |
