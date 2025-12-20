@@ -6,7 +6,7 @@
 - **Difficulty**: Practitioner (Medium)
 - **Category**: Advanced Techniques / Web Cache Poisoning
 - **Impact**: High (Exposure of sensitive user data like API keys)
-- **Lab ID**: 0a1e0073049b2b6680a8039500110012 (your specific instance)
+- **Lab ID**: 0a1e0073049b2b6680a8039500110012
 - **Completion Date**: December 20, 2025
 - **Tools Used**: Burp Suite Professional, Browser DevTools, Exploit Server
 - **Status**: Solved
