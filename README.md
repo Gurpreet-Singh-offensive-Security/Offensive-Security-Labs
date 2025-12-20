@@ -50,7 +50,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 |:---------|:-----------------|:------------|:-----------|
 | 01       | XSS              | 0/30 labs   |            |
 | 02       | CSRF             | 0/12 labs   |            |
-| 03       | Clickjacking     | 0/5 labs    | 🔥 NOW    |
+| 03       | Clickjacking     | 1/5 labs    | 🔥 NOW    |
 | 04       | CORS             | 0/3 labs    |            |
 | 05       | DOM-Based        | 0/7 labs    |            |
 | 06       | WebSockets       | 0/3 labs    |            |
@@ -60,7 +60,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Folder # | Category                  | Progress    |
 |:---------|:--------------------------|:------------|
 | 01       | HTTP Request Smuggling    | 0/21 labs   |
-| 02       | Web Cache Poisoning       | 1/13 labs   |
+| 02       | Web Cache Poisoning       | 0/13 labs   |
 | 03       | Insecure Deserialization  | 0/10 labs   |
 | 04       | SSTI                      | 0/7 labs    |
 | 05       | JWT                       | 0/8 labs    |
