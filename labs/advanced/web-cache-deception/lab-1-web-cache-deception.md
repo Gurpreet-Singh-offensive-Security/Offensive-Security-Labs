@@ -84,3 +84,13 @@ The goal of this lab is to exploit a web cache deception vulnerability to access
 
 ## Personal Notes
 This was my first lab, and it highlighted the importance of understanding cache behaviors in web apps. The path discrepancy was subtle but key to the exploit. Next time, I'll test more extensions (.css, .jpg) for variations. Time taken: ~2 hours. Great intro to advanced client-side attacks—excited for more!
+
+---
+
+## Copyright & License
+
+**© 2025 Gurpreet Singh**  
+Licensed under CC BY-NC-ND 4.0  
+Original source: https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs
+
+**Plagiarism Notice:** This content is protected. Unauthorized copying or submission as your own work is prohibited and constitutes academic dishonesty.
