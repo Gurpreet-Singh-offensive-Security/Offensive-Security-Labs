@@ -1,4 +1,29 @@
 # 🛡️ Offensive Security Labs
+
+[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+## ⚠️ IMPORTANT: Academic Integrity & Copyright Notice
+
+**© 2025 Gurpreet Singh - All Rights Reserved**
+
+This repository is protected under **Creative Commons BY-NC-ND 4.0** license.
+
+### 🚫 Plagiarism Warning:
+- **DO NOT** copy, reproduce, or submit any part of this work as your own
+- **DO NOT** use this content for coursework, certifications, or job applications without attribution
+- Doing so constitutes **academic dishonesty** and **copyright infringement**
+- Educational institutions and employers can detect plagiarism through code similarity tools
+
+###  Permitted Use:
+- View for learning and reference purposes only
+- Cite properly if referencing in academic/professional work
+- Contact for permission: sas487f@gmail.com
+
+###  Watermark:
+Every lab documentation in this repository is timestamped and contains unique identifiers that can be traced back to this original source.
+
+
+# 🛡️ Offensive Security Labs Mission
 **Mission:** Master web application security through systematic, hands-on exploitation of 150+ practical labs. Every vulnerability documented with detailed writeups, screenshots, and professional analysis.
 
 ## 📋 About This Repository
