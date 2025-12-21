@@ -27,8 +27,8 @@ Attack Principle:
 
 URL: /my-account;.css
 
-Origin Server → Stops at ';' → Returns /my-account content
-Cache Server  → Ignores ';' → Caches as static .css file
+Origin Server → Stops at ' ; ' → Returns /my-account content
+Cache Server  → Ignores ' ; ' → Caches as static .css file
 
 ---
 
@@ -91,7 +91,7 @@ Findings:
 |    ;      | 302 | Server stops parsing at delimiter |
 |    ?      | 302 | Server stops parsing at delimiter |
 |    /      | 302 | Server stops parsing at delimiter |
-|   Others  | 400 | Rejected |
+|   Others  | 404 | Rejected |
 
 Three delimiters successfully create parsing discrepancies between cache and server.
 
@@ -105,8 +105,8 @@ Cache Response Testing:
 
 Semicolon (;):
 
-Request: /my-account;.css
-X-Cache: miss → hit (cached)
+Request: /my-account;.css  
+X-Cache: miss → hit (cached)  
 Result:  Exploitable
 
 Question Mark (?):
@@ -143,8 +143,6 @@ Real-world delivery methods: Phishing emails, compromised websites, malvertising
 
 <img width="1920" height="982" alt="LAB2_ss8" src="https://github.com/user-attachments/assets/b1c2ae72-6575-430f-9f70-f4c13d75e90c" />
 
-
-
 Access logs confirm:
 - Victim accessed the malicious URL
 - Authenticated session present
@@ -179,7 +177,7 @@ Server Behavior
 - Returns authenticated user content with 302 redirect
 
 Cache Behavior:
-- Ignores ; character
+- Ignores " ; " character
 - Sees complete path /my-account;.css
 - Treats as static CSS file based on extension
 - Caches response with Cache-Control: max-age=30
