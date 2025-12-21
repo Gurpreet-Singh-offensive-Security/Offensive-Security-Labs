@@ -1,29 +1,30 @@
 Lab 2: Exploiting Path Delimiters for Web Cache Deception
 
-Lab Information
+## Lab Information
 
-Lab Title: Web Cache Deception
-Source: PortSwigger Web Security Academy
-Difficulty: Practitioner(Medium)
-Category: Advanced Techniques/ Web Cache Deception
-Impact: High(EExposure of sensitive user data like API keys)
-Lab ID: 0a1e0074049b2b6680a8039500110012
-Completion Date: December 20, 2025
-Tools Used: Burp Suite Professional, Browser Dev Tools, Exploit Server
-Status: Solved
+**Lab Title:** Web Cache Deception  
+**Source:** PortSwigger Web Security Academy  
+**Difficulty:** Practitioner (Medium)  
+**Category:** Advanced Techniques / Web Cache Deception  
+**Impact:** High (Exposure of sensitive user data like API keys)  
+**Lab ID:** 0a1e0074049b2b6680a8039500110012  
+**Completion Date:** December 20, 2025  
+**Tools Used:** Burp Suite Professional, Browser Dev Tools, Exploit Server  
+**Status:** Solved
 
 
-Objective
+
+**Objective**
 
 Exploit delimiter discrepancies between cache and origin server to perform web cache deception attack and extract victim's API key.
 
 ---
 
-Vulnerability Overview
+**Vulnerability Overview**
 
 Path delimiters are characters that separate or terminate URL path segments. This vulnerability occurs when the cache server and origin server interpret these delimiters differently, allowing an attacker to cache dynamic content as if it were static.
 
-Attack Principle:
+**Attack Principle:**
 
 URL: /my-account;.css
 
@@ -32,12 +33,12 @@ Cache Server  → Ignores ' ; ' → Caches as static .css file
 
 ---
 
-Lab Setup
+**Lab Setup**
 
 <img width="1920" height="982" alt="LAB2_ss1" src="https://github.com/user-attachments/assets/872a9f4f-b720-422c-8657-e09af2ef64b6" />
 
 
-Tools Used:
+**Tools Used:**
 
 - Burp Suite Professional
 - Proxy configuration: 127.0.0.1:8080
@@ -45,7 +46,7 @@ Tools Used:
 
 ---
 
-Exploitation Process
+**Exploitation Process**
 
 1. Reconnaissance
 
@@ -95,13 +96,13 @@ Findings:
 
 Three delimiters successfully create parsing discrepancies between cache and server.
 
-### 5. Cache Behavior Analysis
+5. Cache Behavior Analysis
 <img width="1920" height="982" alt="LAB2_ss6 1" src="https://github.com/user-attachments/assets/206a409d-8820-4581-a895-3bb4aa2d3865" />
 
 <img width="1920" height="982" alt="LAB2_ss6 2" src="https://github.com/user-attachments/assets/bbcfb802-2db7-4ead-8947-63ce8b33559c" />
 
 
-Cache Response Testing:
+**Cache Response Testing:**
 
 Semicolon (;):
 
@@ -167,7 +168,7 @@ Lab successfully completed by submitting extracted API key.
 
 ---
 
-Technical Analysis
+**Technical Analysis**
 
 Why This Works
 
@@ -196,7 +197,7 @@ Testing methodology included both raw and encoded variants (%3b, %2f) to identif
 
 ---
 
-Detection & Prevention
+**Detection & Prevention**
 
 Detection
 - Monitor for delimiter characters followed by static extensions on dynamic paths
@@ -211,13 +212,13 @@ Prevention
 4. Never cache authenticated content.
 
 
-Security Headers:
+**Security Headers:**
 
 
 Cache-Control: no-store, private
 X-Content-Type-Options: nosniff
 
-Key Takeaways
+**Key Takeaways**
 
 - Delimiter interpretation varies between cache layers and application servers
 - Systematic testing reveals exploitable parsing discrepancies
