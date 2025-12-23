@@ -38,7 +38,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Metric                  | Value                              |
 |:------------------------|:-----------------------------------|
 | Total Labs Available    | 278                                |
-| Labs Completed          | 1 (0.36%)                          |
+| Labs Completed          | 2                                  |
 | Current Focus           | Clickjacking & Client-Side Attacks |
 | Next Up                 | Authentication Vulnerabilities     |
 
@@ -46,7 +46,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 
 | Topic                            | Progress | Status           | Priority |
 |:---------------------------------|:--------:|:-----------------|:---------|
-| **Clickjacking (Web Deception)** | 1/5      | 🔥 In Progress  | High     |
+| **Clickjacking (Web Deception)** | 2/5      | 🔥 In Progress  | High     |
 
 ## 📂 Repository Structure
 
@@ -200,7 +200,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 
 ## 📊 Learning Roadmap
 
-### Phase 1: Client-Side Fundamentals (Dec 2025 – Jan 2026)
+### Phase 1: Client-Side Fundamentals (2025 – 2026)
 
 | Topic            | Progress | Note                |
 |:-----------------|:--------:|:--------------------|
@@ -210,7 +210,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | CSRF             | 0/12     |                     |
 | DOM-Based        | 0/7      |                     |
 
-### Phase 2: Server-Side Core (Feb – Apr 2026)
+### Phase 2: Server-Side Core (2026)
 
 | Topic              | Progress |
 |:-------------------|:---------|
@@ -220,7 +220,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | SSRF               | 0/7      |
 | XXE                | 0/9      |
 
-### Phase 3: Application Logic (May – Jul 2026)
+### Phase 3: Application Logic (2026)
 
 | Topic                  | Progress |
 |:-----------------------|:---------|
@@ -229,7 +229,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | File Upload            | 0/7      |
 | Information Disclosure | 0/5      |
 
-### Phase 4: Advanced Topics (Aug 2026 – 2027)
+### Phase 4: Advanced Topics (2027)
 
 | Topic                  | Progress |
 |:-----------------------|:---------|
@@ -264,7 +264,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | PRACTITIONER | ░░░░░░░░░░░░░░░░░░░░         | 0/142             | 0%         |
 | EXPERT       | ░░░░░░░░░░░░░░░░░░░░         | 0/47              | 0%         |
 
-### Weekly Goals
+### Christmas Holidays Goals
 
 | Week                            | Goal                                            |
 |:--------------------------------|:------------------------------------------------|
@@ -294,7 +294,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Prepare for Security+ certification (2027)     |
 | Foundation for OSCP preparation                |
 
-## 🎯 2027 Milestone
+## 🎯 Targeted Milestone
 
 | Milestone                                           | Status |
 |:----------------------------------------------------|:-------|
@@ -331,7 +331,7 @@ Building toward a career in Red Team operations. Open to learning from experienc
 **Email:** sas487f@gmail.com
 
 ## 📝 Repository Updates
-**Last Updated:** December 15, 2025  
+ 
 **Status:** Just getting started! First labs coming soon.  
 **Next Update:** After completing first 5 Clickjacking labs
 
