@@ -55,7 +55,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Folder # | Category                | Progress    | Note       |
 |:---------|:------------------------|:------------|:-----------|
 | 01       | SQL Injection           | 0/18 labs   |            |
-| 02       | Authentication          | 0/14 labs   |        T   |
+| 02       | Authentication          | 0/14 labs   | Started    |
 | 03       | Path Traversal          | 0/6 labs    |            |
 | 04       | Access Control          | 0/13 labs   |            |
 | 05       | Information Disclosure  | 0/5 labs    |            |
@@ -75,7 +75,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 |:---------|:-----------------|:------------|:-----------|
 | 01       | XSS              | 0/30 labs   |            |
 | 02       | CSRF             | 0/12 labs   |            |
-| 03       | Clickjacking     | 1/5 labs    | Finished   |
+| 03       | Clickjacking     | 4/4 labs    | Finished   |
 | 04       | CORS             | 0/3 labs    |            |
 | 05       | DOM-Based        | 0/7 labs    |            |
 | 06       | WebSockets       | 0/3 labs    |            |
@@ -115,7 +115,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Command Injection        | 5    | ⭐⭐⭐           | Critical   | Planned   |
 | Information Disclosure   | 5    | ⭐               | Low-Medium | Planned   |
 | API Testing              | 5    | ⭐⭐            | Medium     | Planned   |
-| Web Cache Deception      | 5    | ⭐⭐⭐         | Medium     | Planned   |
+| Web Cache Deception      | 5    | ⭐⭐⭐         | Medium     |Planned   |
 | NoSQL Injection          | 4    | ⭐⭐⭐           | High       | Planned   |
 
 ### 🟡 Client-Side Vulnerabilities (60 labs)
@@ -125,7 +125,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Cross-Site Scripting (XSS)   | 30   | ⭐⭐⭐           | High          | Planned          |
 | CSRF                         | 12   | ⭐⭐            | Medium-High   | Planned          |
 | DOM-Based Vulns              | 7    | ⭐⭐⭐         | Medium-High   | Planned          |
-| **Clickjacking**             | 5    | ⭐               | Medium        | Completed  |
+| **Clickjacking**             | 4    | ⭐               | Medium        | Completed  |
 | CORS                         | 3    | ⭐⭐            | Medium        | Planned          |
 | WebSockets                   | 3    | ⭐⭐            | Medium        | Planned          |
 
