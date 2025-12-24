@@ -38,7 +38,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Metric                  | Value                              |
 |:------------------------|:-----------------------------------|
 | Total Labs Available    | 278                                |
-| Labs Completed          | 2                                  |
+| Labs Completed          | 4                                  |
 | Current Focus           | Clickjacking & Client-Side Attacks |
 | Next Up                 | Authentication Vulnerabilities     |
 
@@ -46,7 +46,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 
 | Topic                            | Progress | Status           | Priority |
 |:---------------------------------|:--------:|:-----------------|:---------|
-| **Clickjacking (Web Deception)** | 2/5      | 🔥 In Progress  | High     |
+| **Authentication**               | 0/14      | 🔥 In Progress  | High     |
 
 ## 📂 Repository Structure
 
@@ -55,7 +55,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Folder # | Category                | Progress    | Note       |
 |:---------|:------------------------|:------------|:-----------|
 | 01       | SQL Injection           | 0/18 labs   |            |
-| 02       | Authentication          | 0/14 labs   | 🎯 NEXT   |
+| 02       | Authentication          | 0/14 labs   |        T   |
 | 03       | Path Traversal          | 0/6 labs    |            |
 | 04       | Access Control          | 0/13 labs   |            |
 | 05       | Information Disclosure  | 0/5 labs    |            |
@@ -67,7 +67,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | 11       | API Testing             | 0/5 labs    |            |
 | 12       | File Upload             | 0/7 labs    |            |
 | 13       | Race Conditions         | 0/6 labs    |            |
-| 14       | Web Cache Deception     | 0/5 labs    |            |
+| 14       | Web Cache Deception     | 0/4 labs    | Completed  |
 
 ### Client-Side Vulnerabilities
 
@@ -75,7 +75,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 |:---------|:-----------------|:------------|:-----------|
 | 01       | XSS              | 0/30 labs   |            |
 | 02       | CSRF             | 0/12 labs   |            |
-| 03       | Clickjacking     | 1/5 labs    | 🔥 NOW    |
+| 03       | Clickjacking     | 1/5 labs    | Finished   |
 | 04       | CORS             | 0/3 labs    |            |
 | 05       | DOM-Based        | 0/7 labs    |            |
 | 06       | WebSockets       | 0/3 labs    |            |
@@ -104,7 +104,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Category                 | Labs | Difficulty      | Impact     | Status    |
 |:-------------------------|:----:|:---------------:|:----------|:----------|
 | SQL Injection            | 18   | ⭐⭐⭐           | Critical   | Planned   |
-| Authentication           | 14   | ⭐⭐            | Critical   | Next Up   |
+| **Authentication**           | 14   | ⭐⭐         | Critical   |🔥 In Progress |
 | Access Control           | 13   | ⭐⭐            | High       | Planned   |
 | Business Logic           | 11   | ⭐⭐⭐         | High       | Planned   |
 | XXE Injection            | 9    | ⭐⭐⭐           | High       | Planned   |
@@ -125,7 +125,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Cross-Site Scripting (XSS)   | 30   | ⭐⭐⭐           | High          | Planned          |
 | CSRF                         | 12   | ⭐⭐            | Medium-High   | Planned          |
 | DOM-Based Vulns              | 7    | ⭐⭐⭐         | Medium-High   | Planned          |
-| **Clickjacking**             | 5    | ⭐               | Medium        | 🔥 In Progress  |
+| **Clickjacking**             | 5    | ⭐               | Medium        | Completed  |
 | CORS                         | 3    | ⭐⭐            | Medium        | Planned          |
 | WebSockets                   | 3    | ⭐⭐            | Medium        | Planned          |
 
@@ -204,8 +204,8 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 
 | Topic            | Progress | Note                |
 |:-----------------|:--------:|:--------------------|
-| Clickjacking     | 1/5      | 🔥 Starting Here   |
-| Authentication   | 0/14     | 🎯 Next             |
+| Clickjacking     | 1/5      | Completed           |
+| Authentication   | 0/14     | 🔥 Starting Here    |
 | XSS              | 0/30     |                     |
 | CSRF             | 0/12     |                     |
 | DOM-Based        | 0/7      |                     |
@@ -242,17 +242,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 
 ## 📅 Current Focus: Clickjacking Labs
 
-### 🎯 Next 5 Labs (This Week)
 
-| # | Lab Title                                           | Status       | Difficulty    | Estimated Time |
-|:-|:----------------------------------------------------|:------------:|:-------------|:---------------|
-| 1 | **Basic clickjacking with CSRF token protection**   | 📝 Planning | Apprentice   | 1 hour         |
-| 2 | Clickjacking with form input data prefilled         | ⏳ Queued   | Apprentice   | 1 hour         |
-| 3 | Clickjacking with frame buster script               | ⏳ Queued   | Apprentice   | 1.5 hours      |
-| 4 | Exploiting clickjacking to trigger DOM XSS          | ⏳ Queued   | Practitioner | 2 hours        |
-| 5 | Multistep clickjacking                              | ⏳ Queued   | Practitioner | 2 hours        |
-
-**Total Estimated Time:** 7.5 hours for complete Clickjacking topic
 
 ## 📊 Progress Tracking
 
@@ -260,15 +250,15 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 
 | Difficulty   | Progress Bar                  | Completed / Total | Percentage |
 |:-------------|:------------------------------|:-----------------:|:-----------|
-| APPRENTICE   | ░░░░░░░░░░░░░░░░░░░░         | 0/89              | 0%         |
-| PRACTITIONER | ░░░░░░░░░░░░░░░░░░░░         | 0/142             | 0%         |
+| APPRENTICE   | ░░░░░░░░░░░░░░░░░░░░         | 1/89              | 0%         |
+| PRACTITIONER | ░░░░░░░░░░░░░░░░░░░░         | 3/142             | 0%         |
 | EXPERT       | ░░░░░░░░░░░░░░░░░░░░         | 0/47              | 0%         |
 
 ### Christmas Holidays Goals
 
 | Week                            | Goal                                            |
 |:--------------------------------|:------------------------------------------------|
-| Week 1 (Dec 15–21, 2025)        | 🎯 Complete Clickjacking (5 labs)               |
+| Week 1 (Dec 15–21, 2025)        | 🎯 Completed Clickjacking (4 labs) ✅           |
 | Week 2 (Dec 22–28, 2025)        | 🎯 Start Authentication (5 labs)                |
 | Week 3–4 (Dec 29 – Jan 11, 2026)| 🎯 Complete Authentication (remaining 9 labs)   |
 
