@@ -204,7 +204,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 
 | Topic            | Progress | Note                |
 |:-----------------|:--------:|:--------------------|
-| Clickjacking     | 1/5      | Completed           |
+| Clickjacking     | 4/4      | Completed           |
 | Authentication   | 0/14     | 🔥 Starting Here    |
 | XSS              | 0/30     |                     |
 | CSRF             | 0/12     |                     |
