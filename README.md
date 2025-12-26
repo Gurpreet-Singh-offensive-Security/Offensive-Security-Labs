@@ -252,7 +252,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 |:-------------|:------------------------------|:-----------------:|:-----------|
 | APPRENTICE   | ░░░░░░░░░░░░░░░░░░░░         | 1/89              | 0%         |
 | PRACTITIONER | ░░░░░░░░░░░░░░░░░░░░         | 3/142             | 0%         |
-| EXPERT       | ░░░░░░░░░░░░░░░░░░░░         | 0/47              | 0%         |
+| EXPERT       | ░░░░░░░░░░░░░░░░░░░░         | 1/47              | 0%         |
 
 ### Christmas Holidays Goals
 
