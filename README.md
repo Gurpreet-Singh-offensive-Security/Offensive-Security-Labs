@@ -38,8 +38,8 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Metric                  | Value                              |
 |:------------------------|:-----------------------------------|
 | Total Labs Available    | 278                                |
-| Labs Completed          | 4                                  |
-| Current Focus           | Clickjacking & Client-Side Attacks |
+| Labs Completed          | 5                                  |
+| Current Focus           | Web cache deception                |
 | Next Up                 | Authentication Vulnerabilities     |
 
 ### Currently Working On 🔄
@@ -67,7 +67,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | 11       | API Testing             | 0/5 labs    |            |
 | 12       | File Upload             | 0/7 labs    |            |
 | 13       | Race Conditions         | 0/6 labs    |            |
-| 14       | Web Cache Deception     | 0/4 labs    | Completed  |
+| 14       | Web Cache Deception     | 5/5 labs    | Completed  |
 
 ### Client-Side Vulnerabilities
 
@@ -75,7 +75,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 |:---------|:-----------------|:------------|:-----------|
 | 01       | XSS              | 0/30 labs   |            |
 | 02       | CSRF             | 0/12 labs   |            |
-| 03       | Clickjacking     | 4/4 labs    | Finished   |
+| 03       | Clickjacking     | 4/4 labs    |            |
 | 04       | CORS             | 0/3 labs    |            |
 | 05       | DOM-Based        | 0/7 labs    |            |
 | 06       | WebSockets       | 0/3 labs    |            |
@@ -115,7 +115,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Command Injection        | 5    | ⭐⭐⭐           | Critical   | Planned   |
 | Information Disclosure   | 5    | ⭐               | Low-Medium | Planned   |
 | API Testing              | 5    | ⭐⭐            | Medium     | Planned   |
-| Web Cache Deception      | 5    | ⭐⭐⭐         | Medium     |Planned   |
+| **Web Cache Deception**  | 5    | ⭐⭐⭐         | Medium     |Completed   |
 | NoSQL Injection          | 4    | ⭐⭐⭐           | High       | Planned   |
 
 ### 🟡 Client-Side Vulnerabilities (60 labs)
@@ -125,7 +125,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Cross-Site Scripting (XSS)   | 30   | ⭐⭐⭐           | High          | Planned          |
 | CSRF                         | 12   | ⭐⭐            | Medium-High   | Planned          |
 | DOM-Based Vulns              | 7    | ⭐⭐⭐         | Medium-High   | Planned          |
-| **Clickjacking**             | 4    | ⭐               | Medium        | Completed  |
+| Clickjacking               | 4    | ⭐               | Medium        |                |
 | CORS                         | 3    | ⭐⭐            | Medium        | Planned          |
 | WebSockets                   | 3    | ⭐⭐            | Medium        | Planned          |
 
@@ -204,7 +204,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 
 | Topic            | Progress | Note                |
 |:-----------------|:--------:|:--------------------|
-| Clickjacking     | 4/4      | Completed           |
+| Clickjacking     | 0/5      |                     |
 | Authentication   | 0/14     | 🔥 Starting Here    |
 | XSS              | 0/30     |                     |
 | CSRF             | 0/12     |                     |
@@ -240,7 +240,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | JWT & OAuth            | 0/14     |
 | Prototype Pollution    | 0/10     |
 
-## 📅 Current Focus: Clickjacking Labs
+## 📅 Current Focus: Authentication Labs
 
 
 
@@ -258,7 +258,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 
 | Week                            | Goal                                            |
 |:--------------------------------|:------------------------------------------------|
-| Week 1 (Dec 15–21, 2025)        | 🎯 Completed Clickjacking (4 labs) ✅           |
+| Week 1 (Dec 15–21, 2025)        | 🎯 Completed Web Cache Deception (5 labs) ✅    |
 | Week 2 (Dec 22–28, 2025)        | 🎯 Start Authentication (5 labs)                |
 | Week 3–4 (Dec 29 – Jan 11, 2026)| 🎯 Complete Authentication (remaining 9 labs)   |
 
