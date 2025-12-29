@@ -55,7 +55,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Folder # | Category                | Progress    | Note       |
 |:---------|:------------------------|:------------|:-----------|
 | 01       | SQL Injection           | 0/18 labs   |            |
-| 02       | Authentication          | 0/12 labs   | Started    |
+| 02       | Authentication          | 3/12 labs   | Started    |
 | 03       | Path Traversal          | 0/6 labs    |            |
 | 04       | Access Control          | 0/13 labs   |            |
 | 05       | Information Disclosure  | 0/5 labs    |            |
