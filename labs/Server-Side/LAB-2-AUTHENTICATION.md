@@ -229,27 +229,6 @@ def my_account():
 
 Require 2FA completion within 5 minutes of password verification to prevent session lingering.
 
-### Long-Term Solutions
-
-**1. Framework-Level Protection:**
-Utilize security frameworks with built-in 2FA enforcement (e.g., django-two-factor-auth, passport-2fa) that handle state management automatically.
-
-**2. Security Monitoring:**
-- Log all access attempts to protected resources
-- Alert on authenticated sessions accessing resources without 2FA completion
-- Track and investigate 2FA bypass attempts
-
-**3. Security Testing:**
-- Include broken access control testing in security assessments
-- Automated tests for authentication state enforcement
-- Regular penetration testing of multi-factor authentication flows
-
-**4. Defense-in-Depth:**
-- Rate limit 2FA attempts
-- Implement account lockout after multiple failed 2FA submissions
-- Add security headers to prevent caching of authenticated pages
-- Monitor for suspicious authentication patterns
-
 ## Key Takeaways
 
 **Penetration Testing Skills:**
