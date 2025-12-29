@@ -59,7 +59,7 @@ Sent login request to Burp Intruder and configured a Sniper attack targeting the
 | Invalid       | 3,248 bytes | "Invalid username" |
 | Valid         | 3,250 bytes | "Incorrect password" |
 
-**Critical Discovery:** Username `azureuser` returned response length of 3,078 bytes with error message "Incorrect password", confirming username validity. The 11-byte difference provided clear indication of different server-side code paths.
+**Critical Discovery:** Username `azureuser` returned response length of 3,250 bytes with error message "Incorrect password", confirming username validity. The 2-byte difference provided clear indication of different server-side code paths.
 
 **Technical Analysis:** The application uses distinct error messages for invalid usernames vs incorrect passwords. This information leakage reduces attack complexity from O(n×m) to O(n)+O(m), transforming a 1-billion-attempt attack into a 110,000-attempt attack.
 
