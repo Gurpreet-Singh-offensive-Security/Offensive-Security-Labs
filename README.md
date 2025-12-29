@@ -38,7 +38,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Metric                  | Value                              |
 |:------------------------|:-----------------------------------|
 | Total Labs Available    | 278                                |
-| Labs Completed          | 5                                  |
+| Labs Completed          | 8                                  |
 | Current Focus           | Authentication Vulnerabilities     |
 | Next Up                 | Server Side Another Vulnerability  |
 
@@ -46,7 +46,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 
 | Topic                            | Progress | Status           | Priority |
 |:---------------------------------|:--------:|:-----------------|:---------|
-| **Authentication**               | 0/14      | 🔥 In Progress  | High     |
+| **Authentication**               | 3/14      | 🔥 In Progress  | High     |
 
 ## 📂 Repository Structure
 
@@ -205,7 +205,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Topic            | Progress | Note                |
 |:-----------------|:--------:|:--------------------|
 | Clickjacking     | 0/5      |                     |
-| Authentication   | 0/14     | 🔥 Starting Here    |
+| Authentication   | 3/14     | 🔥 Starting Here    |
 | XSS              | 0/30     |                     |
 | CSRF             | 0/12     |                     |
 | DOM-Based        | 0/7      |                     |
@@ -250,7 +250,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 
 | Difficulty   | Progress Bar                  | Completed / Total | Percentage |
 |:-------------|:------------------------------|:-----------------:|:-----------|
-| APPRENTICE   | ░░░░░░░░░░░░░░░░░░░░         | 1/89              | 0%         |
+| APPRENTICE   | ░░░░░░░░░░░░░░░░░░░░         | 4/89              | 0%         |
 | PRACTITIONER | ░░░░░░░░░░░░░░░░░░░░         | 3/142             | 0%         |
 | EXPERT       | ░░░░░░░░░░░░░░░░░░░░         | 1/47              | 0%         |
 
