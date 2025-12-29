@@ -65,7 +65,7 @@ Sent login request to Burp Intruder and configured a Sniper attack targeting the
 
 ### 4. Targeted Password Brute-Force
 
-With valid username confirmed, reconfigured Intruder for password-only attack. Fixed username to `azureuser` and loaded common password wordlist (top 10,000 passwords from breach databases).
+With valid username confirmed, reconfigured Intruder for password-only attack. Fixed username to `azureuser` and loaded common password wordlist (top 100 passwords from breach databases).
 <img width="1920" height="983" alt="LAB1_ss4" src="https://github.com/user-attachments/assets/b94973a8-4b14-417f-82ea-2d9e32cf58e7" />
 
 *Password brute-force successful - credentials `azureuser:123456789` identified via 302 redirect*
