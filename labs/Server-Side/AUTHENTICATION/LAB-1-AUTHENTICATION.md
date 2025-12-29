@@ -50,14 +50,14 @@ Submitted test credentials (`don:123456`) to capture the authentication request 
 Sent login request to Burp Intruder and configured a Sniper attack targeting the username parameter. Deployed a wordlist containing common usernames derived from typical corporate naming conventions (firstname.lastname, firstnamelastname, etc.).
 <img width="1920" height="983" alt="LAB1_ss3" src="https://github.com/user-attachments/assets/cb6a32d0-43cd-403b-ae65-87a16bdef3a2" />
 
-*Intruder attack results - username `azureuser` identified by response length anomaly (3,078 bytes vs 3,089 bytes)*
+*Intruder attack results - username `azureuser` identified by response length anomaly (3,250 bytes vs 3,248 bytes)*
 
 **Attack Results:**
 
 | Username Type | Response Length | Error Message |
 |---------------|-----------------|---------------|
-| Invalid | 3,089 bytes | "Invalid username" |
-| Valid | 3,078 bytes | "Incorrect password" |
+| Invalid       | 3,248 bytes | "Invalid username" |
+| Valid         | 3,250 bytes | "Incorrect password" |
 
 **Critical Discovery:** Username `azureuser` returned response length of 3,078 bytes with error message "Incorrect password", confirming username validity. The 11-byte difference provided clear indication of different server-side code paths.
 
