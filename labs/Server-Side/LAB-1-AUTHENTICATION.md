@@ -74,8 +74,8 @@ With valid username confirmed, reconfigured Intruder for password-only attack. F
 
 | Password | Status Code | Response | Result |
 |----------|-------------|----------|---------|
-| test123 | 200 | Login page + error | Failed |
-| admin | 200 | Login page + error | Failed |
+| test123 | 200 | Login page | Failed |
+| admin | 200 | Login page   | Failed |
 | 123456789 | 302 | Redirect to /my-account | Success |
 
 **Discovery:** Password `123456789` triggered 302 redirect to `/my-account`, indicating successful authentication. This sequential numeric password is ranked in top 10 most common passwords globally and would be cracked in milliseconds by modern GPUs.
