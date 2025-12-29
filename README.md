@@ -39,8 +39,8 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 |:------------------------|:-----------------------------------|
 | Total Labs Available    | 278                                |
 | Labs Completed          | 5                                  |
-| Current Focus           | Web cache deception                |
-| Next Up                 | Authentication Vulnerabilities     |
+| Current Focus           | Authentication Vulnerabilities     |
+| Next Up                 | Server Side Another Vulnerability  |
 
 ### Currently Working On 🔄
 
@@ -67,7 +67,6 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | 11       | API Testing             | 0/5 labs    |            |
 | 12       | File Upload             | 0/7 labs    |            |
 | 13       | Race Conditions         | 0/6 labs    |            |
-| 14       | Web Cache Deception     | 5/5 labs    | Completed  |
 
 ### Client-Side Vulnerabilities
 
@@ -95,6 +94,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | 09       | Host Header Attacks       | 0/7 labs    |
 | 10       | Web LLM Attacks           | 0/4 labs    |
 | 11       | Essential Skills          | 0/2 labs    |
+| 12       | Web Cache Deception       | 5/5 labs    |
 
 
 ## 🎓 Lab Categories Overview
@@ -115,7 +115,6 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | Command Injection        | 5    | ⭐⭐⭐           | Critical   | Planned   |
 | Information Disclosure   | 5    | ⭐               | Low-Medium | Planned   |
 | API Testing              | 5    | ⭐⭐            | Medium     | Planned   |
-| **Web Cache Deception**  | 5    | ⭐⭐⭐         | Medium     |Completed   |
 | NoSQL Injection          | 4    | ⭐⭐⭐           | High       | Planned   |
 
 ### 🟡 Client-Side Vulnerabilities (60 labs)
@@ -144,6 +143,7 @@ This repository chronicles my journey to becoming a Red Team Engineer through co
 | GraphQL                      | 5    | ⭐⭐⭐              | Medium-High | Future  |
 | Web LLM Attacks              | 4    | ⭐⭐⭐⭐             | High        | Future  |
 | Essential Skills             | 2    | ⭐⭐               | N/A         | Future  |
+| **Web Cache Deception**      | 5    | ⭐⭐⭐                 | Medium     |Completed |
 
 ## 🛠️ Tools & Methodology
 
