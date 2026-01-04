@@ -12,7 +12,7 @@ This lab demonstrates an advanced username enumeration vulnerability where subtl
 | **Difficulty**         | Practitioner |
 | **Vulnerability**      | Username Enumeration via Subtle Response Differences |
 | **Risk**               | High - Authentication Bypass via Information Leakage |
-| **Completion**         | December 28, 2025 |
+| **Completion**         | January 3, 2026 |
 
 ## Objective
 
@@ -117,7 +117,7 @@ This single-character difference (presence/absence of a period) leaks authentica
 With valid username confirmed, reconfigured Intruder for password-only attack against the identified account.
 
 **Attack Configuration:**
-- Username: `[valid_username]` (fixed - confirmed valid)
+- Username: `[alerts]` (fixed - confirmed valid)
 - Target Parameter: `password`
 - Payload: Common password wordlist
 - Detection Method: HTTP status code (302 redirect indicates success)
@@ -135,7 +135,7 @@ With valid username confirmed, reconfigured Intruder for password-only attack ag
 | monkey | 302 | Redirect to /my-account | Success |
 
 **Credentials Discovered:**
-- Username: `[enumerated_username]`
+- Username: `[alerts]`
 - Password: `monkey`
 
 **Successful Authentication Confirmed:** 302 redirect to `/my-account` endpoint indicates valid credentials and session establishment.
