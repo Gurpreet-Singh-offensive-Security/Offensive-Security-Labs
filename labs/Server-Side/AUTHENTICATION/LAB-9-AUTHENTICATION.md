@@ -36,7 +36,7 @@ Accessed the lab environment displaying "Brute-forcing a stay-logged-in cookie" 
 
 <img width="1920" height="982" alt="LAB1_ss1" src="https://github.com/user-attachments/assets/4fba436e-6059-43f7-b537-759a53e320e0" />
 
-*Lab 9 environment - Stay-logged-in cookie vulnerability with Burp Suite Professional configured*
+*Lab 9 environment - Stay-logged-in cookie vulnerability title in lab (right) with Burp Suite Professional configured(left)*
 
 ### 2. Legitimate Authentication & Cookie Capture
 
@@ -124,7 +124,7 @@ Validated the attack methodology using my own credentials before targeting the v
 Sent GET /my-account request to Intruder and configured payload processing to generate valid cookies.
 <img width="1920" height="982" alt="LAB1_ss4" src="https://github.com/user-attachments/assets/8a417fb3-c735-46d6-806f-a5d6d8c71497" />
 
-*Proof of concept attack configured - Password payload with hash processing (left) | Successful authentication via crafted cookie (right)*
+*Proof of concept attack configured - Password payload with hash processing (right) | Successful authentication via crafted cookie (middle)*
 
 **Intruder Setup:**
 
