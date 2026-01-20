@@ -1,335 +1,752 @@
 # 🛡️ Offensive Security Labs
+### by Gurpreet Singh
 
-[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+[![Author](https://img.shields.io/badge/Author-Gurpreet%20Singh-blue?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security)
+[![Labs](https://img.shields.io/badge/Labs%20Completed-17%2F278-success?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
+[![Focus](https://img.shields.io/badge/Current%20Focus-Authentication-red?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
+[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg?style=for-the-badge)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-## ⚠️ IMPORTANT: Academic Integrity & Copyright Notice
+<div align="center">
+
+> **Gurpreet Singh's** comprehensive offensive security portfolio: 278 web application penetration testing labs covering OWASP Top 10, authentication attacks, SQL injection, XSS, CSRF, and advanced exploitation techniques using Burp Suite Professional, Python, and Kali Linux.
+
+**Author:** Gurpreet Singh | **Specialization:** Offensive Security & Red Team Operations  
+**Tools:** Burp Suite Professional, Python, Kali Linux, Bash | **Target:** 150+ labs by 2027
+
+[📧 Contact](mailto:gskhalsa6245@gmail.com) • [👤 Profile](https://github.com/Gurpreet-Singh-offensive-Security) • [💼 LinkedIn](your-linkedin-url)
+
+</div>
+
+---
+
+## ⚠️ Copyright & Academic Integrity Notice
 
 **© 2025 Gurpreet Singh - All Rights Reserved**
 
 This repository is protected under **Creative Commons BY-NC-ND 4.0** license.
 
-### 🚫 Plagiarism Warning:
-- **DO NOT** copy, reproduce, or submit any part of this work as your own
-- **DO NOT** use this content for coursework, certifications, or job applications without attribution
-- Doing so constitutes **academic dishonesty** and **copyright infringement**
-- Educational institutions and employers can detect plagiarism through code similarity tools
+<details>
+<summary><b>🚫 Click to read full copyright notice</b></summary>
 
-###  Permitted Use:
-- View for learning and reference purposes only
-- Cite properly if referencing in academic/professional work
-- Contact for permission: sas487f@gmail.com
+### Plagiarism Warning
+- ❌ **DO NOT** copy, reproduce, or submit any part of this work as your own
+- ❌ **DO NOT** use this content for coursework, certifications, or job applications without attribution
+- ❌ Violations constitute **academic dishonesty** and **copyright infringement**
+- ⚠️ Educational institutions and employers detect plagiarism through code similarity tools
 
-###  Watermark:
-Every lab documentation in this repository is timestamped and contains unique identifiers that can be traced back to this original source.
+### ✅ Permitted Use
+- ✅ View for learning and reference purposes only
+- ✅ Cite properly if referencing in academic/professional work
+- ✅ Contact for permission: gskhalsa6245@gmail.com
 
+### 🔐 Watermark
+Every lab documentation contains timestamps and unique identifiers traceable to this source.
 
-# 🛡️ Offensive Security Labs Mission
-**Mission:** Master web application security through systematic, hands-on exploitation of 150+ practical labs. Every vulnerability documented with detailed writeups, screenshots, and professional analysis.
+</details>
 
-## 📋 About This Repository
-This repository chronicles my journey to becoming a Red Team Engineer through comprehensive documentation of offensive security techniques. Each lab represents real-world vulnerabilities with step-by-step exploitation methodology, mitigation strategies, and lessons learned.
+---
 
-**Learning Philosophy:** Quality documentation over quantity. Every lab includes detailed analysis, screenshots, and professional security writeups.
+## 🎯 Mission Statement
 
-## 🎯 Current Progress
+<div align="center">
 
-### Overall Statistics
+**Master web application security through systematic, hands-on exploitation of 278 practical labs.**
 
-| Metric                  | Value                              |
-|:------------------------|:-----------------------------------|
-| Total Labs Available    | 278                                |
-| Labs Completed          | 8                                  |
-| Current Focus           | Authentication Vulnerabilities     |
-| Next Up                 | Server Side Another Vulnerability  |
+*Every vulnerability documented with detailed writeups, professional analysis, custom Python scripts, and comprehensive screenshots. Quality documentation over quantity - each lab includes methodology, technical analysis, exploitation steps, remediation strategies, and real-world impact assessment.*
 
-### Currently Working On 🔄
+</div>
 
-| Topic                            | Progress | Status           | Priority |
-|:---------------------------------|:--------:|:-----------------|:---------|
-| **Authentication**               | 3/14      | 🔥 In Progress  | High     |
+---
 
-## 📂 Repository Structure
+## 📊 Progress Dashboard
 
-### Server-Side Vulnerabilities
+<div align="center">
 
-| Folder # | Category                | Progress    | Note       |
-|:---------|:------------------------|:------------|:-----------|
-| 01       | SQL Injection           | 0/18 labs   |            |
-| 02       | Authentication          | 3/12 labs   | Started    |
-| 03       | Path Traversal          | 0/6 labs    |            |
-| 04       | Access Control          | 0/13 labs   |            |
-| 05       | Information Disclosure  | 0/5 labs    |            |
-| 06       | Business Logic          | 0/11 labs   |            |
-| 07       | Command Injection       | 0/5 labs    |            |
-| 08       | SSRF                    | 0/7 labs    |            |
-| 09       | XXE Injection           | 0/9 labs    |            |
-| 10       | NoSQL Injection         | 0/4 labs    |            |
-| 11       | API Testing             | 0/5 labs    |            |
-| 12       | File Upload             | 0/7 labs    |            |
-| 13       | Race Conditions         | 0/6 labs    |            |
+### 🎯 Overall Statistics
 
-### Client-Side Vulnerabilities
+| Metric | Value |
+|:-------|:------|
+| **Total Labs Available** | 278 |
+| **Labs Completed** | 17 |
+| **Completion Rate** | 6% |
+| **Current Focus** | 🔐 Authentication (12/14 completed) |
+| **Next Category** | 💉 SQL Injection |
+| **Target Milestone** | 150+ labs by 2027 |
+| **Active Since** | December 2025 |
+| **Last Updated** | January 21, 2026 |
 
-| Folder # | Category         | Progress    | Note       |
-|:---------|:-----------------|:------------|:-----------|
-| 01       | XSS              | 0/30 labs   |            |
-| 02       | CSRF             | 0/12 labs   |            |
-| 03       | Clickjacking     | 4/4 labs    |            |
-| 04       | CORS             | 0/3 labs    |            |
-| 05       | DOM-Based        | 0/7 labs    |            |
-| 06       | WebSockets       | 0/3 labs    |            |
+### 📈 Progress by Difficulty
+```
+🟢 Apprentice    ████████░░░░░░░░░░░░  10/89 labs  (11%)
+🟡 Practitioner  ████░░░░░░░░░░░░░░░░   6/142 labs  (4%)
+🔴 Expert        ██░░░░░░░░░░░░░░░░░░   1/47 labs   (2%)
+```
 
-### Advanced Techniques
+### 🏆 Recent Achievements
 
-| Folder # | Category                  | Progress    |
-|:---------|:--------------------------|:------------|
-| 01       | HTTP Request Smuggling    | 0/21 labs   |
-| 02       | Web Cache Poisoning       | 0/13 labs   |
-| 03       | Insecure Deserialization  | 0/10 labs   |
-| 04       | SSTI                      | 0/7 labs    |
-| 05       | JWT                       | 0/8 labs    |
-| 06       | OAuth                     | 0/6 labs    |
-| 07       | Prototype Pollution       | 0/10 labs   |
-| 08       | GraphQL                   | 0/5 labs    |
-| 09       | Host Header Attacks       | 0/7 labs    |
-| 10       | Web LLM Attacks           | 0/4 labs    |
-| 11       | Essential Skills          | 0/2 labs    |
-| 12       | Web Cache Deception       | 5/5 labs    |
+| Date | Achievement | Category | Labs |
+|:-----|:----------|:---------|:-----|
+| ✅ **Jan 2026** | **Mastered Authentication** | Authentication | **12/14** |
+| ✅ **Dec 2025** | Completed Web Cache Deception | Advanced | 5/5 |
+| ✅ **Dec 2025** | Completed Clickjacking | Client-Side | 4/4 |
 
+### 🔥 Current Sprint
 
-## 🎓 Lab Categories Overview
+| Week | Goal | Status |
+|:-----|:-----|:-------|
+| Week 1 (Jan 15-21) | Complete Authentication Labs | ⚡ 12/14 (86%) |
+| Week 2 (Jan 22-28) | Finish Authentication + Start SQL Injection | 🎯 Planned |
+| Week 3 (Jan 29 - Feb 4) | SQL Injection (6 labs) | 📋 Upcoming |
 
-### 🔴 Server-Side Vulnerabilities (125 labs)
+</div>
 
-| Category                 | Labs | Difficulty      | Impact     | Status    |
-|:-------------------------|:----:|:---------------:|:----------|:----------|
-| SQL Injection            | 18   | ⭐⭐⭐           | Critical   | Planned   |
-| **Authentication**           | 14   | ⭐⭐         | Critical   |🔥 In Progress |
-| Access Control           | 13   | ⭐⭐            | High       | Planned   |
-| Business Logic           | 11   | ⭐⭐⭐         | High       | Planned   |
-| XXE Injection            | 9    | ⭐⭐⭐           | High       | Planned   |
-| SSRF                     | 7    | ⭐⭐⭐           | High       | Planned   |
-| File Upload              | 7    | ⭐⭐            | High       | Planned   |
-| Path Traversal           | 6    | ⭐⭐            | Medium     | Planned   |
-| Race Conditions          | 6    | ⭐⭐⭐         | Medium     | Planned   |
-| Command Injection        | 5    | ⭐⭐⭐           | Critical   | Planned   |
-| Information Disclosure   | 5    | ⭐               | Low-Medium | Planned   |
-| API Testing              | 5    | ⭐⭐            | Medium     | Planned   |
-| NoSQL Injection          | 4    | ⭐⭐⭐           | High       | Planned   |
+---
 
-### 🟡 Client-Side Vulnerabilities (60 labs)
+## 🗂️ Lab Categories
 
-| Category                     | Labs | Difficulty      | Impact        | Status           |
-|:-----------------------------|:----:|:---------------:|:-------------|:-----------------|
-| Cross-Site Scripting (XSS)   | 30   | ⭐⭐⭐           | High          | Planned          |
-| CSRF                         | 12   | ⭐⭐            | Medium-High   | Planned          |
-| DOM-Based Vulns              | 7    | ⭐⭐⭐         | Medium-High   | Planned          |
-| Clickjacking               | 4    | ⭐               | Medium        |                |
-| CORS                         | 3    | ⭐⭐            | Medium        | Planned          |
-| WebSockets                   | 3    | ⭐⭐            | Medium        | Planned          |
+### 🔴 Server-Side Vulnerabilities (125 Labs)
 
-### 🟣 Advanced Techniques (93 labs)
+<table>
+<tr>
+<th width="35%">Category</th>
+<th width="15%">Progress</th>
+<th width="15%">Difficulty</th>
+<th width="15%">Impact</th>
+<th width="20%">Status</th>
+</tr>
 
-| Category                     | Labs | Difficulty          | Impact      | Status  |
-|:-----------------------------|:----:|:-------------------:|:-----------|:--------|
-| HTTP Request Smuggling       | 21   | ⭐⭐⭐⭐             | Critical    | Future  |
-| Web Cache Poisoning          | 13   | ⭐⭐⭐⭐             | High        | Future  |
-| Insecure Deserialization     | 10   | ⭐⭐⭐⭐             | Critical    | Future  |
-| Prototype Pollution          | 10   | ⭐⭐⭐⭐             | High        | Future  |
-| JWT                          | 8    | ⭐⭐⭐              | High        | Future  |
-| SSTI                         | 7    | ⭐⭐⭐⭐             | Critical    | Future  |
-| Host Header Attacks          | 7    | ⭐⭐⭐              | Medium-High | Future  |
-| OAuth                        | 6    | ⭐⭐⭐              | High        | Future  |
-| GraphQL                      | 5    | ⭐⭐⭐              | Medium-High | Future  |
-| Web LLM Attacks              | 4    | ⭐⭐⭐⭐             | High        | Future  |
-| Essential Skills             | 2    | ⭐⭐               | N/A         | Future  |
-| **Web Cache Deception**      | 5    | ⭐⭐⭐                 | Medium     |Completed |
+<tr>
+<td><strong>🔐 Authentication</strong></td>
+<td><strong>12/14</strong></td>
+<td>⭐⭐</td>
+<td><span style="color:red">Critical</span></td>
+<td>🔥 <strong>86% Complete</strong></td>
+</tr>
 
-## 🛠️ Tools & Methodology
+<tr>
+<td>💉 SQL Injection</td>
+<td>0/18</td>
+<td>⭐⭐⭐</td>
+<td><span style="color:red">Critical</span></td>
+<td>📋 Next Up</td>
+</tr>
 
-### Primary Tools
+<tr>
+<td>🔓 Access Control</td>
+<td>0/13</td>
+<td>⭐⭐</td>
+<td><span style="color:orange">High</span></td>
+<td>📋 Q1 2026</td>
+</tr>
 
-#### Exploitation Tools
-| Tool                                  | Purpose                                      |
-|:--------------------------------------|:---------------------------------------------|
-| Burp Suite Professional               | Intruder, Repeater, Scanner                  |
-| Kali Linux                            | Updated && Upgraded environment              |
-| Python (latest)                       | Automation scripts                           |
-| Browser DevTools (Chrome/Firefox)     | Client-side analysis                         |
+<tr>
+<td>🧩 Business Logic Flaws</td>
+<td>0/11</td>
+<td>⭐⭐⭐</td>
+<td><span style="color:orange">High</span></td>
+<td>📋 Q2 2026</td>
+</tr>
 
-#### Documentation Tools
-| Tool                  | Purpose                          |
-|:----------------------|:---------------------------------|
-| Markdown              | Writeups                         |
-| GitHub                | Version control                  |
-| Annotated Screenshots | Visual documentation             |
+<tr>
+<td>📄 XXE Injection</td>
+<td>0/9</td>
+<td>⭐⭐⭐</td>
+<td><span style="color:orange">High</span></td>
+<td>📋 Q2 2026</td>
+</tr>
 
-### Lab Methodology
+<tr>
+<td>🌐 SSRF</td>
+<td>0/7</td>
+<td>⭐⭐⭐</td>
+<td><span style="color:orange">High</span></td>
+<td>📋 Q2 2026</td>
+</tr>
 
-| Step                      | Activities                                                                                              |
-|:--------------------------|:--------------------------------------------------------------------------------------------------------|
-| 1. RECONNAISSANCE         | • Analyze target functionality<br>• Identify injection points<br>• Enumerate attack surface            |
-| 2. VULNERABILITY ANALYSIS | • Test for security flaws<br>• Understand underlying weakness<br>• Research exploitation techniques   |
-| 3. EXPLOITATION           | • Craft and test payloads<br>• Document each step with screenshots<br>• Achieve lab objective         |
-| 4. DOCUMENTATION          | • Write detailed walkthrough<br>• Explain key concepts learned<br>• Document mitigation strategies    |
-| 5. REFLECTION             | • Analyze what worked/didn't work<br>• Note real-world applications<br>• Identify areas for deeper study |
+<tr>
+<td>📁 File Upload Vulnerabilities</td>
+<td>0/7</td>
+<td>⭐⭐</td>
+<td><span style="color:orange">High</span></td>
+<td>📋 Q2 2026</td>
+</tr>
+
+<tr>
+<td>📂 Path Traversal</td>
+<td>0/6</td>
+<td>⭐⭐</td>
+<td><span style="color:gold">Medium</span></td>
+<td>📋 Q3 2026</td>
+</tr>
+
+<tr>
+<td>⚡ Race Conditions</td>
+<td>0/6</td>
+<td>⭐⭐⭐</td>
+<td><span style="color:gold">Medium</span></td>
+<td>📋 Q3 2026</td>
+</tr>
+
+<tr>
+<td>💻 Command Injection</td>
+<td>0/5</td>
+<td>⭐⭐⭐</td>
+<td><span style="color:red">Critical</span></td>
+<td>📋 Q2 2026</td>
+</tr>
+
+<tr>
+<td>ℹ️ Information Disclosure</td>
+<td>0/5</td>
+<td>⭐</td>
+<td><span style="color:gold">Low-Med</span></td>
+<td>📋 Q3 2026</td>
+</tr>
+
+<tr>
+<td>🔌 API Testing</td>
+<td>0/5</td>
+<td>⭐⭐</td>
+<td><span style="color:gold">Medium</span></td>
+<td>📋 Q3 2026</td>
+</tr>
+
+<tr>
+<td>🍃 NoSQL Injection</td>
+<td>0/4</td>
+<td>⭐⭐⭐</td>
+<td><span style="color:orange">High</span></td>
+<td>📋 Q3 2026</td>
+</tr>
+</table>
+
+---
+
+### 🟡 Client-Side Vulnerabilities (60 Labs)
+
+<table>
+<tr>
+<th width="35%">Category</th>
+<th width="15%">Progress</th>
+<th width="15%">Difficulty</th>
+<th width="15%">Impact</th>
+<th width="20%">Status</th>
+</tr>
+
+<tr>
+<td>🎨 Cross-Site Scripting (XSS)</td>
+<td>0/30</td>
+<td>⭐⭐⭐</td>
+<td><span style="color:orange">High</span></td>
+<td>📋 Q2 2026</td>
+</tr>
+
+<tr>
+<td>🔗 CSRF</td>
+<td>0/12</td>
+<td>⭐⭐</td>
+<td><span style="color:orange">Med-High</span></td>
+<td>📋 Q3 2026</td>
+</tr>
+
+<tr>
+<td>🖱️ DOM-Based Vulnerabilities</td>
+<td>0/7</td>
+<td>⭐⭐⭐</td>
+<td><span style="color:orange">Med-High</span></td>
+<td>📋 Q3 2026</td>
+</tr>
+
+<tr>
+<td><strong>🖼️ Clickjacking</strong></td>
+<td><strong>4/4</strong></td>
+<td>⭐</td>
+<td><span style="color:gold">Medium</span></td>
+<td>✅ <strong>Complete</strong></td>
+</tr>
+
+<tr>
+<td>🌍 CORS</td>
+<td>0/3</td>
+<td>⭐⭐</td>
+<td><span style="color:gold">Medium</span></td>
+<td>📋 Q3 2026</td>
+</tr>
+
+<tr>
+<td>🔌 WebSockets</td>
+<td>0/3</td>
+<td>⭐⭐</td>
+<td><span style="color:gold">Medium</span></td>
+<td>📋 Q4 2026</td>
+</tr>
+</table>
+
+---
+
+### 🟣 Advanced Techniques (93 Labs)
+
+<table>
+<tr>
+<th width="35%">Category</th>
+<th width="15%">Progress</th>
+<th width="15%">Difficulty</th>
+<th width="15%">Impact</th>
+<th width="20%">Status</th>
+</tr>
+
+<tr>
+<td>📦 HTTP Request Smuggling</td>
+<td>0/21</td>
+<td>⭐⭐⭐⭐</td>
+<td><span style="color:red">Critical</span></td>
+<td>📋 2027</td>
+</tr>
+
+<tr>
+<td>💾 Web Cache Poisoning</td>
+<td>0/13</td>
+<td>⭐⭐⭐⭐</td>
+<td><span style="color:orange">High</span></td>
+<td>📋 2027</td>
+</tr>
+
+<tr>
+<td>🔓 Insecure Deserialization</td>
+<td>0/10</td>
+<td>⭐⭐⭐⭐</td>
+<td><span style="color:red">Critical</span></td>
+<td>📋 2027</td>
+</tr>
+
+<tr>
+<td>⚡ Prototype Pollution</td>
+<td>0/10</td>
+<td>⭐⭐⭐⭐</td>
+<td><span style="color:orange">High</span></td>
+<td>📋 2027</td>
+</tr>
+
+<tr>
+<td>🔑 JWT Attacks</td>
+<td>0/8</td>
+<td>⭐⭐⭐</td>
+<td><span style="color:orange">High</span></td>
+<td>📋 2027</td>
+</tr>
+
+<tr>
+<td>🎭 Server-Side Template Injection (SSTI)</td>
+<td>0/7</td>
+<td>⭐⭐⭐⭐</td>
+<td><span style="color:red">Critical</span></td>
+<td>📋 2027</td>
+</tr>
+
+<tr>
+<td>🌐 Host Header Attacks</td>
+<td>0/7</td>
+<td>⭐⭐⭐</td>
+<td><span style="color:orange">Med-High</span></td>
+<td>📋 2027</td>
+</tr>
+
+<tr>
+<td>🔐 OAuth Attacks</td>
+<td>0/6</td>
+<td>⭐⭐⭐</td>
+<td><span style="color:orange">High</span></td>
+<td>📋 2027</td>
+</tr>
+
+<tr>
+<td>📊 GraphQL API Security</td>
+<td>0/5</td>
+<td>⭐⭐⭐</td>
+<td><span style="color:orange">Med-High</span></td>
+<td>📋 2027</td>
+</tr>
+
+<tr>
+<td><strong>💾 Web Cache Deception</strong></td>
+<td><strong>5/5</strong></td>
+<td>⭐⭐⭐</td>
+<td><span style="color:gold">Medium</span></td>
+<td>✅ <strong>Complete</strong></td>
+</tr>
+
+<tr>
+<td>🤖 Web LLM Attacks</td>
+<td>0/4</td>
+<td>⭐⭐⭐⭐</td>
+<td><span style="color:orange">High</span></td>
+<td>📋 2027</td>
+</tr>
+
+<tr>
+<td>🛠️ Essential Skills</td>
+<td>0/2</td>
+<td>⭐⭐</td>
+<td>N/A</td>
+<td>📋 2027</td>
+</tr>
+</table>
+
+---
+
+## 🛠️ Tools & Methodology by Gurpreet Singh
+
+### 💻 Technical Arsenal
+
+<div align="center">
+
+#### Offensive Security Tools
+
+![Burp Suite](https://img.shields.io/badge/Burp_Suite-Professional-FF6633?style=for-the-badge&logo=burpsuite&logoColor=white)
+![Python](https://img.shields.io/badge/Python-Expert-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Kali Linux](https://img.shields.io/badge/Kali_Linux-Expert-557C94?style=for-the-badge&logo=kalilinux&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-Expert-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)
+
+![SQL](https://img.shields.io/badge/SQL-Expert-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-Expert-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Git](https://img.shields.io/badge/Git-Version_Control-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Markdown](https://img.shields.io/badge/Markdown-Documentation-000000?style=for-the-badge&logo=markdown&logoColor=white)
+
+</div>
+
+### 📋 Gurpreet Singh's Exploitation Methodology
+
+<table>
+<tr>
+<th width="25%">Phase</th>
+<th width="75%">Activities</th>
+</tr>
+
+<tr>
+<td><strong>1️⃣ Reconnaissance</strong></td>
+<td>
+- Analyze target functionality and behavior<br>
+- Identify potential injection points<br>
+- Enumerate attack surface and entry points<br>
+- Map application architecture
+</td>
+</tr>
+
+<tr>
+<td><strong>2️⃣ Vulnerability Analysis</strong></td>
+<td>
+- Test for security flaws systematically<br>
+- Understand underlying weakness and root cause<br>
+- Research exploitation techniques and payloads<br>
+- Assess potential impact and severity
+</td>
+</tr>
+
+<tr>
+<td><strong>3️⃣ Exploitation</strong></td>
+<td>
+- Craft and test custom payloads<br>
+- Document each step with annotated screenshots<br>
+- Achieve lab objective through proven technique<br>
+- Develop Python automation scripts where applicable
+</td>
+</tr>
+
+<tr>
+<td><strong>4️⃣ Documentation</strong></td>
+<td>
+- Write detailed professional walkthrough<br>
+- Explain key concepts and technical details<br>
+- Document remediation and mitigation strategies<br>
+- Include CVSS scoring and real-world impact
+</td>
+</tr>
+
+<tr>
+<td><strong>5️⃣ Reflection & Learning</strong></td>
+<td>
+- Analyze what techniques worked/didn't work<br>
+- Note real-world applications and scenarios<br>
+- Identify areas for deeper study<br>
+- Update personal knowledge base
+</td>
+</tr>
+</table>
+
+---
 
 ## 📖 Documentation Standards
 
-### Required Sections
+### ✅ Every Lab Includes
 
-| Section                | Description                                           |
-|:-----------------------|:------------------------------------------------------|
-| Lab Information        | Platform, difficulty, date completed                  |
-| Objective              | What we're trying to achieve                          |
-| Reconnaissance         | Initial findings and analysis                         |
-| Exploitation Steps     | Detailed walkthrough with screenshots                 |
-| Key Concepts           | Technical explanations                                |
-| Mitigation             | How to prevent the vulnerability                      |
-| References             | Additional learning resources                         |
-| Personal Notes         | Challenges, insights, real-world impact               |
+<table>
+<tr>
+<td width="50%">
 
-### Screenshot Requirements
+**📝 Core Sections**
+- Lab information & metadata
+- Clear objective statement  
+- Reconnaissance findings
+- Step-by-step exploitation
+- Technical analysis
+- Remediation guidance
+- References & resources
 
-| Requirement             | Details                                             |
-|:------------------------|:----------------------------------------------------|
-| Minimum per lab         | 6–8 screenshots                                     |
-| Quality                 | Clear, annotated images                             |
-| Naming convention       | Numbered sequentially (01-initial.png, etc.)         |
-| Content                 | Show both process and results                       |
+</td>
+<td width="50%">
 
-## 📊 Learning Roadmap
+**📸 Visual Documentation**
+- 6-8 annotated screenshots minimum
+- Clear, high-quality images
+- Sequential numbering
+- Process and results shown
+- Burp Suite requests/responses
+- Successful exploitation proof
 
-### Phase 1: Client-Side Fundamentals (2025 – 2026)
+</td>
+</tr>
+</table>
 
-| Topic            | Progress | Note                |
-|:-----------------|:--------:|:--------------------|
-| Clickjacking     | 0/5      |                     |
-| Authentication   | 3/14     | 🔥 Starting Here    |
-| XSS              | 0/30     |                     |
-| CSRF             | 0/12     |                     |
-| DOM-Based        | 0/7      |                     |
+### 🎯 Quality Standards by Gurpreet Singh
 
-### Phase 2: Server-Side Core (2026)
+- ✅ **Professional formatting** with proper markdown structure
+- ✅ **CVSS scoring** for vulnerability severity assessment
+- ✅ **Custom Python scripts** for automation where applicable
+- ✅ **Real-world context** and business impact analysis
+- ✅ **Remediation code** showing secure implementations
+- ✅ **Unique insights** and personal learning notes
 
-| Topic              | Progress |
-|:-------------------|:---------|
-| SQL Injection      | 0/18     |
-| Path Traversal     | 0/6      |
-| Command Injection  | 0/5      |
-| SSRF               | 0/7      |
-| XXE                | 0/9      |
+---
 
-### Phase 3: Application Logic (2026)
+## 📚 Completed Labs Showcase
 
-| Topic                  | Progress |
-|:-----------------------|:---------|
-| Access Control         | 0/13     |
-| Business Logic         | 0/11     |
-| File Upload            | 0/7      |
-| Information Disclosure | 0/5      |
+<details>
+<summary><b>✅ Authentication Vulnerabilities (12/14 Labs) - Click to expand</b></summary>
 
-### Phase 4: Advanced Topics (2027)
+### 🔐 Authentication Labs by Gurpreet Singh
 
-| Topic                  | Progress |
-|:-----------------------|:---------|
-| Request Smuggling      | 0/21     |
-| Deserialization        | 0/10     |
-| Cache Poisoning        | 0/13     |
-| SSTI                   | 0/7      |
-| JWT & OAuth            | 0/14     |
-| Prototype Pollution    | 0/10     |
+**Completed:** 12 labs | **Remaining:** 2 labs | **Progress:** 86%
 
-## 📅 Current Focus: Authentication Labs
+#### Apprentice Level (All Complete)
+1. ✅ Username enumeration via different responses
+2. ✅ Username enumeration via subtly different responses  
+3. ✅ Username enumeration via response timing
+4. ✅ Broken brute-force protection, IP block
+5. ✅ Username enumeration via account lock
+6. ✅ Broken brute-force protection, multiple credentials per request
 
+#### Practitioner Level (All Complete)
+7. ✅ 2FA simple bypass
+8. ✅ 2FA broken logic
+9. ✅ Brute-forcing a stay-logged-in cookie
+10. ✅ Offline password cracking
+11. ✅ Password reset broken logic
+12. ✅ Password reset poisoning via middleware
 
+#### Expert Level (Remaining)
+13. 📋 Password brute-force via password change
+14. 📋 2FA bypass using a brute-force attack
 
-## 📊 Progress Tracking
+**Key Techniques Mastered:**
+- Username enumeration through timing attacks
+- Brute-force protection bypass methods
+- 2FA vulnerabilities and bypasses
+- Session token exploitation
+- Password reset logic flaws
+- Python automation with Burp Suite Turbo Intruder
 
-### By Difficulty Level
+</details>
 
-| Difficulty   | Progress Bar                  | Completed / Total | Percentage |
-|:-------------|:------------------------------|:-----------------:|:-----------|
-| APPRENTICE   | ░░░░░░░░░░░░░░░░░░░░         | 4/89              | 0%         |
-| PRACTITIONER | ░░░░░░░░░░░░░░░░░░░░         | 3/142             | 0%         |
-| EXPERT       | ░░░░░░░░░░░░░░░░░░░░         | 1/47              | 0%         |
+<details>
+<summary><b>✅ Web Cache Deception (5/5 Labs) - Click to expand</b></summary>
 
-### Christmas Holidays Goals
+### 💾 Web Cache Deception by Gurpreet Singh
 
-| Week                            | Goal                                            |
-|:--------------------------------|:------------------------------------------------|
-| Week 1 (Dec 15–21, 2025)        | 🎯 Completed Web Cache Deception (5 labs) ✅    |
-| Week 2 (Dec 22–28, 2025)        | 🎯 Start Authentication (5 labs)                |
-| Week 3–4 (Dec 29 – Jan 11, 2026)| 🎯 Complete Authentication (remaining 9 labs)   |
+**Completed:** 5 labs | **Progress:** 100% ✅
 
-## 💡 Learning Goals
+1. ✅ Exploiting path mapping for web cache deception
+2. ✅ Exploiting path delimiters for web cache deception
+3. ✅ Exploiting origin server normalization for web cache deception
+4. ✅ Exploiting cache server normalization for web cache deception
+5. ✅ Exploiting static extension for web cache deception
 
-### Technical Skills
+**Key Techniques Mastered:**
+- Cache poisoning fundamentals
+- Path normalization exploitation
+- Static resource manipulation
+- Origin vs cache server behavior
+- Advanced caching mechanisms
 
-| Goal                                      |
-|:------------------------------------------|
-| Master Burp Suite Professional workflows  |
-| Develop systematic exploitation methodology|
-| Build comprehensive documentation habits  |
-| Understand vulnerability root causes      |
-| Learn effective mitigation strategies     |
+</details>
 
-### Professional Development
+<details>
+<summary><b>✅ Clickjacking (4/4 Labs) - Click to expand</b></summary>
 
-| Goal                                           |
-|:-----------------------------------------------|
-| Create portfolio-quality writeups              |
-| Demonstrate hands-on security expertise        |
-| Build GitHub presence                          |
-| Prepare for Security+ certification (2027)     |
-| Foundation for OSCP preparation                |
+### 🖼️ Clickjacking by Gurpreet Singh
 
-## 🎯 Targeted Milestone
+**Completed:** 4 labs | **Progress:** 100% ✅
 
-| Milestone                                           | Status |
-|:----------------------------------------------------|:-------|
-| 150+ labs completed with full documentation         | ✅     |
-| All Apprentice & Practitioner labs finished         | ✅     |
-| 50%+ Expert labs completed                          | ✅     |
-| Security+ certified                                 | ✅     |
-| Professional portfolio demonstrating real-world skills | ✅     |
+1. ✅ Basic clickjacking with CSRF token protection
+2. ✅ Clickjacking with form input data prefilled from a URL parameter
+3. ✅ Clickjacking with a frame buster script
+4. ✅ Exploiting clickjacking vulnerability to trigger DOM-based XSS
+
+**Key Techniques Mastered:**
+- UI redressing attacks
+- Frame buster bypass
+- CSRF + Clickjacking combinations
+- DOM-based XSS via clickjacking
+
+</details>
+
+---
+
+## 📊 2026 Learning Roadmap
+
+### Q1 2026 (Current)
+```
+✅ Web Cache Deception (5/5) - COMPLETE
+🔥 Authentication (12/14) - 86% COMPLETE
+📋 SQL Injection (0/18) - STARTING NEXT
+📋 Access Control (0/13) - PLANNED
+```
+
+### Q2 2026
+```
+📋 XSS (0/30)
+📋 Business Logic (0/11)
+📋 XXE Injection (0/9)
+📋 SSRF (0/7)
+📋 File Upload (0/7)
+```
+
+### Q3 2026
+```
+📋 CSRF (0/12)
+📋 DOM-Based (0/7)
+📋 Path Traversal (0/6)
+📋 Command Injection (0/5)
+📋 Race Conditions (0/6)
+```
+
+### Q4 2026 - 2027
+```
+📋 Advanced topics (93 labs remaining)
+📋 Security+ Certification prep
+📋 OSCP preparation foundation
+```
+
+---
+
+## 🎯 Goals
+### 🏆 2027 Ultimate Goals
+
+| Goal | Description |
+|:-----|:------------|
+| **150+ Labs Complete** | Comprehensive offensive security portfolio |
+| **All Practitioner Labs** | Master intermediate exploitation techniques |
+| **50%+ Expert Labs** | Advanced penetration testing skills |
+| **Security+ Certified** | Professional certification achieved |
+| **OSCP Preparation** | Foundation for advanced certification |
+
+---
+
+## 💡 Learning Philosophy
+
+<div align="center">
+
+### Gurpreet Singh's Approach to Offensive Security
+
+*"Quality documentation over quantity. Every lab is an opportunity to deeply understand the vulnerability, not just solve it."*
+
+</div>
+
+**Core Principles:**
+- 📝 **Professional Documentation** - Portfolio-quality writeups for every lab
+- 🔍 **Deep Understanding** - Focus on root causes, not just exploitation
+- 🛠️ **Tool Mastery** - Burp Suite Professional, Python, custom scripts
+- 🎯 **Real-World Focus** - Business impact and practical applications
+- 📚 **Continuous Learning** - Always improving methodology
+
+---
 
 ## 📚 Resources & References
 
 ### Primary Learning Platform
-- [PortSwigger Web Security Academy](https://portswigger.net/web-security)
+- [PortSwigger Web Security Academy](https://portswigger.net/web-security) - All 278 labs
 
-### Additional Resources
+### Additional Resources by Gurpreet Singh
 
-| Resource             | Link                                                               |
-|:---------------------|:-------------------------------------------------------------------|
-| OWASP Top 10         | https://owasp.org/www-project-top-ten/                             |
-| HackerOne Hacktivity | https://hackerone.com/hacktivity                                   |
-| Bug Bounty Writeups  | https://pentester.land/list-of-bug-bounty-writeups.html            |
+| Resource | Purpose |
+|:---------|:--------|
+| [OWASP Top 10](https://owasp.org/www-project-top-ten/) | Industry standard vulnerabilities |
+| [HackerOne Hacktivity](https://hackerone.com/hacktivity) | Real-world bug bounty reports |
+| [Bug Bounty Writeups](https://pentester.land/list-of-bug-bounty-writeups.html) | Community insights |
+| [Burp Suite Documentation](https://portswigger.net/burp/documentation) | Tool mastery |
+| [OWASP Testing Guide](https://owasp.org/www-project-web-security-testing-guide/) | Methodology reference |
 
-### Tools Documentation
+---
 
-| Tool                   | Link                                                               |
-|:-----------------------|:-------------------------------------------------------------------|
-| Burp Suite             | https://portswigger.net/burp/documentation                         |
-| OWASP Testing Guide    | https://owasp.org/www-project-web-security-testing-guide/          |
+## 🤝 Connect with Gurpreet Singh
 
-## 🔗 Connect
-Building toward a career in Red Team operations. Open to learning from experienced security professionals.
+<div align="center">
 
-**Profile:** [github.com/gurpreet-singh-offensive-security](https://github.com/gurpreet-singh-offensive-security)  
-**Email:** sas487f@gmail.com
+**Building toward a career in Red Team operations | Open to learning from experienced security professionals**
 
-## 📝 Repository Updates
- 
-**Status:** Just getting started! First labs coming soon.  
-**Next Update:** After completing first 5 Clickjacking labs
+[![Email](https://img.shields.io/badge/Email-gskhalsa6245%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:gskhalsa6245@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-Gurpreet--Singh--offensive--Security-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Gurpreet-Singh-offensive-Security)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](your-linkedin-url)
 
-**🚀 Journey to 150+ Labs Starts Now 🚀**
+### 📫 Professional Opportunities
 
-### Tech Stack & Tools
+💼 **Open to:** Red Team Internships | Security Research Collaboration | Mentorship  
+🌍 **Location:** Canada  
+🎯 **Specialization:** Web Application Penetration Testing | Authentication Attacks | SQL Injection  
+🛡️ **Focus:** OWASP Top 10 | Burp Suite Professional | Python Automation  
+💻 **Skills:** Python Expert | SQL Expert | Linux Expert | Bash Expert  
 
-<img src="https://skillicons.dev/icons?i=python,mysql,linux,kali,bash,vim,tor&theme=dark&perline=8" alt="Tech Stack" />
-<img src="https://www.nicepng.com/png/detail/875-8750625_nmap-project-logo-nmap-logo.png" width="48" />  
-<img src="https://portswigger.net/content/images/logos/portswigger-twittercardlogo.png" width="48" /> 
-<img src="https://www.torproject.org/static/images/tor-logo.svg" width="48" />
+</div>
+
+---
+
+<div align="center">
+
+### 💡 Quote I Live By
+
+*"The only truly secure system is one that is powered off, cast in a block of concrete and sealed in a lead-lined room with armed guards."*  
+— Gene Spafford
+
+---
+
+**Gurpreet Singh** | Offensive Security Researcher | Red Team Operations  
+🔴 17 Labs Completed • 🛡️ Authentication Expert • 🎯 SQL Injection Next  
+💻 Python | SQL | Linux | Bash | Burp Suite Professional
+
+*Last Updated: January 21, 2026 | Next Update: Authentication Complete (2 labs remaining)*
+
+</div>
+
+---
+
+## 📈 Repository Statistics
+
+![GitHub last commit](https://img.shields.io/github/last-commit/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs?style=flat-square)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs?style=flat-square)
+
+**🚀 Journey to 150+ Labs - 17/278 Complete (6%) 🚀**
+
+---
+
+## 📝 Auto-Update Instructions
+
+**To update this README when completing labs:**
+
+1. Update badge: `Labs%20Completed-17%2F278` → change 17 to your new count
+2. Update **Progress Dashboard** → Overall Statistics → Labs Completed
+3. Update **Progress by Difficulty** → Add to appropriate difficulty level
+4. Update specific category progress (e.g., Authentication 12/14 → 13/14)
+5. Update **Last Updated** date
+6. Update footer statistics
+7. Add to **Recent Achievements** if completing a category
+
+---
