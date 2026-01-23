@@ -14,7 +14,6 @@
 **Core Stack:** Burp Suite Pro, Python, SQL, Linux, Bash | **Target:** 150+ labs by 2027
 
 [📧 Email](mailto:gskhalsa6245@gmail.com) • [👤 Profile](https://github.com/Gurpreet-Singh-offensive-Security) • [💼 LinkedIn](https://www.linkedin.com/in/gurpreetsingh-security)
-
 </div>
 
 ---
