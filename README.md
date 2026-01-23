@@ -13,7 +13,7 @@
 **Author:** Gurpreet Singh | **Specialization:** Offensive Security & Red Team Operations  
 **Tools:** Burp Suite Professional, Python, Kali Linux, Bash | **Target:** 150+ labs by 2027
 
-[📧 Contact](mailto:gskhalsa6245@gmail.com) • [👤 Profile](https://github.com/Gurpreet-Singh-offensive-Security) • [💼 LinkedIn](your-linkedin-url)
+[📧 Contact](mailto:gskhalsa6245@gmail.com) • [👤 Profile](https://github.com/Gurpreet-Singh-offensive-Security) • [💼 LinkedIn](https://www.linkedin.com/in/gurpreetsingh-security)
 
 </div>
 
@@ -680,7 +680,7 @@ Every lab documentation contains timestamps and unique identifiers traceable to 
 
 [![Email](https://img.shields.io/badge/Email-gskhalsa6245%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:gskhalsa6245@gmail.com)
 [![GitHub](https://img.shields.io/badge/GitHub-Gurpreet--Singh--offensive--Security-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Gurpreet-Singh-offensive-Security)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](your-linkedin-url)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gurpreetsingh-security)
 
 ### 📫 Professional Opportunities
 
