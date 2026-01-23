@@ -4,7 +4,7 @@
   <br><br>
 
   [![Author](https://img.shields.io/badge/Author-Gurpreet%20Singh-blue?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security)
-  [![Labs](https://img.shields.io/badge/Labs%20Completed-17%2F278-success?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
+  [![Labs](https://img.shields.io/badge/Labs%20Completed-19%2F278-success?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
   [![Focus](https://img.shields.io/badge/Current%20Focus-Authentication-red?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
   [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg?style=for-the-badge)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 </div>
@@ -68,7 +68,7 @@ This repository is protected under **Creative Commons BY-NC-ND 4.0** license.
 | Metric | Value |
 |:-------|:------|
 | **Total Labs Available** | 278 |
-| **Labs Completed** | 17 |
+| **Labs Completed** | 19 |
 | **Completion Rate** | 6.1% |
 | **Current Focus** | 🔐 Authentication (Apprentice & Practitioner Cleared) |
 | **Next Category** | 💉 SQL Injection |
@@ -78,14 +78,14 @@ This repository is protected under **Creative Commons BY-NC-ND 4.0** license.
 
 ### 📈 Progress by Difficulty
 
-🟢 Apprentice ████████░░░░░░░░░░░░ 6/89 labs (6.7%) 🟡 Practitioner ██████████░░░░░░░░░░ 11/142 labs (7.7%) 🔴 Expert ░░░░░░░░░░░░░░░░░░░░ 0/47 labs (0%)
+🟢 Apprentice ████████░░░░░░░░░░░░ 4/89 labs (6.7%) 🟡 Practitioner ██████████░░░░░░░░░░ 12/142 labs (7.7%) 🔴 Expert ░░░░░░░░░░░░░░░░░░░░ 3/47 labs (0%)
 
 
 ### 🏆 Recent Achievements
 
 | Date | Achievement | Category | Labs |
 |:-----|:----------|:---------|:-----|
-| ✅ **Jan 2026** | **Mastered Auth (App/Prac)** | Authentication | **12/14** |
+| ✅ **Jan 2026** | **Mastered Auth (App/Prac)** | Authentication | **14/14** |
 | ✅ **Jan 2026** | **Topic Complete: Web Cache** | Advanced | 5/5 |
 | 📋 **Upcoming** | SQL Injection Sprint | Server-Side | 0/18 |
 
@@ -94,7 +94,7 @@ This repository is protected under **Creative Commons BY-NC-ND 4.0** license.
 | Week | Goal | Status |
 |:-----|:-----|:-------|
 | Week 1 (Jan 15-21) | Complete Auth Apprentice/Practitioner | ✅ Complete |
-| Week 2 (Jan 22-28) | Start SQL Injection & Finish Auth Expert | ⚡ In Progress |
+| Week 2 (Jan 22-28) | Start SQL Injection         | ⚡ In Progress |
 | Week 3 (Jan 29 - Feb 4) | SQL Injection (6 labs) | 📋 Upcoming |
 
 </div>
@@ -230,7 +230,7 @@ This repository is protected under **Creative Commons BY-NC-ND 4.0** license.
 ## 📚 Completed Labs Showcase
 
 <details>
-<summary><b>✅ Authentication Vulnerabilities (12/14 Labs) - Click to expand</b></summary>
+<summary><b>✅ Authentication Vulnerabilities (14/14 Labs) - Click to expand</b></summary>
 
 ### 🔐 Authentication Labs by Gurpreet Singh
 **Status: Apprentice & Practitioner Mastered**
@@ -281,12 +281,10 @@ This repository is protected under **Creative Commons BY-NC-ND 4.0** license.
 <div align="center">
 
 **Gurpreet Singh** | Offensive Security Researcher  
-🔴 17 Labs Completed • 🛡️ Auth & Cache Expert • 🎯 SQL Injection Next  
-
-*Last Updated: January 23, 2026*
+🔴 19 Labs Completed • 🛡️ Auth & Cache Expert • 🎯 SQL Injection Next  
 
 ---
 
-**🚀 Journey to 150+ Labs - 17/278 Complete (6.1%) 🚀**
+**🚀 Journey to 150+ Labs - 19/278 Complete (6.1%) 🚀**
 
 </div>
