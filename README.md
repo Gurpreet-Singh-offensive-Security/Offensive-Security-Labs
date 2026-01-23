@@ -1,3 +1,4 @@
+<div align="center">
 # 🛡️ Offensive Security Labs
 ### by Gurpreet Singh
 
@@ -5,6 +6,8 @@
 [![Labs](https://img.shields.io/badge/Labs%20Completed-17%2F278-success?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
 [![Focus](https://img.shields.io/badge/Current%20Focus-Authentication-red?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg?style=for-the-badge)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+</div>
 
 <div align="center">
 
