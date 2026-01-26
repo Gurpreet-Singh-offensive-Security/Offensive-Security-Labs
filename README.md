@@ -5,7 +5,7 @@
 
   [![Author](https://img.shields.io/badge/Author-Gurpreet%20Singh-blue?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security)
   [![Labs](https://img.shields.io/badge/Labs%20Completed-19%2F278-success?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
-  [![Focus](https://img.shields.io/badge/Current%20Focus-Authentication-red?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
+  [![Focus](https://img.shields.io/badge/Current%20Focus-SQL%20Injection-red?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
   [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg?style=for-the-badge)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 </div>
 
@@ -69,31 +69,34 @@ This repository is protected under **Creative Commons BY-NC-ND 4.0** license.
 |:-------|:------|
 | **Total Labs Available** | 278 |
 | **Labs Completed** | 19 |
-| **Completion Rate** | 6.1% |
-| **Current Focus** | 🔐 Authentication (Apprentice & Practitioner Cleared) |
-| **Next Category** | 💉 SQL Injection |
+| **Completion Rate** | 6.8% |
+| **Current Focus** | 💉 SQL Injection (Starting) |
+| **Next Category** | 🔓 Access Control |
 | **Target Milestone** | 150+ labs by 2027 |
 | **Active Since** | December 2025 |
-| **Last Updated** | January 23, 2026 |
+| **Last Updated** | January 26, 2026 |
 
 ### 📈 Progress by Difficulty
 
-🟢 Apprentice ████████░░░░░░░░░░░░ 4/89 labs (6.7%) 🟡 Practitioner ██████████░░░░░░░░░░ 12/142 labs (7.7%) 🔴 Expert ░░░░░░░░░░░░░░░░░░░░ 3/47 labs (0%)
-
+```
+🟢 Apprentice     ████░░░░░░░░░░░░░░░░  4/89 labs (4.5%)
+🟡 Practitioner   ████████░░░░░░░░░░░░  12/142 labs (8.5%)
+🔴 Expert         ██░░░░░░░░░░░░░░░░░░  3/47 labs (6.4%)
+```
 
 ### 🏆 Recent Achievements
 
 | Date | Achievement | Category | Labs |
 |:-----|:----------|:---------|:-----|
-| ✅ **Jan 2026** | **Mastered Auth (App/Prac)** | Authentication | **14/14** |
-| ✅ **Jan 2026** | **Topic Complete: Web Cache** | Advanced | 5/5 |
+| ✅ **Jan 2026** | **Topic Complete: Authentication** | Authentication | **14/14** |
+| ✅ **Jan 2026** | **Topic Complete: Web Cache** | Advanced | **5/5** |
 | 📋 **Upcoming** | SQL Injection Sprint | Server-Side | 0/18 |
 
 ### 🔥 Current Sprint
 
 | Week | Goal | Status |
 |:-----|:-----|:-------|
-| Week 1 (Jan 15-21) | Complete Auth Apprentice/Practitioner | ✅ Complete |
+| Week 1 (Jan 15-21) | Complete Authentication Topic | ✅ Complete |
 | Week 2 (Jan 22-28) | Start SQL Injection         | ⚡ In Progress |
 | Week 3 (Jan 29 - Feb 4) | SQL Injection (6 labs) | 📋 Upcoming |
 
@@ -116,10 +119,10 @@ This repository is protected under **Creative Commons BY-NC-ND 4.0** license.
 
 <tr>
 <td><strong>🔐 Authentication</strong></td>
-<td><strong>12/14</strong></td>
+<td><strong>14/14</strong></td>
 <td>⭐⭐</td>
 <td><span style="color:red">Critical</span></td>
-<td>🔥 <strong>86% Complete</strong></td>
+<td>✅ <strong>COMPLETE</strong></td>
 </tr>
 
 <tr>
@@ -127,7 +130,7 @@ This repository is protected under **Creative Commons BY-NC-ND 4.0** license.
 <td>0/18</td>
 <td>⭐⭐⭐</td>
 <td><span style="color:red">Critical</span></td>
-<td>📋 Next Up</td>
+<td>🔥 Next Up</td>
 </tr>
 
 <tr>
@@ -233,7 +236,7 @@ This repository is protected under **Creative Commons BY-NC-ND 4.0** license.
 <summary><b>✅ Authentication Vulnerabilities (14/14 Labs) - Click to expand</b></summary>
 
 ### 🔐 Authentication Labs by Gurpreet Singh
-**Status: Apprentice & Practitioner Mastered**
+**Status: Topic 100% Complete**
 
 1. ✅ Username enumeration via different responses
 2. ✅ Username enumeration via subtly different responses  
@@ -247,6 +250,8 @@ This repository is protected under **Creative Commons BY-NC-ND 4.0** license.
 10. ✅ Offline password cracking
 11. ✅ Password reset broken logic
 12. ✅ Password reset poisoning via middleware
+13. ✅ Password brute-force via password change
+14. ✅ 2FA bypass using a brute-force attack
 
 </details>
 
@@ -285,6 +290,6 @@ This repository is protected under **Creative Commons BY-NC-ND 4.0** license.
 
 ---
 
-**🚀 Journey to 150+ Labs - 19/278 Complete (6.1%) 🚀**
+**🚀 Journey to 150+ Labs - 19/278 Complete (6.8%) 🚀**
 
 </div>
