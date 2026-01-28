@@ -57,7 +57,6 @@ Content-Type: application/x-www-form-urlencoded
 
 username=carlos&password=adam%4012345
 ```
-
 ### 3. Brute-Force Protection Testing
 
 Sent captured request to Burp Repeater to test for rate limiting and account lockout mechanisms.
