@@ -61,20 +61,20 @@ Authentication vulnerabilities occur when web applications fail to properly veri
 
 | # | Lab Title | Difficulty | Focus Area | Key Techniques |
 |---|-----------|------------|------------|----------------|
-| 1 | Username Enumeration via Different Responses | 🟢 Apprentice | User Enumeration | Response comparison analysis |
-| 2 | 2FA Simple Bypass | 🟢 Apprentice | MFA Bypass | Direct path manipulation |
-| 3 | Password Reset Broken Logic | 🟢 Apprentice | Password Reset | Parameter tampering |
-| 4 | Username Enumeration via Subtly Different Responses | 🟡 Practitioner | User Enumeration | Grep pattern matching |
-| 5 | Username Enumeration via Response Timing | 🟡 Practitioner | Timing Attacks | X-Forwarded-For + timing |
-| 6 | Broken Brute-Force Protection (IP Block) | 🟡 Practitioner | Brute Force | IP rotation bypass |
-| 7 | Username Enumeration via Account Lock | 🟡 Practitioner | Account Lockout | Null payload fuzzing |
-| 8 | 2FA Broken Logic | 🟡 Practitioner | MFA Bypass | Cookie manipulation |
-| 9 | Brute-Forcing Stay-Logged-In Cookie | 🟡 Practitioner | Session Attacks | Base64/MD5 cracking |
-| 10 | Offline Password Cracking | 🟡 Practitioner | Cryptanalysis | XSS + hash cracking |
-| 11 | Password Reset Poisoning via Middleware | 🟡 Practitioner | Header Injection | X-Forwarded-Host exploit |
-| 12 | Password Brute-Force via Password Change | 🟡 Practitioner | Logic Flaws | Authenticated brute force |
-| 13 | Broken Brute-Force Protection (Multiple Credentials) | 🔴 Expert | Advanced Bypass | JSON array + Turbo Intruder |
-| 14 | 2FA Bypass Using Brute-Force Attack | 🔴 Expert | Advanced MFA | Macro automation |
+| 1 | [Username Enumeration via Different Responses](./lab-1-username-enumeration-different-responses.md) | 🟢 Apprentice | User Enumeration | Response comparison analysis |
+| 2 | [2FA Simple Bypass](./lab-2-2fa-simple-bypass.md) | 🟢 Apprentice | MFA Bypass | Direct path manipulation |
+| 3 | [Password Reset Broken Logic](./lab-3-password-reset-broken-logic.md) | 🟢 Apprentice | Password Reset | Parameter tampering |
+| 4 | [Username Enumeration via Subtly Different Responses](./lab-4-username-enumeration-subtly-different-responses.md) | 🟡 Practitioner | User Enumeration | Grep pattern matching |
+| 5 | [Username Enumeration via Response Timing](./lab-5-username-enumeration-response-timing.md) | 🟡 Practitioner | Timing Attacks | X-Forwarded-For + timing |
+| 6 | [Broken Brute-Force Protection (IP Block)](./lab-6-broken-brute-force-protection-ip-block.md) | 🟡 Practitioner | Brute Force | IP rotation bypass |
+| 7 | [Username Enumeration via Account Lock](./lab-7-username-enumeration-account-lock.md) | 🟡 Practitioner | Account Lockout | Null payload fuzzing |
+| 8 | [2FA Broken Logic](./lab-8-2fa-broken-logic.md) | 🟡 Practitioner | MFA Bypass | Cookie manipulation |
+| 9 | [Brute-Forcing Stay-Logged-In Cookie](./lab-9-brute-forcing-stay-logged-in-cookie.md) | 🟡 Practitioner | Session Attacks | Base64/MD5 cracking |
+| 10 | [Offline Password Cracking](./lab-10-offline-password-cracking.md) | 🟡 Practitioner | Cryptanalysis | XSS + hash cracking |
+| 11 | [Password Reset Poisoning via Middleware](./lab-11-password-reset-poisoning-middleware.md) | 🟡 Practitioner | Header Injection | X-Forwarded-Host exploit |
+| 12 | [Password Brute-Force via Password Change](./lab-12-password-brute-force-password-change.md) | 🟡 Practitioner | Logic Flaws | Authenticated brute force |
+| 13 | [Broken Brute-Force Protection (Multiple Credentials)](./lab-13-broken-brute-force-protection-multiple-credentials.md) | 🔴 Expert | Advanced Bypass | JSON array + Turbo Intruder |
+| 14 | [2FA Bypass Using Brute-Force Attack](./lab-14-2fa-bypass-brute-force-attack.md) | 🔴 Expert | Advanced MFA | Macro automation |
 
 ---
 
