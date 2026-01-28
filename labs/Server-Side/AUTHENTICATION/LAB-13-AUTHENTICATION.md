@@ -12,7 +12,7 @@ This lab demonstrates a critical vulnerability in JSON-based authentication wher
 | **Difficulty**         | Practitioner |
 | **Vulnerability**      | JSON Array Injection in Authentication |
 | **Risk**               | Critical - Instant Authentication Bypass |
-| **Completion**         | January 3, 2026 |
+| **Completion**         | January 27, 2026 |
 
 ## Objective
 
