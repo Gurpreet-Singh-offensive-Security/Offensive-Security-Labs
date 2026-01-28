@@ -15,7 +15,6 @@ This lab demonstrates an advanced username enumeration vulnerability exploiting 
 | **Completion**         | January 3, 2026 |
 
 ## Objective
-
 Exploit response timing discrepancies to enumerate valid usernames, bypass IP-based brute-force protection, and conduct password attacks to achieve unauthorized account access.
 
 ## Testing Setup
