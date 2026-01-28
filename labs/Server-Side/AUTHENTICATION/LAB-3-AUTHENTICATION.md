@@ -204,7 +204,6 @@ Secure Implementation:
 3. Application verifies token matches user and hasn't expired
 4. Password changed only if valid token provided
 ```
-
 **Attack Methodology:**
 
 | Step | Action | Result |
