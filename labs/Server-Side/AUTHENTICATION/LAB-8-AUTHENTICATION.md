@@ -114,7 +114,6 @@ Sent GET /login2 request to Burp Repeater to test parameter manipulation and ses
 GET /login2 HTTP/1.1
 Cookie: verify=carlos
 ```
-
 **Response:** 200 OK - MFA code entry page displayed for `carlos`
 
 **Critical Vulnerability Confirmed:**
