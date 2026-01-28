@@ -235,7 +235,6 @@ Security controls must be applied uniformly across all endpoints. A single unpro
 6. PCI-DSS Requirement 8.3 - Multi-Factor Authentication
 
 ---
-
 ## Legal Notice
 
 **Copyright © 2025 Gurpreet Singh**  
