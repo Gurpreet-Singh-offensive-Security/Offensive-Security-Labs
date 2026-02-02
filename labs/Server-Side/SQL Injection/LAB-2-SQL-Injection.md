@@ -48,7 +48,7 @@ Tested login functionality with intentionally incorrect credentials to capture a
 
 <img width="1920" height="982" alt="LAB2_ss2" src="https://github.com/user-attachments/assets/c9820cc0-3af6-4e40-b2ca-197331ed5004" />
 
-*Invalid login attempt showing "Incorrect password" (right) | POST request captured with CSRF token (left)*
+*Invalid login attempt showing "Incorrect username and password" (right) | POST request captured with CSRF token (left)*
 
 **Authentication Request Captured:**
 ```http
@@ -69,7 +69,7 @@ SELECT * FROM users
 WHERE username = 'wiener' AND password = 'bluecheese'
 ```
 
-**Response:** "Incorrect password" - indicates username exists but password invalid.
+**Response:** "Incorrect username and password".
 
 ### 3. SQL Injection Testing
 
