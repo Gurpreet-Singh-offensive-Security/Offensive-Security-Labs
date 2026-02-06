@@ -167,7 +167,7 @@ Sent encoded payload and successfully bypassed WAF protection.
 ```
 <img width="1920" height="983" alt="LAB1_SS6" src="https://github.com/user-attachments/assets/e4872aff-9ce9-44b0-980b-de6cdad42abe" />
 
-*Encoded payload sent - 200 OK response with "400 units" and "null" confirming SQL injection success*
+*Encoded payload sent - 200 OK response with "441 units" and "null" confirming SQL injection success*
 
 **Response:**
 ```
