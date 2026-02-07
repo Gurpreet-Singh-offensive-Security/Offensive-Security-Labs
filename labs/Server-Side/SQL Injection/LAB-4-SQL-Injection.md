@@ -13,7 +13,7 @@ This lab demonstrates SQL injection exploitation against an Oracle database wher
 | **Difficulty**         | Practitioner |
 | **Vulnerability**      | SQL Injection - Oracle Database Enumeration |
 | **Risk**               | High - Database Fingerprinting & Information Disclosure |
-| **Completion**         | February 1, 2026 |
+| **Completion**         | February 7, 2026 |
 
 ## Objective
 
@@ -48,8 +48,7 @@ Explored product categories to identify SQL injection vectors and understand fil
 **Available Categories:**
 - Accessories
 - Corporate Gifts
-- Lifestyle
-- Pens
+- Pets
 
 **Request Analysis:**
 ```http
