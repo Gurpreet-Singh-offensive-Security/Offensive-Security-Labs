@@ -48,7 +48,7 @@ Navigated through product categories to identify SQL injection vectors and under
 **Available Categories:**
 - Food & Drink
 - Gifts
-- Lifestyle
+- Pets
 - Other product categories
 
 **Request Captured:**
