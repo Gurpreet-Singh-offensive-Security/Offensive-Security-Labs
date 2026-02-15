@@ -4,7 +4,7 @@
   <br><br>
 
   [![Author](https://img.shields.io/badge/Author-Gurpreet%20Singh-blue?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security)
-  [![Labs](https://img.shields.io/badge/Labs%20Completed-25%2F278-success?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
+  [![Labs](https://img.shields.io/badge/Labs%20Completed-28%2F278-success?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
   [![Focus](https://img.shields.io/badge/Current%20Focus-SQL%20Injection-red?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
   [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg?style=for-the-badge)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 </div>
@@ -68,19 +68,19 @@ This repository is protected under **Creative Commons BY-NC-ND 4.0** license.
 | Metric | Value |
 |:-------|:------|
 | **Total Labs Available** | 278 |
-| **Labs Completed** | 25 |
-| **Completion Rate** | 9.0% |
+| **Labs Completed** | 28 |
+| **Completion Rate** | 10.1% |
 | **Current Focus** | 💉 SQL Injection (Apprentice Complete - Practitioner Active) |
 | **Next Category** | 🔓 Access Control |
 | **Target Milestone** | 150+ labs by 2027 |
 | **Active Since** | December 2025 |
-| **Last Updated** | January 28, 2026 |
+| **Last Updated** | January 29, 2026 |
 
 ### 📈 Progress by Difficulty
 
 ```
 🟢 Apprentice     ███████░░░░░░░░░░░░░  6/89 labs (6.7%)
-🟡 Practitioner   ███████████░░░░░░░░░  16/142 labs (11.3%)
+🟡 Practitioner   █████████████░░░░░░░  19/142 labs (13.4%)
 🔴 Expert         ██░░░░░░░░░░░░░░░░░░  3/47 labs (6.4%)
 ```
 
@@ -91,7 +91,7 @@ This repository is protected under **Creative Commons BY-NC-ND 4.0** license.
 | ✅ **Jan 2026** | **Topic Complete: Authentication** | Authentication | **14/14** |
 | ✅ **Jan 2026** | **Topic Complete: Web Cache** | Advanced | **5/5** |
 | ✅ **Jan 2026** | **SQLi Apprentice Complete** | SQL Injection | **2/2** |
-| 🔥 **Active** | **SQLi Practitioner** | SQL Injection | **4/10** |
+| 🔥 **Active** | **SQLi Practitioner** | SQL Injection | **7/10** |
 
 ### 🔥 Current Sprint
 
@@ -99,7 +99,7 @@ This repository is protected under **Creative Commons BY-NC-ND 4.0** license.
 |:-----|:-----|:-------|
 | Week 1 (Jan 15-21) | Complete Authentication Topic | ✅ Complete |
 | Week 2 (Jan 22-28) | SQL Injection Apprentice | ✅ Complete |
-| Week 3 (Jan 29 - Feb 4) | SQL Injection Practitioner (6 labs) | 🔥 Active |
+| Week 3 (Jan 29 - Feb 4) | SQL Injection Practitioner (8 labs) | 🔥 Active |
 
 </div>
 
@@ -128,10 +128,10 @@ This repository is protected under **Creative Commons BY-NC-ND 4.0** license.
 
 <tr>
 <td><strong>💉 SQL Injection</strong></td>
-<td><strong>6/18</strong></td>
+<td><strong>9/18</strong></td>
 <td>⭐⭐⭐</td>
 <td><span style="color:red">Critical</span></td>
-<td>🔥 <strong>Active - 33%</strong></td>
+<td>🔥 <strong>Active - 50%</strong></td>
 </tr>
 
 <tr>
@@ -271,23 +271,23 @@ This repository is protected under **Creative Commons BY-NC-ND 4.0** license.
 </details>
 
 <details>
-<summary><b>🔥 SQL Injection (6/18 Labs) - Click to expand</b></summary>
+<summary><b>🔥 SQL Injection (9/18 Labs) - Click to expand</b></summary>
 
 ### 💉 SQL Injection Labs by Gurpreet Singh
-**Status: Apprentice Complete - Practitioner Active (33% Complete)**
+**Status: Apprentice Complete - Practitioner Active (50% Complete)**
 
 #### 🟢 Apprentice Level (2/2 Complete)
 1. ✅ SQL injection vulnerability in WHERE clause allowing retrieval of hidden data
 2. ✅ SQL injection vulnerability allowing login bypass
 
-#### 🟡 Practitioner Level (4/10 In Progress)
+#### 🟡 Practitioner Level (7/10 In Progress)
 3. ✅ SQL injection UNION attack, determining the number of columns returned by the query
 4. ✅ SQL injection UNION attack, finding a column containing text
 5. ✅ SQL injection UNION attack, retrieving data from other tables
 6. ✅ SQL injection UNION attack, retrieving multiple values in a single column
-7. 📋 SQL injection attack, querying the database type and version on Oracle
-8. 📋 SQL injection attack, querying the database type and version on MySQL and Microsoft
-9. 📋 SQL injection attack, listing the database contents on non-Oracle databases
+7. ✅ SQL injection attack, querying the database type and version on Oracle
+8. ✅ SQL injection attack, querying the database type and version on MySQL and Microsoft
+9. ✅ SQL injection attack, listing the database contents on non-Oracle databases
 10. 📋 SQL injection attack, listing the database contents on Oracle
 11. 📋 Blind SQL injection with conditional responses
 12. 📋 Blind SQL injection with conditional errors
@@ -319,10 +319,10 @@ This repository is protected under **Creative Commons BY-NC-ND 4.0** license.
 <div align="center">
 
 **Gurpreet Singh** | Offensive Security Researcher  
-🔴 25 Labs Completed • 🛡️ Auth & Cache Expert • 💉 SQL Injection Active  
+🔴 28 Labs Completed • 🛡️ Auth & Cache Expert • 💉 SQL Injection Active  
 
 ---
 
-**🚀 Journey to 150+ Labs - 25/278 Complete (9.0%) 🚀**
+**🚀 Journey to 150+ Labs - 28/278 Complete (10.1%) 🚀**
 
 </div>
