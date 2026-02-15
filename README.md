@@ -91,7 +91,7 @@ This repository is protected under **Creative Commons BY-NC-ND 4.0** license.
 | ✅ **Jan 2026** | **Topic Complete: Authentication** | Authentication | **14/14** |
 | ✅ **Jan 2026** | **Topic Complete: Web Cache** | Advanced | **5/5** |
 | ✅ **Jan 2026** | **SQLi Apprentice Complete** | SQL Injection | **2/2** |
-| 🔥 **Active** | **SQLi Practitioner** | SQL Injection | **7/10** |
+| 🔥 **Active** | **SQLi Practitioner** | SQL Injection | **7/16** |
 
 ### 🔥 Current Sprint
 
