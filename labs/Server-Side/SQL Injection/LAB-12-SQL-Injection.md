@@ -12,7 +12,7 @@
 | **Vulnerability** | Blind SQL Injection — Boolean-Based Conditional Response Extraction |
 | **CWE** | CWE-89: Improper Neutralization of Special Elements in SQL Commands |
 | **Risk Level** |  Critical |
-| **Completed** | April 2026 |
+| **Completed** | 12 April 2026 |
 
 ---
 
