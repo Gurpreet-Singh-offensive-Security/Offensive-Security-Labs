@@ -648,7 +648,7 @@ cursor.execute(query, [tracking_id])
 
 ## Legal Notice
 
-**Copyright © 2025 Gurpreet Singh**  
+**Copyright © 2026 Gurpreet Singh**  
 Licensed under CC BY-NC-ND 4.0
 
 **Repository:** https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs
