@@ -1,4 +1,3 @@
-```
 # Lab 13: Blind SQL Injection with Conditional Errors
 
 ## Executive Summary
@@ -655,4 +654,3 @@ Licensed under CC BY-NC-ND 4.0
 **Repository:** https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs
 
 **Disclaimer:** This documentation is for authorized security testing and educational purposes only. All techniques were performed in a controlled laboratory environment with explicit permission. Unauthorized access to systems, credential theft, or database enumeration is illegal under applicable laws worldwide.
-```
