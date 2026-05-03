@@ -1,4 +1,4 @@
-# Lab 1: Web Cache Deception
+# Lab 1: Web Cache Deception 
 
 ## Lab Information
 - **Lab Title**: Web Cache Deception
