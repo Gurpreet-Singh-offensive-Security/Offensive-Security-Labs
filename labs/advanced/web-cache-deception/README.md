@@ -30,11 +30,11 @@ This series follows a **progressive difficulty model**, building from basic conc
 
 | Lab | Difficulty | Focus Area | Key Techniques |
 |-----|------------|------------|----------------|
-| [Lab 1](./lab-1-web-cache-deception.md) | Apprentice   | Static Extension Exploitation | Basic path manipulation, extension-based caching |
-| [Lab 2](./lab-2-web-cache-deception.md) | Practitioner | Cache Key Vulnerabilities | Cache key flaws, origin header manipulation |
-| [Lab 3](./lab-3-web-cache-deception.md) | Practitioner | Cache Rule Bypass | Delimiter discovery, path truncation |
-| [Lab 4](./lab-4-web-cache-deception.md) | Practitioner | Normalization Discrepancies | URL encoding, path traversal, delimiter fuzzing |
-| [Lab 5](./lab-5-web-cache-deception.md) | Expert       | Exact Match Exploitation | Multi-stage attacks, CSRF chaining, session timing |
+| [Lab 1](./lab-1-web-cache-deception.md) | Apprentice   | Basic path Normalization-- Exploit Server Payload Creation -- Link sent to Victim Clicked -- Exploitation |
+| [Lab 2](./lab-2-web-cache-deception.md) | Practitioner | Delimiter Discovery -- Path Normalization -- Exploit Server Payload Creation -- Link sent to Victim Clicked -- Exploitation |
+| [Lab 3](./lab-3-web-cache-deception.md) | Practitioner | Delimiter Potential Discovery -- Url Encoding,Path Traversal Normalization-- Cache Path & Variable Finding(Http History)-- Combined Exploit Creation |
+| [Lab 4](./lab-4-web-cache-deception.md) | Practitioner | Delimiter Discovery - Delimiter Discrepancies (Stop server at endpoint and add payload there) - Cache Path Finding and Testing-- Exploit Creation |
+| [Lab 5](./lab-5-web-cache-deception.md) | Expert       | Delimiter Discovery -- Explicit Cache Resource Finding (robots.txt) after all techniques failure-- Combine Url encode with cache-- Exploit Creation -- Session timing Discovery -- Use Cache Buster to reset webpage -- Csrf Poc Generated Exploit to Full Account Compromise -- Link sent to Victim Clicked -- Account Takeover |
 
 ## Learning Path
 
