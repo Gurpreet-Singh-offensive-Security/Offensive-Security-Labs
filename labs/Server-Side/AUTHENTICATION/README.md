@@ -61,21 +61,20 @@ Authentication vulnerabilities occur when web applications fail to properly veri
 
 | # | Lab Title | Difficulty | Focus Area | Key Techniques |
 |---|-----------|------------|------------|----------------|
-| 1 | [Username Enumeration via Different Responses](./LAB-1-AUTHENTICATION.md) | 🟢 Apprentice | User Enumeration | Response comparison analysis |
-| 2 | [2FA Simple Bypass](./LAB-2-AUTHENTICATION.md) | 🟢 Apprentice | MFA Bypass | Direct path manipulation |
-| 3 | [Password Reset Broken Logic](./LAB-3-AUTHENTICATION.md) | 🟢 Apprentice | Password Reset | Parameter tampering |
-| 4 | [Username Enumeration via Subtly Different Responses](./LAB-4-AUTHENTICATION.md) | 🟡 Practitioner | User Enumeration | Grep pattern matching |
-| 5 | [Username Enumeration via Response Timing](./LAB-5-AUTHENTICATION.md) | 🟡 Practitioner | Timing Attacks | X-Forwarded-For + timing |
-| 6 | [Broken Brute-Force Protection (IP Block)](./LAB-6-AUTHENTICATION.md) | 🟡 Practitioner | Brute Force | IP rotation bypass |
-| 7 | [Username Enumeration via Account Lock](./LAB-7-AUTHENTICATION.md) | 🟡 Practitioner | Account Lockout | Null payload fuzzing |
-| 8 | [2FA Broken Logic](./LAB-8-AUTHENTICATION.md) | 🟡 Practitioner | MFA Bypass | Cookie manipulation |
-| 9 | [Brute-Forcing Stay-Logged-In Cookie](./LAB-9-AUTHENTICATION.md) | 🟡 Practitioner | Session Attacks | Base64/MD5 cracking |
-| 10 | [Offline Password Cracking](./LAB-10-AUTHENTICATION.md) | 🟡 Practitioner | Cryptanalysis | XSS + hash cracking |
-| 11 | [Password Reset Poisoning via Middleware](./LAB-11-AUTHENTICATION.md) | 🟡 Practitioner | Header Injection | X-Forwarded-Host exploit |
-| 12 | [Password Brute-Force via Password Change](./LAB-12-AUTHENTICATION.md) | 🟡 Practitioner | Logic Flaws | Authenticated brute force |
-| 13 | [Broken Brute-Force Protection (Multiple Credentials)](./LAB-13-AUTHENTICATION.md) | 🔴 Expert | Advanced Bypass | JSON array + Turbo Intruder |
-| 14 | [2FA Bypass Using Brute-Force Attack](./LAB-14-AUTHENTICATION.md) | 🔴 Expert | Advanced MFA | Macro automation |
-
+| 1 | [Username Enumeration via Different Responses](./LAB-1-AUTHENTICATION.md) | 🟢 Apprentice | User Enumeration | Response comparison analysis ( 300 login { Intruder Results})|
+| 2 | [2FA Simple Bypass](./LAB-2-AUTHENTICATION.md) | 🟢 Apprentice | MFA Bypass | Direct path manipulation -- Path Change from Login to my account in url directly |
+| 3 | [Password Reset Broken Logic](./LAB-3-AUTHENTICATION.md) | 🟢 Apprentice | Password Reset | Forgot Password Token Removal -- New Credentials Reset |
+| 4 | [Username Enumeration via Subtly Different Responses](./LAB-4-AUTHENTICATION.md) | 🟡 Practitioner | User Enumeration | Grep pattern matching ( Invalid Username or password . or no . ) -- password finding -- account takeover |
+| 5 | [Username Enumeration via Response Timing](./LAB-5-AUTHENTICATION.md) | 🟡 Practitioner | Timing Attacks | X-Forwarded-For Header Injection ( Rate Limit Bypass) -- timing observer valid vs invalid response time difference -- increased password length -- actual username enumerated with longest response -- password finding -- account takeover |
+| 6 | [Broken Brute-Force Protection (IP Block)](./LAB-6-AUTHENTICATION.md) | 🟡 Practitioner | Brute Force | IP Roatation Bypass by Valid Account entries before lockout after 2 invalid entries by Turbo Intruder -- Attached Wordlists in Intruder -- Victim Account Enumerated ) 
+| 7 | [Username Enumeration via Account Lock](./LAB-7-AUTHENTICATION.md) | 🟡 Practitioner | Account Lockout | No Ip restriction to invalid accounts -- Cluster bomb by muliple passwords with each username and multiple usernames -- Account lockout for actual username due to multiple wrong passwords -- Password Finding -- Account Takeover |
+| 8 | [2FA Broken Logic](./LAB-8-AUTHENTICATION.md) | 🟡 Practitioner | MFA Bypass | Cookie manipulation by verify parameter -- actual account mfa request intercdepted -- changed parameter -- code finding-- session token received in valid code response in intruder results -- session token changed in attacker browser -- account takeover |
+| 9 | [Brute-Forcing Stay-Logged-In Cookie](./LAB-9-AUTHENTICATION.md) | 🟡 Practitioner | Session Attacks | Stay in login cookie weak encoding in Base64/MD5 -- Decode in Decoder -- ID parameter set to Victim -- Password Payload Processign set according stay in login session cookie format -- Stay in Login Cookie Captured  |
+| 10 | [Offline Password Cracking](./LAB-10-AUTHENTICATION.md) | 🟡 Practitioner | Cryptanalysis | Weak Encoded Base 64 MD5 HASH Stay in Login cookie observed + XSS -- Created Payload to capture stay in login cookie -- Link Clicked by Victim -- Got Cookie - Decode in Decoder -- Decrypted by Hashcat -- Credentials Submitted in Webpage -- Accounts Takeover |
+| 11 | [Password Reset Poisoning via Middleware](./LAB-11-AUTHENTICATION.md) | 🟡 Practitioner | Header Injection | Session Token removed and id parameter changed 302 -- broken session bound logic-- temp forgot password reset link manipulation by host header injection -- host header injection used to make webpage trust our exploit server host instead of actual host -- reset link sent by our exploit server to victim -- victim clicked -- victim password token captured -- used captured token to reset victim password -- account compromised |
+| 12 | [Password Brute-Force via Password Change](./LAB-12-AUTHENTICATION.md) | 🟡 Practitioner | Logic Flaws | Password Change testing -- Broken Logout Protection -- Rate Limit Bypass -- Valid Credential Enumeration -- Account Compromised |
+| 13 | [Broken Brute-Force Protection (Multiple Credentials)](./LAB-13-AUTHENTICATION.md) | 🔴 Expert | Advanced Bypass JSON | Credentials Captured in JSON format -- Can add thousands of passwords in Json {} -- Got session token if any valid password present -- session token change in attacker webpage -- account compromised |
+| 14 | [2FA Bypass Using Brute-Force Attack](./LAB-14-AUTHENTICATION.md) | 🔴 Expert | Advanced MFA | CSRF token got issued FOR single time MFA session -- MACRO all those login request from  GET LOGIN -- POST LOGIN -- POST LOGIN2 ( FAKE MFA ENTRY AND GET CSRF TOKEN) -- restore session by macro for multiple mfas attempts-- got mfa captured with same process in victim account compromise stage-- got sesion token with valid mfa -- account comprmise by attacker webpagte session replacement ( catch ) { there was no short time than we required to guess 4 digit code for mfa to get invalid }|
 ---
 
 ## 🎓 Learning Path
