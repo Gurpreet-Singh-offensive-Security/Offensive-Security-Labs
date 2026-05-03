@@ -28,8 +28,8 @@ Web Cache Deception is a vulnerability that occurs when there are **normalizatio
 
 This series follows a **progressive difficulty model**, building from basic concepts to complex multi-stage attacks:
 
-| Lab | Difficulty | Focus Area | Key Techniques |
-|-----|------------|------------|----------------|
+| Lab | Difficulty | Key Techniques |
+|-----|------------|---------------------------|
 | [Lab 1](./lab-1-web-cache-deception.md) | Apprentice   | Basic path Normalization-- Exploit Server Payload Creation -- Link sent to Victim Clicked -- Exploitation |
 | [Lab 2](./lab-2-web-cache-deception.md) | Practitioner | Delimiter Discovery -- Path Normalization -- Exploit Server Payload Creation -- Link sent to Victim Clicked -- Exploitation |
 | [Lab 3](./lab-3-web-cache-deception.md) | Practitioner | Delimiter Potential Discovery -- Url Encoding,Path Traversal Normalization-- Cache Path & Variable Finding(Http History)-- Combined Exploit Creation |
