@@ -170,7 +170,7 @@ Tested password change with incorrect current password and mismatched new passwo
 
 | Scenario | Current Password | New Passwords | Error Message | Information Leak |
 |----------|------------------|---------------|---------------|------------------|
-| 1 | Correct | Matching | Success | Password valid |
+| 1 | Correct | Matching | Success( No Error ) | Password valid |
 | 2 | Correct | Mismatched | "New passwords do not match" | **Password valid** |
 | 3 | Incorrect | Mismatched | "Current password is incorrect" | Password invalid |
 
