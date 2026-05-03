@@ -1,4 +1,4 @@
-Lab 2: Exploiting Path Delimiters for Web Cache Deception
+Lab 2: Exploiting Path Delimiters for Web Cache Deception 
 
 ## Lab Information
 
