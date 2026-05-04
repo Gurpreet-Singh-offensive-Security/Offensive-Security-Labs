@@ -192,12 +192,6 @@ Do them in order. Labs 1–2 build the core mental model — without understandi
 - [Omer Gil — Web Cache Deception Attack (Black Hat 2017)](https://omergil.blogspot.com/2017/02/web-cache-deception-attack.html) — the original research
 - [James Kettle — Practical Web Cache Poisoning (Black Hat 2018)](https://portswigger.net/research/practical-web-cache-poisoning) — closely related, worth reading together
 
-Other series in this repo:
-- [SQL Injection](../SQL-Injection/) — 18 labs done
-- [Authentication Vulnerabilities](../Authentication/) — 14 labs done
-- XSS — in progress
-- Access Control — in progress
-
 ---
 
 ## Legal
