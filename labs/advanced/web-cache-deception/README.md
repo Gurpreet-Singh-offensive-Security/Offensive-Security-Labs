@@ -2,10 +2,10 @@
 
 <div align="center">
 
-![Category](https://img.shields.io/badge/Category-Web%20Cache%20Deception-8E44AD?style=for-the-badge&logo=cloudflare&logoColor=white)
-![Labs Completed](https://img.shields.io/badge/Labs%20Completed-5%2F5-00C853?style=for-the-badge&logo=checkmarx&logoColor=white)
-![Difficulty](https://img.shields.io/badge/Difficulty-Apprentice%20to%20Expert-orange?style=for-the-badge&logo=target&logoColor=white)
-![Status](https://img.shields.io/badge/Status-100%25%20Complete-brightgreen?style=for-the-badge&logo=statuspage&logoColor=white)
+![Category](https://img.shields.io/badge/Category-Web%20Cache%20Deception-8E44AD?style=for-the-badge)
+![Labs Completed](https://img.shields.io/badge/Labs%20Completed-5%2F5-00C853?style=for-the-badge)
+![Difficulty](https://img.shields.io/badge/Difficulty-Apprentice%20to%20Expert-FF6D00?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-100%25%20Complete-00C853?style=for-the-badge)
 
 **5 labs. Apprentice through Expert. All done.**
 
@@ -191,6 +191,12 @@ Do them in order. Labs 1–2 build the core mental model — without understandi
 - [PortSwigger Web Cache Deception](https://portswigger.net/web-security/web-cache-deception)
 - [Omer Gil — Web Cache Deception Attack (Black Hat 2017)](https://omergil.blogspot.com/2017/02/web-cache-deception-attack.html) — the original research
 - [James Kettle — Practical Web Cache Poisoning (Black Hat 2018)](https://portswigger.net/research/practical-web-cache-poisoning) — closely related, worth reading together
+
+Other series in this repo:
+- [SQL Injection](../SQL-Injection/) — 18 labs done
+- [Authentication Vulnerabilities](../Authentication/) — 14 labs done
+- XSS — in progress
+- Access Control — in progress
 
 ---
 
