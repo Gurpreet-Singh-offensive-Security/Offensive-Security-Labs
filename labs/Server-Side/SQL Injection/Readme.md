@@ -96,15 +96,15 @@ SQL Injection (SQLi) is one of the **most dangerous and prevalent** web applicat
 
 | # | Lab Title | Key Technique | Attack Type |
 |---|-----------|---------------|-------------|
-| 1 | [SQL Injection WHERE Clause — Retrieve Hidden Data](./LAB-01-SQLI.md) | `' OR 1=1--` appended to category filter — unrestricted row return | `In-Band · UNION` |
-| 2 | [SQL Injection — Login Bypass](./LAB-02-SQLI.md) | `administrator'--` in username field — password check commented out | `Auth Bypass` |
-| 3 | [SQL Injection UNION — Determine Column Count](./LAB-03-SQLI.md) | `ORDER BY` clause incrementing / `UNION SELECT NULL` chaining — column count found | `UNION Based` |
-| 4 | [SQL Injection UNION — Find Columns with Text](./LAB-04-SQLI.md) | Replace `NULL` with string value per column — identify text-compatible columns | `UNION Based` |
-| 5 | [SQL Injection UNION — Retrieve Data from Other Tables](./LAB-05-SQLI.md) | `UNION SELECT username, password FROM users--` — full credential dump | `UNION Based` |
-| 6 | [SQL Injection UNION — Retrieve Multiple Values in Single Column](./LAB-06-SQLI.md) | String concatenation `username\|\|'~'\|\|password` — multiple fields in one column | `UNION Based` |
-| 7 | [SQL Injection — Query the Database Type and Version (Oracle)](./LAB-07-SQLI.md) | `UNION SELECT BANNER,NULL FROM v$version` — Oracle dual table technique | `Fingerprinting` |
-| 8 | [SQL Injection — Query the Database Type and Version (MySQL/MSSQL)](./LAB-08-SQLI.md) | `UNION SELECT @@version,NULL#` — MySQL/MSSQL version banner retrieval | `Fingerprinting` |
-| 9 | [SQL Injection — List the Database Contents (non-Oracle)](./LAB-09-SQLI.md) | `information_schema.tables` → `information_schema.columns` → data dump — full schema walk | `Enumeration` |
+| 1 | [SQL Injection WHERE Clause — Retrieve Hidden Data](./LAB-1-SQL-Injection.md) | `' OR 1=1--` appended to category filter — unrestricted row return | `In-Band · UNION` |
+| 2 | [SQL Injection — Login Bypass](./LAB-2-SQL-Injection.md) | `administrator'--` in username field — password check commented out | `Auth Bypass` |
+| 3 | [SQL Injection UNION — Determine Column Count](./LAB-3-SQL-Injection.md) | `ORDER BY` clause incrementing / `UNION SELECT NULL` chaining — column count found | `UNION Based` |
+| 4 | [SQL Injection UNION — Find Columns with Text](./LAB-4-SQL-Injection.md) | Replace `NULL` with string value per column — identify text-compatible columns | `UNION Based` |
+| 5 | [SQL Injection UNION — Retrieve Data from Other Tables](./LAB-5-SQL-Injection.md) | `UNION SELECT username, password FROM users--` — full credential dump | `UNION Based` |
+| 6 | [SQL Injection UNION — Retrieve Multiple Values in Single Column](./LAB-6-SQL-Injection.md) | String concatenation `username\|\|'~'\|\|password` — multiple fields in one column | `UNION Based` |
+| 7 | [SQL Injection — Query the Database Type and Version (Oracle)](./LAB-7-SQL-Injection.md) | `UNION SELECT BANNER,NULL FROM v$version` — Oracle dual table technique | `Fingerprinting` |
+| 8 | [SQL Injection — Query the Database Type and Version (MySQL/MSSQL)](./LAB-8-SQL-Injection.md) | `UNION SELECT @@version,NULL#` — MySQL/MSSQL version banner retrieval | `Fingerprinting` |
+| 9 | [SQL Injection — List the Database Contents (non-Oracle)](./LAB-9-SQL-Injection.md) | `information_schema.tables` → `information_schema.columns` → data dump — full schema walk | `Enumeration` |
 
 ---
 
@@ -113,14 +113,14 @@ SQL Injection (SQLi) is one of the **most dangerous and prevalent** web applicat
 
 | # | Lab Title | Key Technique | Attack Type |
 |---|-----------|---------------|-------------|
-| 10 | [SQL Injection — List the Database Contents (Oracle)](./LAB-10-SQLI.md) | `all_tables` → `all_columns` Oracle catalog query — credentials extracted | `Enumeration` |
-| 11 | [Blind SQLi — Conditional Responses](./LAB-11-SQLI.md) | `AND SUBSTRING(password,1,1)='a'` in cookie — boolean response difference per char | `Blind · Boolean` |
-| 12 | [Blind SQLi — Conditional Errors](./LAB-12-SQLI.md) | `CASE WHEN (condition) THEN 1/0 END` — forced Oracle error reveals true/false | `Blind · Error` |
-| 13 | [Blind SQLi — Time Delays](./LAB-13-SQLI.md) | `'; SELECT SLEEP(10)--` (MySQL) / `pg_sleep(10)` — response delay as oracle | `Blind · Time` |
-| 14 | [Blind SQLi — Time Delays and Data Exfiltration](./LAB-14-SQLI.md) | `IF(SUBSTRING(password,1,1)='a', SLEEP(5), 0)` — char-by-char password timing leak | `Blind · Time` |
-| 15 | [Blind SQLi — Out-of-Band Interaction](./LAB-15-SQLI.md) | `UTL_HTTP.request()` (Oracle) / DNS lookup via Burp Collaborator — OOB channel confirmed | `Blind · OOB` |
-| 16 | [Blind SQLi — Out-of-Band Data Exfiltration](./LAB-16-SQLI.md) | DNS subdomain payload carries exfiltrated data to Collaborator — password in DNS lookup | `Blind · OOB` |
-| 17 | [SQL Injection — Filter Bypass via XML Encoding](./LAB-17-SQLI.md) | WAF bypassed using XML hex entity encoding `&#x53;ELECT` — payload obfuscation | `WAF Bypass` |
+| 10 | [SQL Injection — List the Database Contents (Oracle)](./LAB-10-SQL-Injection.md) | `all_tables` → `all_columns` Oracle catalog query — credentials extracted | `Enumeration` |
+| 11 | [Blind SQLi — Conditional Responses](./LAB-11-SQL-Injection.md) | `AND SUBSTRING(password,1,1)='a'` in cookie — boolean response difference per char | `Blind · Boolean` |
+| 12 | [Blind SQLi — Conditional Errors](./LAB-12-SQL-Injection.md) | `CASE WHEN (condition) THEN 1/0 END` — forced Oracle error reveals true/false | `Blind · Error` |
+| 13 | [Blind SQLi — Time Delays](./LAB-13-SQL-Injection.md) | `'; SELECT SLEEP(10)--` (MySQL) / `pg_sleep(10)` — response delay as oracle | `Blind · Time` |
+| 14 | [Blind SQLi — Time Delays and Data Exfiltration](./LAB-14-SQL-Injection.md) | `IF(SUBSTRING(password,1,1)='a', SLEEP(5), 0)` — char-by-char password timing leak | `Blind · Time` |
+| 15 | [Blind SQLi — Out-of-Band Interaction](./LAB-15-SQL-Injection.md) | `UTL_HTTP.request()` (Oracle) / DNS lookup via Burp Collaborator — OOB channel confirmed | `Blind · OOB` |
+| 16 | [Blind SQLi — Out-of-Band Data Exfiltration](./LAB-16-SQL-Injection.md) | DNS subdomain payload carries exfiltrated data to Collaborator — password in DNS lookup | `Blind · OOB` |
+| 17 | [SQL Injection — Filter Bypass via XML Encoding](./LAB-17-SQL-Injection.md) | WAF bypassed using XML hex entity encoding `&#x53;ELECT` — payload obfuscation | `WAF Bypass` |
 
 ---
 
@@ -129,7 +129,7 @@ SQL Injection (SQLi) is one of the **most dangerous and prevalent** web applicat
 
 | # | Lab Title | Key Technique | Attack Type |
 |---|-----------|---------------|-------------|
-| 18 | [Visible Error-Based SQL Injection](./LAB-18-SQLI.md) | `CAST((SELECT password FROM users LIMIT 1) AS int)` — data leaked in error message | `Error Based` |
+| 18 | [Visible Error-Based SQL Injection](./LAB-18-SQL-Injection.md) | `CAST((SELECT password FROM users LIMIT 1) AS int)` — data leaked in error message | `Error Based` |
 
 ---
 
@@ -496,30 +496,30 @@ Phase 4 — Automation & Reporting  ──────────────�
 
 ### 🟢 Apprentice Level — `9 / 9 Complete`
 
-- [x] Lab 01 · SQL Injection WHERE Clause — Retrieve Hidden Data
-- [x] Lab 02 · SQL Injection — Login Bypass
-- [x] Lab 03 · UNION — Determine Column Count
-- [x] Lab 04 · UNION — Find Text-Compatible Columns
-- [x] Lab 05 · UNION — Retrieve Data from Other Tables
-- [x] Lab 06 · UNION — Retrieve Multiple Values in One Column
-- [x] Lab 07 · Query Database Type & Version (Oracle)
-- [x] Lab 08 · Query Database Type & Version (MySQL/MSSQL)
-- [x] Lab 09 · List Database Contents (non-Oracle)
+- [x] [Lab 1 · SQL Injection WHERE Clause — Retrieve Hidden Data](./LAB-1-SQL-Injection.md)
+- [x] [Lab 2 · SQL Injection — Login Bypass](./LAB-2-SQL-Injection.md)
+- [x] [Lab 3 · UNION — Determine Column Count](./LAB-3-SQL-Injection.md)
+- [x] [Lab 4 · UNION — Find Text-Compatible Columns](./LAB-4-SQL-Injection.md)
+- [x] [Lab 5 · UNION — Retrieve Data from Other Tables](./LAB-5-SQL-Injection.md)
+- [x] [Lab 6 · UNION — Retrieve Multiple Values in One Column](./LAB-6-SQL-Injection.md)
+- [x] [Lab 7 · Query Database Type & Version (Oracle)](./LAB-7-SQL-Injection.md)
+- [x] [Lab 8 · Query Database Type & Version (MySQL/MSSQL)](./LAB-8-SQL-Injection.md)
+- [x] [Lab 9 · List Database Contents (non-Oracle)](./LAB-9-SQL-Injection.md)
 
 ### 🟡 Practitioner Level — `8 / 8 Complete`
 
-- [x] Lab 10 · List Database Contents (Oracle)
-- [x] Lab 11 · Blind SQLi — Conditional Responses
-- [x] Lab 12 · Blind SQLi — Conditional Errors
-- [x] Lab 13 · Blind SQLi — Time Delays
-- [x] Lab 14 · Blind SQLi — Time Delays & Data Exfiltration
-- [x] Lab 15 · Blind SQLi — Out-of-Band Interaction
-- [x] Lab 16 · Blind SQLi — Out-of-Band Data Exfiltration
-- [x] Lab 17 · SQL Injection Filter Bypass via XML Encoding
+- [x] [Lab 10 · List Database Contents (Oracle)](./LAB-10-SQL-Injection.md)
+- [x] [Lab 11 · Blind SQLi — Conditional Responses](./LAB-11-SQL-Injection.md)
+- [x] [Lab 12 · Blind SQLi — Conditional Errors](./LAB-12-SQL-Injection.md)
+- [x] [Lab 13 · Blind SQLi — Time Delays](./LAB-13-SQL-Injection.md)
+- [x] [Lab 14 · Blind SQLi — Time Delays & Data Exfiltration](./LAB-14-SQL-Injection.md)
+- [x] [Lab 15 · Blind SQLi — Out-of-Band Interaction](./LAB-15-SQL-Injection.md)
+- [x] [Lab 16 · Blind SQLi — Out-of-Band Data Exfiltration](./LAB-16-SQL-Injection.md)
+- [x] [Lab 17 · SQL Injection Filter Bypass via XML Encoding](./LAB-17-SQL-Injection.md)
 
 ### 🔴 Expert Level — `1 / 1 Complete`
 
-- [x] Lab 18 · Visible Error-Based SQL Injection
+- [x] [Lab 18 · Visible Error-Based SQL Injection](./LAB-18-SQL-Injection.md)
 
 ---
 
@@ -555,7 +555,7 @@ Phase 4 — Automation & Reporting  ──────────────�
 ║                  💉  SQL INJECTION — COMPLETE                   ║
 ╠═════════════════════════════════════════════════════════════════╣
 ║                                                                 ║
-║   Labs Completed     18 / 18           ✅  100%                 ║
+║   Labs Completed     18 / 18          ✅  100%                  ║
 ║   Apprentice          9 / 9            🟢  Complete             ║
 ║   Practitioner        8 / 8            🟡  Complete             ║
 ║   Expert              1 / 1            🔴  Complete             ║
@@ -564,9 +564,9 @@ Phase 4 — Automation & Reporting  ──────────────�
 ║                                                                 ║
 ╠═════════════════════════════════════════════════════════════════╣
 ║                                                                 ║
-║  ➡️  Up Next:   Cross-Site Scripting (XSS) Lab Series           ║
-║  ➡️  Then:      Access Control & IDOR                           ║
-║  ➡️  Then:      Server-Side Request Forgery (SSRF)              ║
+║  ➡️  Up Next:   Cross-Site Scripting (XSS) Lab Series            ║
+║  ➡️  Then:      Access Control & IDOR                            ║
+║  ➡️  Then:      Server-Side Request Forgery (SSRF)               ║
 ║                                                                 ║
 ╚═════════════════════════════════════════════════════════════════╝
 ```
