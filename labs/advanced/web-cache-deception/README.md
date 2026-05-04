@@ -206,10 +206,6 @@ Done entirely on PortSwigger Academy's lab environment. Using any of this agains
 
 ---
 
-*
-
-*
-
 <div align="center">
 
 ### Gurpreet Singh | Offensive Security Researcher
