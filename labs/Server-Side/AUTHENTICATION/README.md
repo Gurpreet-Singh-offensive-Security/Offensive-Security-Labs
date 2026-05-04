@@ -277,7 +277,14 @@ Other series in this repo:
 Done entirely on PortSwigger Academy's lab environment. Using any of this against systems you don't own or don't have written permission to test is illegal and I wouldn't document it if I had.
 
 ---
+<div align="center">
 
-*Gurpreet Singh — [GitHub](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs) · [LinkedIn](https://www.linkedin.com/in/gurpreetsingh-security) · [Email](mailto:gskhalsa6245@gmail.com)*
+### Gurpreet Singh | Offensive Security Researcher
 
-*CC BY-NC-ND 4.0 — © 2025 Gurpreet Singh*
+[![EMAIL](https://img.shields.io/badge/EMAIL-GSKHALSA6245%40GMAIL.COM-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:gskhalsa6245@gmail.com)
+
+[![GITHUB](https://img.shields.io/badge/GITHUB-GURPREET--SINGH--OFFENSIVE--SECURITY-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs) [![LINKEDIN](https://img.shields.io/badge/LINKEDIN-CONNECT-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gurpreetsingh-security)
+
+**CC BY-NC-ND 4.0 — © 2025 Gurpreet Singh**
+
+</div>
