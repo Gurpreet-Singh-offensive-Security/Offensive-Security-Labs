@@ -1,15 +1,22 @@
-# SQL Injection — 18 Labs, All Completed
+# 💉 SQL Injection — Complete Lab Series
 
-![SQL Injection](https://img.shields.io/badge/Category-SQL%20Injection-FF4500?style=for-the-badge&logo=databricks&logoColor=white)
-![Labs Completed](https://img.shields.io/badge/Labs%20Completed-18%2F18-00C853?style=for-the-badge&logo=checkmarx&logoColor=white)
-![Difficulty](https://img.shields.io/badge/Difficulty-Apprentice%20to%20Expert-9C27B0?style=for-the-badge&logo=target&logoColor=white)
-![Platform](https://img.shields.io/badge/Platform-PortSwigger%20Academy-FF6D00?style=for-the-badge&logo=hackaday&logoColor=white)
+<div align="center">
 
-[![Main Repo](https://img.shields.io/badge/🔗%20Main%20Repository-181717?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs) [![Auth Labs](https://img.shields.io/badge/🔐%20Auth%20Labs-2C3E50?style=for-the-badge)](./AUTHENTICATION/) [![Contact](https://img.shields.io/badge/📧%20Contact-D14836?style=for-the-badge)](mailto:gskhalsa6245@gmail.com)
+![CATEGORY](https://img.shields.io/badge/CATEGORY-SQL%20INJECTION-FF4500?style=for-the-badge)
+![LABS COMPLETED](https://img.shields.io/badge/LABS%20COMPLETED-18%2F18-00C853?style=for-the-badge)
+
+![DIFFICULTY](https://img.shields.io/badge/DIFFICULTY-APPRENTICE%20TO%20EXPERT-9C27B0?style=for-the-badge)
+![STATUS](https://img.shields.io/badge/STATUS-100%25%20COMPLETE-00C853?style=for-the-badge)
+
+**Finished all 18 PortSwigger SQLi labs — Apprentice through Expert.**
+
+[![Main Repository](https://img.shields.io/badge/🔗%20Main%20Repository-181717?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs) [![About Me](https://img.shields.io/badge/👤%20About%20Me-2C3E50?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security) [![Contact](https://img.shields.io/badge/📧%20Contact-D14836?style=for-the-badge)](mailto:gskhalsa6245@gmail.com)
+
+</div>
 
 ---
 
-Finished all 18 PortSwigger SQLi labs — Apprentice through Expert. Writeups below cover what I actually did in each lab, not the theory. The cheat sheet at the bottom is what I kept open while working through the blind injection labs.
+Writeups below cover what I actually did in each lab, not the theory. The cheat sheet at the bottom is what I kept open while working through the blind injection labs.
 
 **Time spent:** ~60 hours across the full series  
 **Tools:** Burp Suite Pro, SQLMap, Python for a few custom scripts  
