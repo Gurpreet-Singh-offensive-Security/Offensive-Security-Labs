@@ -5,7 +5,7 @@
 ![Difficulty](https://img.shields.io/badge/Difficulty-Apprentice%20to%20Expert-9C27B0?style=for-the-badge&logo=target&logoColor=white)
 ![Platform](https://img.shields.io/badge/Platform-PortSwigger%20Academy-FF6D00?style=for-the-badge&logo=hackaday&logoColor=white)
 
-[Main Repo](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs) · [Auth Labs](./AUTHENTICATION/) · [Contact](mailto:gskhalsa6245@gmail.com)
+[![Main Repo](https://img.shields.io/badge/🔗%20Main%20Repository-181717?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs) [![Auth Labs](https://img.shields.io/badge/🔐%20Auth%20Labs-2C3E50?style=for-the-badge)](./AUTHENTICATION/) [![Contact](https://img.shields.io/badge/📧%20Contact-D14836?style=for-the-badge)](mailto:gskhalsa6245@gmail.com)
 
 ---
 
