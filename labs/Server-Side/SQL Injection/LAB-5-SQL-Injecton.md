@@ -1,4 +1,4 @@
-# Lab 6: SQL Injection - Listing Database Contents on Non-Oracle Databases
+# Lab 5: SQL Injection - Listing Database Contents on Non-Oracle Databases
 
 ## Executive Summary
 
