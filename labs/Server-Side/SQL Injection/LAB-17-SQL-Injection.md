@@ -1,4 +1,4 @@
-# Lab 3: SQL Injection with Filter Bypass via XML Encoding
+# Lab 17: SQL Injection with Filter Bypass via XML Encoding
 
 ## Executive Summary
 
