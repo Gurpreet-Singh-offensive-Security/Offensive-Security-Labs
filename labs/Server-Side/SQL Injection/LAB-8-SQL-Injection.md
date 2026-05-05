@@ -1,4 +1,4 @@
-# Lab 9: SQL Injection UNION Attack - Finding a Column Containing Text
+# Lab 8: SQL Injection UNION Attack - Finding a Column Containing Text
 
 ## Executive Summary
 
