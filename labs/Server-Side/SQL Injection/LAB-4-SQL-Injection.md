@@ -1,4 +1,4 @@
-# Lab 5: SQL Injection Attack - Querying Database Type and Version on MySQL and Microsoft
+# Lab 4: SQL Injection Attack - Querying Database Type and Version on MySQL and Microsoft
 
 ## Executive Summary
 
