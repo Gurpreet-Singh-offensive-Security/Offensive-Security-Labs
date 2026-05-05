@@ -37,13 +37,17 @@ Tools: Burp Suite Pro, Python, Kali Linux, Bash. Started December 2025.
 
 ## Completed Topics
 
-### [Authentication — 14/14](./Authentication/)
+<details>
+<summary><b>Authentication — 14/14</b></summary>
+<br>
 
-All 14 labs, Apprentice through Expert. Enumeration, brute force bypass, MFA logic flaws, session cookie attacks, password reset vulnerabilities. The README has full technique breakdowns and the attack patterns I kept open while working through the harder ones.
+All 14 labs, Apprentice through Expert. Enumeration, brute force bypass, MFA logic flaws, session cookie attacks, password reset vulnerabilities. The [README](./Authentication/) has full technique breakdowns and the attack patterns I kept open while working through the harder ones.
 
----
+</details>
 
-### [Web Cache Deception — 5/5](./Web-Cache-Deception/)
+<details>
+<summary><b>Web Cache Deception — 5/5</b></summary>
+<br>
 
 1. Path mapping
 2. Path delimiters
@@ -51,9 +55,11 @@ All 14 labs, Apprentice through Expert. Enumeration, brute force bypass, MFA log
 4. Cache server normalization
 5. Static extension
 
----
+</details>
 
-### [SQL Injection — 18/18](./SQL-Injection/)
+<details>
+<summary><b>SQL Injection — 18/18</b></summary>
+<br>
 
 **Apprentice (2/2)**
 1. WHERE clause — hidden data retrieval
@@ -78,6 +84,8 @@ All 14 labs, Apprentice through Expert. Enumeration, brute force bypass, MFA log
 16. Blind SQLi — out-of-band interaction
 17. Blind SQLi — out-of-band exfiltration
 18. Filter bypass via XML encoding
+
+</details>
 
 ---
 
