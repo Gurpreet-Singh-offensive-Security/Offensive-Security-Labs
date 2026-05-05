@@ -1,4 +1,4 @@
-# Lab 8: SQL Injection UNION Attack - Determining Number of Columns
+# Lab 7: SQL Injection UNION Attack - Determining Number of Columns
 
 ## Executive Summary
 
