@@ -15,9 +15,11 @@
 
 ---
 
-Working through all 278 PortSwigger Web Security Academy labs. 46 done so far. Each topic folder has a writeup covering what I actually did — not rephrased from the hints.
+Full documentation of every PortSwigger Web Security Academy lab I've completed.
 
-Tools: Burp Suite Pro, Python, Kali Linux, Bash. Started December 2025.
+Each writeup covers attack vector identification, payload development, exploitation walkthrough, and remediation. Written the way a pentest report gets written — not a tutorial, not a walkthrough, not rephrased hints.
+
+278 labs total. Working through them in order of complexity. Burp Suite Pro · Turbo Intruder · Python · Kali Linux. Targeting eWPTX and BSCP.
 
 > © 2026 Gurpreet Singh — [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/). Feel free to reference for learning; don't submit as your own work.
 
