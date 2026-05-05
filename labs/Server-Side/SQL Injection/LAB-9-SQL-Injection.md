@@ -1,4 +1,4 @@
-# Lab 10: SQL Injection UNION Attack - Retrieving Data from Other Tables
+# Lab 9: SQL Injection UNION Attack - Retrieving Data from Other Tables
 
 ## Executive Summary
 
