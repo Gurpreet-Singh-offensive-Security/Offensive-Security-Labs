@@ -1,4 +1,4 @@
-# Lab 13: Blind SQL Injection with Conditional Errors
+# Lab 12: Blind SQL Injection with Conditional Errors
 
 ## Executive Summary
 
