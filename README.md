@@ -1,6 +1,6 @@
 <div align="center">
 
-![header](https://capsule-render.vercel.app/api?type=waving&color=FFD700&height=200&section=header&text=Offensive%20Security%20Labs&fontSize=38&fontColor=1a1a1a&fontAlignY=40&desc=Gurpreet%20Singh%20%C2%B7%20PortSwigger%20Web%20Security%20Academy&descSize=14&descAlignY=62&descColor=8B0000)
+<img src="https://capsule-render.vercel.app/api?type=waving&color=FFD700&height=200&section=header&text=Offensive%20Security%20Labs&fontSize=38&fontColor=1a1a1a&fontAlignY=40&desc=Gurpreet%20Singh%20%C2%B7%20PortSwigger%20Web%20Security%20Academy&descSize=14&descAlignY=62&descColor=8B0000" width="100%"/>
 
 [![Author](https://img.shields.io/badge/Author-Gurpreet%20Singh-blue?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security)
 [![Labs](https://img.shields.io/badge/Labs%20Completed-46%2F278-success?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
@@ -15,11 +15,13 @@
 
 ---
 
-Full documentation of every PortSwigger Web Security Academy lab I've completed.
+*Full documentation of every PortSwigger Web Security Academy lab I've completed.*
 
-Each writeup covers attack vector identification, payload development, exploitation walkthrough, and remediation. Written the way a pentest report gets written — not a tutorial, not a walkthrough, not rephrased hints.
+Each writeup covers **attack vector identification, payload development, exploitation walkthrough, and remediation**. Written the way a pentest report gets written — not a tutorial, not a walkthrough, not rephrased hints.
 
-278 labs total. Working through them in order of complexity. Burp Suite Pro · Turbo Intruder · Python · Kali Linux. Targeting eWPTX and BSCP.
+**278 labs total.** Working through them in order of complexity.
+**Burp Suite Pro · Turbo Intruder · Python · Kali Linux**
+Targeting **eWPTX** and **BSCP**.
 
 > © 2026 Gurpreet Singh — [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/). Feel free to reference for learning; don't submit as your own work.
 
