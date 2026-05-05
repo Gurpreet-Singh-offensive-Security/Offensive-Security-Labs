@@ -1,4 +1,4 @@
-# Lab 4: SQL Injection Attack - Querying Database Type and Version on Oracle
+# Lab 3: SQL Injection Attack - Querying Database Type and Version on Oracle
 
 ## Executive Summary
 
