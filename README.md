@@ -1,6 +1,6 @@
 <div align="center">
 
-# Offensive Security Labs
+![header](https://capsule-render.vercel.app/api?type=waving&color=e34c26&height=120&section=header&text=Offensive%20Security%20Labs&fontSize=38&fontColor=f0f6fc&fontAlignY=45&desc=Gurpreet%20Singh%20%C2%B7%20PortSwigger%20Web%20Security%20Academy&descSize=14&descAlignY=72&descColor=8b949e)
 
 [![Author](https://img.shields.io/badge/Author-Gurpreet%20Singh-blue?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security)
 [![Labs](https://img.shields.io/badge/Labs%20Completed-46%2F278-success?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
