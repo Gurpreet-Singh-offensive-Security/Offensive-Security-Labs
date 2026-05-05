@@ -1,4 +1,4 @@
-# Lab 11: SQL Injection UNION Attack - Retrieving Multiple Values in a Single Column
+# Lab 10: SQL Injection UNION Attack - Retrieving Multiple Values in a Single Column
 
 ## Executive Summary
 
