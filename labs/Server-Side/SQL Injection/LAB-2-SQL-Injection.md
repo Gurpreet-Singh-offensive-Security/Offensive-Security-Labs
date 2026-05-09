@@ -188,10 +188,10 @@ Used the SQL injection payload directly in the browser login form to confirm exp
 *Administrator account accessed successfully - Lab solved*
 
 **Complete Account Access:**
-- ✅ Administrator authentication bypassed
-- ✅ Full administrative access obtained
-- ✅ No password required
-- ✅ Complete system compromise
+- Administrator authentication bypassed
+- Full administrative access obtained
+- No password required
+- Complete system compromise
 
 **Lab completion confirmed: "Congratulations, you solved the lab!"**
 
