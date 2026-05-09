@@ -156,10 +156,10 @@ OR 1=1                 -- Always true (universal condition)
 **Response:** 200 OK with all products including previously hidden items
 
 **Attack Success:**
-- ✅ Category filter bypassed
-- ✅ Hidden products revealed
-- ✅ All database records retrieved
-- ✅ Access control circumvented
+- Category filter bypassed
+- Hidden products revealed
+- All database records retrieved
+- Access control circumvented
 
 **Lab completion confirmed: Hidden products now visible**
 
