@@ -167,11 +167,11 @@ Authenticated to victim account using the newly set password to confirm complete
 - Password: `peter1` (attacker-controlled)
 
 **Compromise Achieved:**
-- ✅ Victim password changed without email access
-- ✅ No reset token required
-- ✅ Full account access obtained
-- ✅ Email modification capability available
-- ✅ Complete account takeover successful
+- Victim password changed without email access
+- No reset token required
+- Full account access obtained
+- Email modification capability available
+- Complete account takeover successful
 
 **Lab completion message displayed: "Congratulations, you solved the lab!"**
 
