@@ -178,9 +178,9 @@ UNION SELECT NULL, NULL, NULL--'
 **Column Count Confirmed:** Exactly **3 columns** verified using NULL-based UNION method.
 
 **Dual-Method Validation:**
-- ✅ ORDER BY method: 3 columns
-- ✅ UNION NULL method: 3 columns
-- ✅ Both methods agree - high confidence
+- ORDER BY method: 3 columns
+- UNION NULL method: 3 columns
+- Both methods agree - high confidence
 
 ### 5. Lab Completion
 
@@ -191,10 +191,10 @@ Demonstrated successful column enumeration by accessing the result in browser.
 *Lab completion confirmed - 3 columns successfully determined*
 
 **Attack Success:**
-- ✅ SQL injection vulnerability exploited
-- ✅ Column count determined (3 columns)
-- ✅ Dual verification methods applied
-- ✅ Foundation established for advanced attacks
+- SQL injection vulnerability exploited
+- Column count determined (3 columns)
+- Dual verification methods applied
+- Foundation established for advanced attacks
 
 **Lab completion confirmed: "Congratulations, you solved the lab!"**
 
