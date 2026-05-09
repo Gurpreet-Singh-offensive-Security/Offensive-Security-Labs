@@ -23,49 +23,41 @@ Writeups below cover what I actually did in each lab, not the theory. The cheat 
 **Databases hit:** MySQL, PostgreSQL, Oracle, MSSQL
 
 ---
-
 ## Labs
 
-### Apprentice — 9/9
+### Apprentice — 2/2
 
-These build the foundation. If you skip straight to blind injection without doing UNION labs first, you'll struggle to understand what you're actually looking for in the response.
+Short ones but don't skip them — Lab 1 is the starting point for understanding how WHERE clause injection works, and Lab 2 is a classic you'll see variants of everywhere.
 
 | # | Lab | What I did | Technique |
 |---|-----|-----------|-----------|
 | 1 | [WHERE Clause — Retrieve Hidden Data](./LAB-1-SQL-Injection.md) | Injected `' OR 1=1--` into the category filter. Turns the WHERE into an always-true condition — got back all rows including ones the app was hiding. Confirmed by the jump in product count. | In-Band |
 | 2 | [Login Bypass](./LAB-2-SQL-Injection.md) | Entered `administrator'--` as the username. Closes the string, comments out the password check entirely. Server just matched on username. Got admin without touching the password field. | Auth Bypass |
-| 3 | [UNION — Determine Column Count](./LAB-3-SQL-Injection.md) | Incremented `ORDER BY` until I hit an error at 3 — so 2 columns. Cross-checked with `UNION SELECT NULL,NULL--`. Always do both, ORDER BY can behave differently depending on the DB. | UNION |
-| 4 | [UNION — Find String Columns](./LAB-4-SQL-Injection.md) | 2 columns confirmed. Swapped NULLs for `'test'` one at a time. Second column reflected the string back. You need at least one string column before you can pull real data. | UNION |
-| 5 | [UNION — Retrieve Data from Other Tables](./LAB-5-SQL-Injection.md) | Both columns string-compatible. `UNION SELECT username,password FROM users--` — credentials dumped straight into the product listing. Plain text. | UNION |
-| 6 | [UNION — Multiple Values in Single Column](./LAB-6-SQL-Injection.md) | Only one usable column this time. Concatenated with `username\|\|'~'\|\|password` — tilde as a delimiter so I could split it client-side. Got everything in one shot. | UNION |
-| 7 | [DB Version — Oracle](./LAB-7-SQL-Injection.md) | Oracle needs `FROM dual` in every SELECT — trips people up if they're used to MySQL. `UNION SELECT BANNER,NULL FROM v$version--` returned the full version banner. | Fingerprinting |
-| 8 | [DB Version — MySQL/MSSQL](./LAB-8-SQL-Injection.md) | `UNION SELECT @@version,NULL#` — MySQL needs `#` or a space after `--` for comment syntax, not just `--`. Got the version string, confirmed the DB engine. | Fingerprinting |
-| 9 | [List DB Contents — non-Oracle](./LAB-9-SQL-Injection.md) | Queried `information_schema.tables` for table names, then `information_schema.columns` once I had the users table name. Final payload dumped credentials. Straightforward but easy to mess up if the table name has a random suffix — it did. | Enumeration |
 
 ---
 
-### Practitioner — 8/8
+### Practitioner — 15/15
 
-This is where it actually gets interesting. No data in the response means you have to read the application's behaviour as a signal — a status code, a delay, a DNS ping. Labs 11–16 took the most time by far.
+This is where the bulk of the series lives — fingerprinting, UNION extraction, enumeration, and all the blind techniques. The blind labs (11–17) are the hardest mental shift. No data in the response means you have to read the application's behaviour as a signal — a status code, a delay, a DNS ping.
 
 | # | Lab | What I did | Technique |
 |---|-----|-----------|-----------|
-| 10 | [List DB Contents — Oracle](./LAB-10-SQL-Injection.md) | Oracle doesn't have `information_schema`. Used `all_tables` and `all_columns` instead. Same end result — just different catalog syntax. Worth knowing cold if you're doing Oracle engagements. | Enumeration |
+| 3 | [DB Version — Oracle](./LAB-3-SQL-Injection.md) | Oracle needs `FROM dual` in every SELECT — trips people up if they're used to MySQL. `UNION SELECT BANNER,NULL FROM v$version--` returned the full version banner. | Fingerprinting |
+| 4 | [DB Version — MySQL/MSSQL](./LAB-4-SQL-Injection.md) | `UNION SELECT @@version,NULL#` — MySQL needs `#` or a space after `--` for comment syntax, not just `--`. Got the version string, confirmed the DB engine. | Fingerprinting |
+| 5 | [List DB Contents — non-Oracle](./LAB-5-SQL-Injection.md) | Queried `information_schema.tables` for table names, then `information_schema.columns` once I had the users table name. Final payload dumped credentials. Straightforward but easy to mess up if the table name has a random suffix — it did. | Enumeration |
+| 6 | [List DB Contents — Oracle](./LAB-6-SQL-Injection.md) | Oracle doesn't have `information_schema`. Used `all_tables` and `all_columns` instead. Same end result — just different catalog syntax. Worth knowing cold if you're doing Oracle engagements. | Enumeration |
+| 7 | [UNION — Determine Column Count](./LAB-7-SQL-Injection.md) | Incremented `ORDER BY` until I hit an error at 3 — so 2 columns. Cross-checked with `UNION SELECT NULL,NULL--`. Always do both, ORDER BY can behave differently depending on the DB. | UNION |
+| 8 | [UNION — Find String Columns](./LAB-8-SQL-Injection.md) | 2 columns confirmed. Swapped NULLs for `'test'` one at a time. Second column reflected the string back. You need at least one string column before you can pull real data. | UNION |
+| 9 | [UNION — Retrieve Data from Other Tables](./LAB-9-SQL-Injection.md) | Both columns string-compatible. `UNION SELECT username,password FROM users--` — credentials dumped straight into the product listing. Plain text. | UNION |
+| 10 | [UNION — Multiple Values in Single Column](./LAB-10-SQL-Injection.md) | Only one usable column this time. Concatenated with `username\|\|'~'\|\|password` — tilde as a delimiter so I could split it client-side. Got everything in one shot. | UNION |
 | 11 | [Blind — Conditional Responses](./LAB-11-SQL-Injection.md) | Injected into the TrackingId cookie. `AND 1=1--` kept "Welcome back" in the response. `AND 1=2--` removed it. Used that as a boolean oracle to pull the password one character at a time with `SUBSTRING`. Intruder Cluster Bomb to automate it — response length was the differentiator. | Blind Boolean |
 | 12 | [Blind — Conditional Errors](./LAB-12-SQL-Injection.md) | No page difference on true/false. Switched to error-based oracle — division by zero in a CASE expression on Oracle. True condition = 500 error, false = 200. HTTP status becomes your data channel. Same char-by-char extraction with Intruder, filtering on response code instead of length. | Blind Error |
-| 13 | [Blind — Time Delays](./LAB-13-SQL-Injection.md) | Nothing in the response at all — not even a status code difference. `'; SELECT pg_sleep(10)--` caused a 10s hang. That confirmed both the injection point and that it was PostgreSQL. No extraction yet, just confirming the channel exists. | Blind Time |
-| 14 | [Blind — Time Delays + Data Exfiltration](./LAB-14-SQL-Injection.md) | Built on Lab 13. Conditional sleep: `CASE WHEN (SUBSTRING(password,1,1)='a') THEN pg_sleep(5) ELSE pg_sleep(0) END`. One thread in Intruder's Resource Pool — if you run concurrent threads the timing breaks and you get garbage. Slow but it works. | Blind Time |
-| 15 | [Blind — OOB Interaction](./LAB-15-SQL-Injection.md) | App was processing the query async. No boolean signal, no timing signal. Dropped an Oracle XXE payload pointing at a Burp Collaborator subdomain. Got a DNS hit back. That's your confirmation — the DB can reach out. | Blind OOB |
-| 16 | [Blind — OOB Data Exfiltration](./LAB-16-SQL-Injection.md) | Extended Lab 15. Embedded the password query inside the DNS lookup itself — `(SELECT password FROM users WHERE username='administrator')` as a subdomain prefix. Collaborator received the lookup with the password in the hostname. Read it straight from the interaction log. | Blind OOB |
-| 17 | [Filter Bypass via XML Encoding](./LAB-17-SQL-Injection.md) | WAF was blocking SQLi keywords in the request body. Payload was inside an XML parameter. Hex-encoded the keywords — `&#x53;ELECT` instead of `SELECT`. WAF didn't decode before matching. The XML parser on the backend did. Payload executed cleanly. | WAF Bypass |
-
----
-
-### Expert — 1/1
-
-| # | Lab | What I did | Technique |
-|---|-----|-----------|-----------|
-| 18 | [Visible Error-Based SQLi](./LAB-18-SQL-Injection.md) | Verbose errors were on. Injected `AND 1=CAST((SELECT username FROM users LIMIT 1) AS integer)--`. PostgreSQL tries to cast the string to int, fails, and throws the value back in the error message. Did the same with the password column. No blind technique needed — the DB just handed it over. | Error Based |
+| 13 | [Visible Error-Based SQLi](./LAB-13-SQL-Injection.md) | Verbose errors were on. Injected `AND 1=CAST((SELECT username FROM users LIMIT 1) AS integer)--`. PostgreSQL tries to cast the string to int, fails, and throws the value back in the error message. Did the same with the password column. No blind technique needed — the DB just handed it over. | Error Based |
+| 14 | [Blind — Time Delays](./LAB-14-SQL-Injection.md) | Nothing in the response at all — not even a status code difference. `'; SELECT pg_sleep(10)--` caused a 10s hang. That confirmed both the injection point and that it was PostgreSQL. No extraction yet, just confirming the channel exists. | Blind Time |
+| 15 | [Blind — Time Delays + Data Exfiltration](./LAB-15-SQL-Injection.md) | Built on Lab 14. Conditional sleep: `CASE WHEN (SUBSTRING(password,1,1)='a') THEN pg_sleep(5) ELSE pg_sleep(0) END`. One thread in Intruder's Resource Pool — if you run concurrent threads the timing breaks and you get garbage. Slow but it works. | Blind Time |
+| 16 | [Blind — OOB Interaction](./LAB-16-SQL-Injection.md) | App was processing the query async. No boolean signal, no timing signal. Dropped an Oracle XXE payload pointing at a Burp Collaborator subdomain. Got a DNS hit back. That's your confirmation — the DB can reach out. | Blind OOB |
+| 17 | [Blind — OOB Data Exfiltration](./LAB-17-SQL-Injection.md) | Extended Lab 16. Embedded the password query inside the DNS lookup itself — `(SELECT password FROM users WHERE username='administrator')` as a subdomain prefix. Collaborator received the lookup with the password in the hostname. Read it straight from the interaction log. | Blind OOB |
+| 18 | [Filter Bypass via XML Encoding](./LAB-18-SQL-Injection.md) | WAF was blocking SQLi keywords in the request body. Payload was inside an XML parameter. Hex-encoded the keywords — `&#x53;ELECT` instead of `SELECT`. WAF didn't decode before matching. The XML parser on the backend did. Payload executed cleanly. | WAF Bypass |
 
 ---
 
@@ -298,25 +290,25 @@ Labs 17 and 18 are short. Both rely on understanding how layers of parsing work 
 ---
 
 ## Completion
-
 - [x] Lab 1 — WHERE Clause Hidden Data
 - [x] Lab 2 — Login Bypass
-- [x] Lab 3 — UNION Column Count
-- [x] Lab 4 — UNION String Columns
-- [x] Lab 5 — UNION Data Extraction
-- [x] Lab 6 — UNION Single Column Concat
-- [x] Lab 7 — Version Fingerprint (Oracle)
-- [x] Lab 8 — Version Fingerprint (MySQL/MSSQL)
-- [x] Lab 9 — Schema Enumeration (non-Oracle)
-- [x] Lab 10 — Schema Enumeration (Oracle)
+- [x] Lab 3 — DB Version Oracle
+- [x] Lab 4 — DB Version MySQL/MSSQL
+- [x] Lab 5 — List DB Contents (non-Oracle)
+- [x] Lab 6 — List DB Contents (Oracle)
+- [x] Lab 7 — UNION Column Count
+- [x] Lab 8 — UNION String Columns
+- [x] Lab 9 — UNION Data Extraction
+- [x] Lab 10 — UNION Single Column Concat
 - [x] Lab 11 — Blind Boolean
 - [x] Lab 12 — Blind Conditional Error
-- [x] Lab 13 — Blind Time Delay
-- [x] Lab 14 — Blind Time + Extraction
-- [x] Lab 15 — Blind OOB Interaction
-- [x] Lab 16 — Blind OOB Exfiltration
-- [x] Lab 17 — WAF Bypass XML Encoding
-- [x] Lab 18 — Visible Error-Based
+- [x] Lab 13 — Visible Error-Based
+- [x] Lab 14 — Blind Time Delay
+- [x] Lab 15 — Blind Time + Extraction
+- [x] Lab 16 — Blind OOB Interaction
+- [x] Lab 17 — Blind OOB Exfiltration
+- [x] Lab 18 — WAF Bypass XML Encoding
+
 
 ---
 
@@ -328,7 +320,7 @@ Labs 17 and 18 are short. Both rely on understanding how layers of parsing work 
 - [CWE-89](https://nvd.nist.gov/vuln/search/results?cwe_id=CWE-89)
 
 Other series in this repo:
-- [Authentication Vulnerabilities](./AUTHENTICATION/) — 14 labs done
+- [Authentication Vulnerabilities](../AUTHENTICATION/) — 14 labs done
 - XSS — in progress
 - Access Control — in progress
 
@@ -339,6 +331,10 @@ Other series in this repo:
 All of this was done on PortSwigger Academy's lab environment. Using these techniques against systems you don't own or don't have written permission to test is illegal in most jurisdictions and not something I'd document here if I did it.
 
 ---
+
+*
+
+*
 
 <div align="center">
 
