@@ -147,10 +147,10 @@ UNION SELECT 'a','a' FROM dual--'
 **Response:** 200 OK with visible 'a' values in product listing
 
 **Confirmed:**
-- ✅ Both columns accept string data types
-- ✅ UNION injection successful
-- ✅ Oracle-specific `FROM dual` syntax required
-- ✅ Injected data rendered in application output
+- Both columns accept string data types
+- UNION injection successful
+- Oracle-specific `FROM dual` syntax required
+- Injected data rendered in application output
 
 **Why FROM dual?**
 ```sql
@@ -200,10 +200,10 @@ NLSRTL Version 11.2.0.2.0 - Production
 - **PL/SQL Version:** 11.2.0.2.0
 
 **Complete Attack Success:**
-- ✅ Database type identified (Oracle)
-- ✅ Exact version disclosed (11.2.0.2.0)
-- ✅ Platform fingerprinted (Linux x64)
-- ✅ Foundation established for targeted exploitation
+- Database type identified (Oracle)
+- Exact version disclosed (11.2.0.2.0)
+- Platform fingerprinted (Linux x64)
+- Foundation established for targeted exploitation
 
 **Lab completion confirmed: "Congratulations, you solved the lab!"**
 
@@ -265,9 +265,9 @@ Knowing exact version enables:
 **3. Attack Escalation Path:**
 
 **Phase 1 - Information Gathering (Completed):**
-- ✅ Database type: Oracle
-- ✅ Version: 11.2.0.2.0
-- ✅ Platform: Linux x64
+- Database type: Oracle
+- Version: 11.2.0.2.0
+- Platform: Linux x64
 
 **Phase 2 - Further Enumeration (Possible Next Steps):**
 - Extract table names: `SELECT table_name FROM all_tables`
