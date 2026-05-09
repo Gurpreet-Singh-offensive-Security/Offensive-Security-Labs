@@ -201,12 +201,12 @@ username=adam&password=ginger
 **Response:** 302 Found - Redirect to `/my-account`
 
 **Account Access Achieved:**
-- ✅ Valid username enumerated via lockout behavior
-- ✅ Password discovered through response analysis
-- ✅ Full authentication successful
-- ✅ Account dashboard accessible
-- ✅ Email modification functionality available
-- ✅ Complete control over victim account
+- Valid username enumerated via lockout behavior
+- Password discovered through response analysis
+- Full authentication successful
+- Account dashboard accessible
+- Email modification functionality available
+- Complete control over victim account
 
 **Lab completion confirmed: "Congratulations, you solved the lab!"**
 
