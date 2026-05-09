@@ -121,9 +121,9 @@ UNION SELECT 'abc','def' FROM dual--'
 **Response:** 200 OK with 'abc' and 'def' values inserted into response
 
 **Confirmed:**
-- ✅ Both columns accept string data types
-- ✅ Oracle database confirmed (FROM dual required)
-- ✅ UNION injection successful
+- Both columns accept string data types
+- Oracle database confirmed (FROM dual required)
+- UNION injection successful
 
 ### 5. Table Enumeration Using Oracle System Tables
 
@@ -259,12 +259,12 @@ username=administrator&password=[extracted_password]
 *Lab completion confirmed with administrator account access*
 
 **Complete Attack Success:**
-- ✅ Oracle database structure fully enumerated
-- ✅ User credentials table identified (USERS_OHIHSP)
-- ✅ Column names discovered (USERNAME_DZUOAV, PASSWORD_UEYHKY)
-- ✅ All credentials extracted
-- ✅ Administrator account compromised
-- ✅ Complete authentication bypass
+- Oracle database structure fully enumerated
+- User credentials table identified (USERS_OHIHSP)
+- Column names discovered (USERNAME_DZUOAV, PASSWORD_UEYHKY)
+- All credentials extracted
+- Administrator account compromised
+- Complete authentication bypass
 
 **Lab completion confirmed: "Congratulations, you solved the lab!"**
 
