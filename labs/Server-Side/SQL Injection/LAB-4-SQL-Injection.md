@@ -189,11 +189,11 @@ UNION SELECT @@version, NULL#'
 - **Package:** Official Ubuntu repository build
 
 **Complete Attack Success:**
-- ✅ SQL injection vulnerability exploited
-- ✅ Database structure enumerated (2 columns)
-- ✅ Database type identified (MySQL)
-- ✅ Exact version disclosed (8.0.36)
-- ✅ Platform fingerprinted (Ubuntu 20.04)
+- SQL injection vulnerability exploited
+- Database structure enumerated (2 columns)
+- Database type identified (MySQL)
+- Exact version disclosed (8.0.36)
+- Platform fingerprinted (Ubuntu 20.04)
 
 **Lab completion confirmed: "Congratulations, you solved the lab!"**
 
@@ -299,9 +299,9 @@ SELECT column_name FROM information_schema.columns WHERE table_name='users'
 **Escalation Potential:**
 
 **Phase 1 - Reconnaissance (Completed):**
-- ✅ Database type: MySQL 8.0.36
-- ✅ Platform: Ubuntu 20.04
-- ✅ Column structure: 2 columns
+- Database type: MySQL 8.0.36
+- Platform: Ubuntu 20.04
+- Column structure: 2 columns
 
 **Phase 2 - Enumeration (Next Steps):**
 - Extract database names
