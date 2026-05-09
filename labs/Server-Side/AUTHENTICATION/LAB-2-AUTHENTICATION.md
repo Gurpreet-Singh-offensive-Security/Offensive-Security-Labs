@@ -87,10 +87,10 @@ Successfully completed 2FA verification and gained access to authenticated accou
 *Account dashboard accessed - email modification functionality visible*
 
 **Legitimate Flow Confirmed:**
-- ✅ Valid credentials required for initial login
-- ✅ 2FA code sent to registered email
-- ✅ Correct code verification required
-- ✅ Access granted to `/my-account` after full verification
+- Valid credentials required for initial login
+- 2FA code sent to registered email
+- Correct code verification required
+- Access granted to `/my-account` after full verification
 
 ### 6. Victim Credential Testing
 
@@ -137,10 +137,10 @@ Direct navigation to `/my-account` succeeded without providing any 2FA code. Gai
 *Victim account fully compromised - username, email, and account modification capabilities exposed*
 
 **Compromise Achieved:**
-- ✅ Full access to `carlos` account
-- ✅ Email address visible and modifiable
-- ✅ All account functionality accessible
-- ✅ 2FA completely bypassed without valid code
+- Full access to `carlos` account
+- Email address visible and modifiable
+- All account functionality accessible
+- 2FA completely bypassed without valid code
 
 **Security Impact:** Despite 2FA implementation, the control provides zero protection when enforcement is not applied to all authenticated resources. The vulnerability renders the entire 2FA system ineffective.
 
