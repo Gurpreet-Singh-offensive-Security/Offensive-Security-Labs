@@ -251,13 +251,13 @@ Content-Length: 3346
 ```
 
 **Complete Account Compromise:**
-- ✅ Stay-logged-in cookie structure reverse-engineered
-- ✅ Cookie generation algorithm replicated
-- ✅ Password brute-forced via MD5 hash enumeration
-- ✅ Valid cookie crafted for victim account
-- ✅ Direct authentication bypass achieved
-- ✅ Full account access without password entry
-- ✅ Email modification capability available
+- Stay-logged-in cookie structure reverse-engineered
+- Cookie generation algorithm replicated
+- Password brute-forced via MD5 hash enumeration
+- Valid cookie crafted for victim account
+- Direct authentication bypass achieved
+- Full account access without password entry
+- Email modification capability available
 
 **Lab completion confirmed: "Congratulations, you solved the lab!"**
 
