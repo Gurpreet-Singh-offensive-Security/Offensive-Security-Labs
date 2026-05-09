@@ -145,8 +145,8 @@ UNION SELECT 'a', 'a'--'
 
 | Column Position | Accepts Strings? |
 |----------------|------------------|
-| Column 1 | ✅ Yes |
-| Column 2 | ✅ Yes |
+| Column 1 | Yes |
+| Column 2 | Yes |
 
 **Perfect Scenario:** Both columns accept string data, enabling extraction of any textual information (usernames, passwords, emails, etc.).
 
@@ -187,10 +187,10 @@ wiener        : [wiener_password]
 - **Administrator password:** `[extracted_password]`
 
 **Attack Success:**
-- ✅ Users table exists and is accessible
-- ✅ Username and password columns identified
-- ✅ All user credentials extracted
-- ✅ Administrator account credentials obtained
+- Users table exists and is accessible
+- Username and password columns identified
+- All user credentials extracted
+- Administrator account credentials obtained
 
 ### 6. Administrator Authentication & System Compromise
 
@@ -210,12 +210,12 @@ username=administrator&password=[extracted_password]
 **Response:** 302 Found - Redirect to administrator dashboard
 
 **Complete System Compromise:**
-- ✅ Database structure enumerated (2 columns, both strings)
-- ✅ Users table identified and accessed
-- ✅ All user credentials extracted
-- ✅ Administrator credentials obtained
-- ✅ Full authentication bypass achieved
-- ✅ Complete administrative access granted
+- Database structure enumerated (2 columns, both strings)
+- Users table identified and accessed
+- All user credentials extracted
+- Administrator credentials obtained
+- Full authentication bypass achieved
+- Complete administrative access granted
 
 **Lab completion confirmed: "Congratulations, you solved the lab!"**
 
@@ -268,10 +268,10 @@ Unlike information disclosure or version enumeration, this attack:
 
 **2. Zero Prerequisites:**
 The attack requires:
-- ✅ No prior authentication
-- ✅ No special permissions
-- ✅ No complex exploitation
-- ✅ Just SQL injection + knowledge of common table names
+- No prior authentication
+- No special permissions
+- No complex exploitation
+- Just SQL injection + knowledge of common table names
 
 **3. Universal Applicability:**
 Most applications have:
