@@ -154,10 +154,10 @@ Verified session handling rule properly configured with macro.
 *Session handling rule active with macro configured for auto-login*
 
 **Configuration Confirmed:**
-- ✅ Rule 1 active
-- ✅ Macro attached
-- ✅ Scope includes all tools
-- ✅ Auto-login enabled
+- Rule 1 active
+- Macro attached
+- Scope includes all tools
+- Auto-login enabled
 
 ### 7. MFA Brute-Force Attack Configuration
 
@@ -228,10 +228,10 @@ Set-Cookie: session=[CARLOS_SESSION_TOKEN]
 ```
 
 **Attack Success:**
-- ✅ 4-digit MFA code brute-forced
-- ✅ Session handling macro bypassed logout protection
-- ✅ Valid session token obtained
-- ✅ Complete authentication achieved
+- 4-digit MFA code brute-forced
+- Session handling macro bypassed logout protection
+- Valid session token obtained
+- Complete authentication achieved
 
 ### 9. Session Hijacking & Account Access
 
@@ -258,11 +258,11 @@ Modified: session=[CARLOS_SESSION_TOKEN]
 **Result:** Full access to Carlos's account
 
 **Complete Account Access:**
-- ✅ Full 2FA bypass successful
-- ✅ Carlos's username and email visible
-- ✅ Email modification capability available
-- ✅ Complete control over victim account
-- ✅ Brute-force protection completely circumvented
+- Full 2FA bypass successful
+- Carlos's username and email visible
+- Email modification capability available
+- Complete control over victim account
+- Brute-force protection completely circumvented
 
 **Lab completion confirmed: "Congratulations, you solved the lab!"**
 
