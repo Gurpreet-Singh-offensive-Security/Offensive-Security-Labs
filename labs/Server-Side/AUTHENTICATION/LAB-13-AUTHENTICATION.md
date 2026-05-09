@@ -159,10 +159,10 @@ Set-Cookie: session=[CARLOS_SESSION_TOKEN]; HttpOnly
 ```
 
 **Attack Success:**
-- ✅ One password in array matched victim's password
-- ✅ Valid session token issued for Carlos's account
-- ✅ Single request executed (no lockout triggered)
-- ✅ Brute-force protection completely bypassed
+- One password in array matched victim's password
+- Valid session token issued for Carlos's account
+- Single request executed (no lockout triggered)
+- Brute-force protection completely bypassed
 
 **Session Token Extracted:** Captured from Set-Cookie header for session hijacking.
 
@@ -197,11 +197,11 @@ Modified URL to access victim account using hijacked session token.
 *Victim account fully accessed (right) | Session request captured in Repeater (left)*
 
 **Complete Account Access:**
-- ✅ Full authentication bypass successful
-- ✅ Carlos's username and email visible
-- ✅ Email modification capability available
-- ✅ Complete control over victim account
-- ✅ Single-request attack with minimal forensic footprint
+- Full authentication bypass successful
+- Carlos's username and email visible
+- Email modification capability available
+- Complete control over victim account
+- Single-request attack with minimal forensic footprint
 
 **Lab completion confirmed: "Congratulations, you solved the lab!"**
 
