@@ -252,11 +252,11 @@ The email modification succeeded, changing the administrator's email to the atta
 *Administrator email successfully modified - Lab 5 solved*
 
 **Attack Success Confirmation:**
-- ✅ Cache successfully poisoned with administrative session
-- ✅ CSRF token extracted from cached response
-- ✅ Valid CSRF token used to bypass protection
-- ✅ Administrator email modified without authentication
-- ✅ Full account takeover possible via password reset
+- Cache successfully poisoned with administrative session
+- CSRF token extracted from cached response
+- Valid CSRF token used to bypass protection
+- Administrator email modified without authentication
+- Full account takeover possible via password reset
 
 ## Technical Impact
 
