@@ -222,12 +222,12 @@ Value: carlos ← Changed to victim username (or deleted)
 **Result:** Browser sent request with Carlos's session token, granting full access to victim account.
 
 **Complete Account Access Achieved:**
-- ✅ Victim's MFA bypassed through parameter manipulation
-- ✅ 4-digit MFA code brute-forced (1940)
-- ✅ Valid session token extracted from response
-- ✅ Session hijacking successful via cookie replacement
-- ✅ Full control over Carlos's account
-- ✅ Username, email, and modification capabilities exposed
+- Victim's MFA bypassed through parameter manipulation
+- 4-digit MFA code brute-forced (1940)
+- Valid session token extracted from response
+- Session hijacking successful via cookie replacement
+- Full control over Carlos's account
+- Username, email, and modification capabilities exposed
 
 <img width="1920" height="982" alt="LAB2_ss7" src="https://github.com/user-attachments/assets/03ae2577-27de-4a72-95d1-82a746325891" />
 
