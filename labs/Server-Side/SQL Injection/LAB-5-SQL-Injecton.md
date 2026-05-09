@@ -266,11 +266,11 @@ Used extracted administrator credentials to log into the application.
 *Administrator account accessed successfully - Lab completion confirmed*
 
 **Complete System Compromise:**
-- ✅ Database structure fully enumerated
-- ✅ User credentials table identified
-- ✅ All usernames and passwords extracted
-- ✅ Administrator account accessed
-- ✅ Complete authentication bypass
+- Database structure fully enumerated
+- User credentials table identified
+- All usernames and passwords extracted
+- Administrator account accessed
+- Complete authentication bypass
 
 **Lab completion confirmed: "Congratulations, you solved the lab!"**
 
