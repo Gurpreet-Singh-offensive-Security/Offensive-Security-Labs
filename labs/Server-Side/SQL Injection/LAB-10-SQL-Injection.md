@@ -120,8 +120,8 @@ GET /filter?category=[value]'+UNION+SELECT+'abc','abc'-- HTTP/1.1
 
 | Column Position | Accepts Strings? |
 |----------------|------------------|
-| Column 1 | ❌ No (Numeric/Date) |
-| Column 2 | ✅ Yes (String) |
+| Column 1 |  No (Numeric/Date) |
+| Column 2 |  Yes (String) |
 
 **Critical Constraint:** Only ONE column accepts string data, but we need to extract TWO pieces of information (username AND password).
 
@@ -225,10 +225,10 @@ wiener*[wiener_password]
 ```
 
 **Attack Success:**
-- ✅ Both username and password extracted together
-- ✅ Clear correlation maintained via separator
-- ✅ Administrator credentials identified
-- ✅ Single-column constraint overcome
+- Both username and password extracted together
+- Clear correlation maintained via separator
+- Administrator credentials identified
+- Single-column constraint overcome
 
 ### 9. Administrator Authentication
 
@@ -247,12 +247,12 @@ Used extracted administrator credentials to authenticate.
 *Administrator account accessed successfully - Complete system compromise achieved*
 
 **Complete System Compromise:**
-- ✅ Database structure enumerated (2 columns, 1 string)
-- ✅ PostgreSQL database fingerprinted
-- ✅ Concatenation technique successfully applied
-- ✅ All user credentials extracted
-- ✅ Administrator credentials obtained
-- ✅ Full authentication bypass achieved
+- Database structure enumerated (2 columns, 1 string)
+- PostgreSQL database fingerprinted
+- Concatenation technique successfully applied
+- All user credentials extracted
+- Administrator credentials obtained
+- Full authentication bypass achieved
 
 **Lab completion confirmed: "Congratulations, you solved the lab!"**
 
