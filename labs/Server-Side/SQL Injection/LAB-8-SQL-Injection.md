@@ -202,10 +202,10 @@ UNION SELECT NULL, 'nUebdo', NULL--'
 **Response:** 200 OK with 'nUebdo' successfully injected and displayed
 
 **Attack Success:**
-- ✅ Column count determined (3 columns)
-- ✅ String-compatible column identified (column 2)
-- ✅ Required text payload successfully injected
-- ✅ Control over database output demonstrated
+- Column count determined (3 columns)
+- String-compatible column identified (column 2)
+- Required text payload successfully injected
+- Control over database output demonstrated
 
 **Lab completion confirmed: "Congratulations, you solved the lab!"**
 
@@ -263,9 +263,9 @@ Column Count Discovery (3 columns)
         ↓
 Data Type Testing
         ↓
-Column 1: Numeric ❌
-Column 2: String ✅ ← Target column
-Column 3: Numeric ❌
+Column 1: Numeric 
+Column 2: String ← Target column
+Column 3: Numeric 
         ↓
 String Injection Capability Confirmed
         ↓
@@ -339,11 +339,11 @@ Complete Database Compromise
 - But cannot extract meaningful data
 
 **After Data Type Discovery:**
-- ✅ Know exactly which columns accept strings
-- ✅ Can extract usernames, passwords, emails
-- ✅ Can enumerate database structure
-- ✅ Can exfiltrate sensitive textual data
-- ✅ Complete database compromise possible
+- Know exactly which columns accept strings
+- Can extract usernames, passwords, emails
+- Can enumerate database structure
+- Can exfiltrate sensitive textual data
+- Complete database compromise possible
 
 ## Key Takeaways
 
