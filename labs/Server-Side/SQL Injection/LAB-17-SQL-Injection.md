@@ -176,10 +176,10 @@ null
 ```
 
 **Success Indicators:**
-- ✅ 200 OK status (not 403 Forbidden)
-- ✅ "null" output visible (result from SELECT NULL)
-- ✅ WAF bypass confirmed
-- ✅ SQL injection executable
+- 200 OK status (not 403 Forbidden)
+- "null" output visible (result from SELECT NULL)
+- WAF bypass confirmed
+- SQL injection executable
 
 **Backend Query Executed:**
 ```sql
@@ -270,11 +270,11 @@ Used extracted credentials to authenticate as administrator.
   *Administrator account accessed successfully (right) | Credential extraction request/response (left)*
 
 **Complete System Compromise:**
-- ✅ WAF bypassed using XML encoding
-- ✅ Database structure enumerated
-- ✅ Administrator credentials extracted
-- ✅ Full administrative access obtained
-- ✅ Complete authentication bypass
+- WAF bypassed using XML encoding
+- Database structure enumerated
+- Administrator credentials extracted
+- Full administrative access obtained
+- Complete authentication bypass
 
 **Lab completion confirmed: "Congratulations, you solved the lab!"**
 
