@@ -266,7 +266,7 @@ The jump from Practitioner to Expert isn't as big as it looks — Lab 13 is actu
 - [Turbo Intruder](https://portswigger.net/research/turbo-intruder-embracing-the-billion-request-attack) — worth reading before Lab 6
 
 Other series in this repo:
-- [SQL Injection](../SQL-Injection/) — 18 labs done
+- [SQL Injection](../SQL%20Injection/) — 18 labs done
 - XSS — in progress
 - Access Control — in progress
 
@@ -277,6 +277,11 @@ Other series in this repo:
 Done entirely on PortSwigger Academy's lab environment. Using any of this against systems you don't own or don't have written permission to test is illegal and I wouldn't document it if I had.
 
 ---
+
+*
+
+*
+
 <div align="center">
 
 ### Gurpreet Singh | Offensive Security Researcher
