@@ -214,14 +214,14 @@ Cookie: TrackingId=[TRACKING_VALUE]'%3BSELECT+CASE+WHEN+(username='administrator
 
 <img width="1920" height="982" alt="LAB2_ss7 1" src="https://github.com/user-attachments/assets/b6e5267c-cd03-4b1e-834f-2e616e5c1160" />
 
-*`LENGTH(password)>20` condition submitted — response enters waiting state during enumeration, indicating the boundary value is being approached. Final boundary test confirmed: password length is exactly 20 characters*
+*`LENGTH(password)=20` condition submitted — response enters waiting state during enumeration, indicating the boundary value is being approached. Final boundary test confirmed: password length is exactly 20 characters*
 
 **Step 7.2 — Length Boundary Measured**
 
 
 <img width="1920" height="982" alt="LAB2_ss7 2" src="https://github.com/user-attachments/assets/dce39996-fc48-4931-b18a-9f9b58df5ca3" />
 
-*Response returned after 10,478 milliseconds at the boundary threshold — combined with the immediate response at `LENGTH(password)>20`, this confirms the administrator password is exactly 20 characters in length*
+*Response returned after 10,478 milliseconds at the boundary threshold — combined with the immediate response at `LENGTH(password)=20`, this confirms the administrator password is exactly 20 characters in length*
 
 **Password Length Confirmed:** 20 characters
 
