@@ -3,7 +3,7 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=FFD700&height=200&section=header&text=Offensive%20Security%20Labs&fontSize=38&fontColor=1a1a1a&fontAlignY=40&desc=Gurpreet%20Singh%20%C2%B7%20PortSwigger%20Web%20Security%20Academy&descSize=14&descAlignY=62&descColor=8B0000" width="100%"/>
 
 [![Author](https://img.shields.io/badge/Author-Gurpreet%20Singh-blue?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security)
-[![Labs](https://img.shields.io/badge/Labs%20Completed-46%2F278-success?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
+[![Labs](https://img.shields.io/badge/Labs%20Completed-37%2F278-success?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
 [![Focus](https://img.shields.io/badge/Current%20Focus-Access%20Control-red?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg?style=for-the-badge)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
