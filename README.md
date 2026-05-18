@@ -34,7 +34,7 @@ Targeting **eWPTX** and **BSCP**.
 | Authentication | 14 | 14 | Complete |
 | Web Cache Deception | 5 | 5 | Complete |
 | SQL Injection | 18 | 18 | Complete |
-| Access Control | 0 | 13 | Active |
+| Path Traversal | 0 | 6 | Active |
 | XSS | 0 | 30 | Q2 2026 |
 | Clickjacking | 0 | 4 | Q3 2026 |
 | HTTP Request Smuggling | 0 | 21 | 2027 |
