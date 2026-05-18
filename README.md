@@ -21,7 +21,8 @@ Each writeup covers **attack vector identification, payload development, exploit
 
 **278 labs total.** Working through them in order of complexity.
 **Burp Suite Pro · Turbo Intruder · Python · Kali Linux**
-Targeting **PWPT-Professional**.
+  
+  Targeting **PWPT-Professional**.
 
 > © 2026 Gurpreet Singh — [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/). Feel free to reference for learning; don't submit as your own work.
 
