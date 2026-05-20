@@ -13,7 +13,7 @@ This lab demonstrates exploitation of a file path traversal vulnerability in its
 | **Difficulty**         | Apprentice |
 | **Vulnerability**      | File Path Traversal — No Input Validation or Path Restriction |
 | **Risk**               | Critical - Arbitrary Server Filesystem Read, Sensitive File Disclosure |
-| **Completion**         | May 2026 |
+| **Completion**         | May 19,2026 |
 
 ## Objective
 
