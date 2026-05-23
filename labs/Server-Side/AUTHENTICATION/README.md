@@ -9,7 +9,7 @@
 
 **14 labs. Apprentice through Expert. All done.**
 
-[🔗 Main Repository](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs) • [👤 About Me](https://github.com/Gurpreet-Singh-offensive-Security) • [📧 Contact](mailto:gskhalsa6245@gmail.com)
+[![🔗 Main Repository](https://img.shields.io/badge/🔗%20Main%20Repository-black?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs) [![👤 About Me](https://img.shields.io/badge/👤%20About%20Me-5865F2?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security)  [![📧 Contact](https://img.shields.io/badge/📧%20Contact-E8562A?style=for-the-badge)](mailto:gskhalsa6245@gmail.com)
 
 </div>
 
