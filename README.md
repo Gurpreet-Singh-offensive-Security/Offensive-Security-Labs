@@ -35,7 +35,7 @@ Each writeup covers **attack vector identification, payload development, exploit
 | Authentication | 14 | 14 | Complete |
 | Web Cache Deception | 5 | 5 | Complete |
 | SQL Injection | 18 | 18 | Complete |
-| Path Traversal | 0 | 6 | Active |
+| Path Traversal | 6 | 6 | Complete |
 | XSS | 0 | 30 | Q2 2026 |
 | Clickjacking | 0 | 4 | Q3 2026 |
 | HTTP Request Smuggling | 0 | 21 | 2027 |
