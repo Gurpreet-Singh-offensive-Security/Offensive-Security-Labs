@@ -13,7 +13,7 @@ This lab demonstrates exploitation of an OS command injection vulnerability in i
 | **Difficulty**         | Apprentice |
 | **Vulnerability**      | OS Command Injection — Unsanitized User Input in Shell Command Construction |
 | **Risk**               | Critical - Arbitrary OS Command Execution, Full Server Compromise |
-| **Completion**         | May 2026 |
+| **Completion**         | May 31, 2026 |
 
 ## Objective
 
