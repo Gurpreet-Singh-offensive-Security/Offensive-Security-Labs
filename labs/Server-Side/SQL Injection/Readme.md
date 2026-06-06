@@ -235,6 +235,108 @@ SELECT column_name FROM all_columns WHERE table_name='USERS'
 
 ---
 
+## Possible Parameters in Modern Applications
+
+Where SQL injection vulnerabilities realistically appear in modern applications, APIs, and infrastructure. These are the parameters and input points worth checking specifically when testing for SQLi.
+
+### Common Injection Points
+
+| Parameter | Context | What to test |
+|-----------|---------|--------------|
+| `id`, `product_id`, `item_id`, `user_id` | URL params, query strings, REST path segments | Integer injection, UNION extraction |
+| `category`, `filter`, `sort`, `order`, `orderby` | Filtering and sorting parameters | WHERE clause injection, ORDER BY manipulation |
+| `search`, `q`, `query`, `keyword`, `term` | Search bars, autocomplete endpoints | String injection in LIKE clauses |
+| `page`, `offset`, `limit`, `start` | Pagination controls | Numeric injection, UNION via LIMIT |
+| `username`, `email`, `login` | Login forms, user lookup endpoints | Auth bypass, boolean-based enumeration |
+| `name`, `title`, `description`, `comment` | CRUD form fields | Second-order injection — stored then executed later |
+| `from`, `to`, `start_date`, `end_date` | Date range filters | Unparameterized date comparisons |
+
+---
+
+### REST API & Modern Backend Surfaces
+
+| Surface | Parameter / Header | What to test |
+|---------|--------------------|--------------|
+| REST path segments | `/api/users/123`, `/products/electronics` | Replace numeric/string segments directly |
+| Query strings | `?sort=price&order=asc` | ORDER BY injection — `order=price,(SELECT 1)` |
+| JSON body | `{"id": 1}`, `{"filter": "active"}` | JSON-based SQLi if body is interpolated |
+| GraphQL | Inline arguments in queries | Injection inside resolver queries |
+| XML body / SOAP | `<id>1</id>`, `<category>shoes</category>` | WAF bypass via entity encoding |
+| OData | `$filter`, `$orderby`, `$select` | OData filter-to-SQL translation flaws |
+| HTTP headers | `X-Forwarded-For`, `User-Agent`, `Referer`, `Cookie` | Logged or stored headers queried later |
+
+---
+
+### Cookie & Session Parameters
+
+| Parameter | Context | What to test |
+|-----------|---------|--------------|
+| `TrackingId`, `sessionId`, `analytics_id` | Analytics / tracking cookies | Blind injection — boolean or time-based oracle |
+| `lang`, `locale`, `currency` | Preference cookies used in queries | Injected into SELECT or WHERE directly |
+| `cart_id`, `order_id`, `ref` | E-commerce session values | Numeric or string injection in backend lookups |
+| `remember_token`, `auth_token` | Persistent session tokens | If validated via raw query, injectable |
+
+---
+
+### Second-Order & Stored Injection Points
+
+Second-order injection is stored in the DB on first request and executed in a different query later — standard input validation often misses it entirely.
+
+| Input Point | Where it fires | What to look for |
+|-------------|---------------|-----------------|
+| Username / display name at registration | Profile display, admin lookup queries | Payload stored clean, executed unsanitized elsewhere |
+| Comment / review fields | Moderation dashboards, report exports | Injection appears in internal queries |
+| File names on upload | File listing, download handlers | Filename embedded in a query without parameterization |
+| Address / profile fields | Order history, billing queries | Stored payload hits a different query on checkout |
+| Referral codes, voucher codes | Redemption endpoint SQL lookup | Code value directly interpolated |
+
+---
+
+### Modern Stack & ORM Pitfalls
+
+Frameworks and ORMs reduce raw SQLi risk but don't eliminate it — raw queries still sneak in for performance, complex filtering, or legacy code.
+
+| Stack / ORM | Where raw SQL appears | What to test |
+|-------------|----------------------|--------------|
+| Django ORM | `.raw()`, `.extra()`, `RawSQL()` | Direct injection in raw query arguments |
+| SQLAlchemy | `text()`, `engine.execute()` | String interpolation into `text()` clauses |
+| ActiveRecord (Rails) | `.where("col = '#{var}'")`  | String interpolation — parameterize with `?` instead |
+| Hibernate (Java) | Native queries, `createNativeQuery()` | HQL injection and native SQL passthrough |
+| Sequelize (Node.js) | `query()` method, `literal()` | Unsanitized values in `where` with `literal` |
+| Prisma | `$queryRaw`, `$executeRaw` | Template literal injection — use `Prisma.sql` tagged template |
+| WordPress / PHP | `$wpdb->query()`, `get_results()` | Direct string concat without `$wpdb->prepare()` |
+| Stored procedures | Any SP that builds dynamic SQL internally | `EXEC`, `sp_executesql` with string concat |
+
+---
+
+### Search & Analytics Backends
+
+Applications routing queries through search or analytics layers can have SQLi-equivalent flaws with different syntax.
+
+| Backend | Parameter | What to test |
+|---------|-----------|--------------|
+| Elasticsearch | `query`, `filter`, `sort` in JSON body | JSON injection in query DSL, script injection |
+| Splunk | `search`, SPL query parameters | SPL injection — `| eval`, `| stats` manipulation |
+| ClickHouse / BigQuery | SQL-like query parameters | Direct SQL if query is assembled server-side |
+| Reporting tools (Metabase, Grafana) | Dashboard filter parameters | SQL injection in native query mode |
+
+---
+
+### Headers That Affect SQL Execution
+
+These aren't body parameters but are commonly logged, stored, or used in queries — and frequently overlooked in security reviews.
+
+```
+X-Forwarded-For       → Logged to DB for analytics or rate limiting — injectable if unparameterized
+User-Agent            → Stored in access logs or session tables — second-order risk
+Referer               → Recorded in referral tracking tables — same risk as User-Agent
+Cookie values         → TrackingId, preferences — often queried directly (see Lab 11)
+Accept-Language       → Used to query locale/translation tables in some stacks
+Authorization         → JWT sub/claims used in queries without validation
+```
+
+---
+
 ## Fix
 
 Parameterized queries. That's it. Everything else — input validation, WAFs, error suppression — is layered on top and none of it substitutes for this.
@@ -309,7 +411,6 @@ Labs 17 and 18 are short. Both rely on understanding how layers of parsing work 
 - [x] Lab 17 — Blind OOB Exfiltration
 - [x] Lab 18 — WAF Bypass XML Encoding
 
-
 ---
 
 ## Resources
@@ -331,10 +432,6 @@ Other series in this repo:
 All of this was done on PortSwigger Academy's lab environment. Using these techniques against systems you don't own or don't have written permission to test is illegal in most jurisdictions and not something I'd document here if I did it.
 
 ---
-
-*
-
-*
 
 <div align="center">
 
