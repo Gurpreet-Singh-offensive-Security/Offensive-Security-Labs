@@ -204,6 +204,97 @@ Set up in Burp: Project Options → Sessions → Session Handling Rules → Add 
 
 ---
 
+## Possible Parameters in Modern Security
+
+Where authentication vulnerabilities realistically appear in modern applications, APIs, and infrastructure. These are the parameters and input points worth checking specifically when testing auth flows.
+
+### Login & Session Parameters
+
+| Parameter | Context | What to test |
+|-----------|---------|--------------|
+| `username`, `email`, `login` | Login forms, API auth endpoints | Enumeration via response differences, timing |
+| `password`, `passwd`, `pass` | Login, password change, reset forms | Brute force, credential stuffing |
+| `remember_me`, `stay_logged_in`, `persistent` | Session persistence toggles | Cookie format analysis, predictable token generation |
+| `session`, `token`, `auth`, `sid` | Cookie values, Authorization headers | Token prediction, weak encoding, reuse |
+| `mfa_code`, `otp`, `totp_code`, `verification_code` | MFA verification endpoints | Brute force, code reuse, binding check |
+| `verify`, `account`, `user_id` | MFA session binding | Change to another user's identifier |
+| `redirect`, `next`, `return_to`, `continue` | Post-login redirect | Open redirect chaining after auth bypass |
+
+---
+
+### Password Reset Parameters
+
+| Parameter | Context | What to test |
+|-----------|---------|--------------|
+| `token`, `reset_token`, `key` | Reset links and POST bodies | Token bound to account? Reusable? Predictable? |
+| `username`, `email` | Reset request body | Tamper to target another account |
+| `new_password`, `confirm_password` | Reset confirmation | Is the token actually validated before accepting? |
+| `Host`, `X-Forwarded-Host`, `X-Host` | Request headers on reset endpoint | Host header injection → poisoned reset link |
+| `X-Forwarded-For`, `X-Real-IP` | IP-based rate limiting on resets | Bypass attempt limits |
+
+---
+
+### Modern API Authentication
+
+| Surface | Parameter / Header | What to test |
+|---------|--------------------|--------------|
+| REST APIs | `Authorization: Bearer <token>` | Token expiry, signature validation, algorithm confusion |
+| REST APIs | `api_key`, `access_token`, `client_secret` | Key reuse across environments, predictable generation |
+| GraphQL | `operationName`, inline credentials in query body | Auth applied per-resolver or globally? |
+| OAuth flows | `code`, `state`, `redirect_uri` | CSRF on state, redirect_uri manipulation, code reuse |
+| OAuth flows | `client_id`, `client_secret` | Exposed in frontend code, mobile app binaries |
+| JWT | `alg`, `kid`, header claims | `alg: none`, RS256 → HS256 confusion, kid injection |
+| SSO / SAML | `SAMLResponse`, `RelayState` | Signature wrapping, replay, XML injection |
+| WebSockets | Auth token in connection URL or first message | Token logged in access logs, reusable after logout |
+
+---
+
+### Session Management in Modern Stacks
+
+| Stack / Framework | Where to look | What to test |
+|-------------------|--------------|--------------|
+| Next.js / Vercel | `__Secure-next-auth.session-token` | Predictable secret, missing HttpOnly/Secure flags |
+| Django | `sessionid` cookie | SECRET_KEY weak or leaked, session fixation |
+| Laravel | `laravel_session` cookie | APP_KEY exposed, cookie not invalidated on logout |
+| Rails | `_session_id` cookie | Session not rotated on privilege change |
+| Node.js + Express | `connect.sid` | Session secret hardcoded, weak randomness |
+| Firebase Auth | `idToken`, `refreshToken` | Refresh token not revoked on password change |
+| AWS Cognito | `id_token`, `access_token`, `refresh_token` | Token leakage in URL, missing token binding |
+| Mobile apps | Tokens stored in SharedPreferences / NSUserDefaults | Extractable without root on some devices |
+
+---
+
+### Infrastructure & Internal Systems
+
+| System | Auth Parameter | What to test |
+|--------|---------------|--------------|
+| Admin panels (`/admin`, `/dashboard`) | Session cookie, basic auth header | Default credentials, session not expiring |
+| CI/CD (Jenkins, GitLab, GitHub Actions) | `PRIVATE_TOKEN`, `CI_JOB_TOKEN` | Tokens in logs, overprivileged scope |
+| Cloud consoles (AWS, GCP, Azure) | IAM tokens, metadata service credentials | SSRF to metadata endpoint → credential theft |
+| Internal APIs (no WAF) | Any auth header or cookie | Relaxed validation, missing rate limiting |
+| Kubernetes dashboards | `Bearer` token, kubeconfig | Unauthenticated access, overpermissioned service accounts |
+| Git repositories | `.env`, `config.yml`, `secrets.yml` | Hardcoded credentials, tokens committed to history |
+
+---
+
+### Headers That Affect Auth Behavior
+
+These aren't body parameters but directly influence how authentication logic executes on the server side.
+
+```
+X-Forwarded-For       → IP-based rate limiting and lockout bypass
+X-Forwarded-Host      → Password reset link generation, redirect construction
+X-Original-URL        → Access control bypass on some reverse proxies
+X-Rewrite-URL         → Same as above on different stacks
+X-Custom-IP-Auth      → Some internal apps trust this for IP allowlisting
+Authorization         → Bearer token, Basic auth — test algorithm, encoding, expiry
+Cookie                → Session binding, MFA binding, remember-me token format
+Origin                → CORS misconfiguration enabling cross-origin auth requests
+Referer               → Some apps validate Referer for CSRF — predictable bypass
+```
+
+---
+
 ## Fix
 
 The recurring theme across all 14 labs: the app made security decisions based on data it shouldn't have trusted — client-controlled cookies, headers, request parameters, response timing side-channels it never thought about.
@@ -266,9 +357,10 @@ The jump from Practitioner to Expert isn't as big as it looks — Lab 13 is actu
 - [Turbo Intruder](https://portswigger.net/research/turbo-intruder-embracing-the-billion-request-attack) — worth reading before Lab 6
 
 Other series in this repo:
-- [SQL Injection](../SQL%20Injection/) — 18 labs done
+- [OS Command Injection](../OS-Command-Injection/) — 5 labs done
+- [Web Cache Deception](../web-cache-deception/) — 5 labs done
+- SQL Injection — in progress
 - XSS — in progress
-- Access Control — in progress
 
 ---
 
@@ -277,10 +369,6 @@ Other series in this repo:
 Done entirely on PortSwigger Academy's lab environment. Using any of this against systems you don't own or don't have written permission to test is illegal and I wouldn't document it if I had.
 
 ---
-
-*
-
-*
 
 <div align="center">
 
