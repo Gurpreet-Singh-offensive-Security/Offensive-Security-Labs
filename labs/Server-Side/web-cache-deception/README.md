@@ -145,6 +145,107 @@ Set up Intruder in Sniper mode, mark the delimiter position, load the list. Filt
 
 ---
 
+## Possible Parameters in Modern Security
+
+Where web cache deception realistically appears in modern applications, CDNs, and infrastructure. These are the URL patterns, headers, and surfaces worth targeting when testing for cache deception.
+
+### URL Patterns & Path Parameters
+
+| Pattern | Context | Why it's exploitable |
+|---------|---------|----------------------|
+| `/account`, `/my-account`, `/profile`, `/dashboard` | Authenticated user pages | Serve user-specific data — if cached, visible to anyone |
+| `/api/user`, `/api/me`, `/api/profile` | Authenticated API endpoints | JSON responses with PII, tokens, account details |
+| `/settings`, `/billing`, `/payment-methods` | Sensitive account sections | Financial data, card info, subscription details |
+| `/admin`, `/admin/users`, `/admin/config` | Admin panels | Highest impact — admin session data or CSRF tokens cached |
+| `/notifications`, `/messages`, `/inbox` | User-specific content feeds | Private messages served from cache to unauthenticated requester |
+| `/orders`, `/history`, `/transactions` | E-commerce user data | Order history, addresses, payment summaries |
+| `/api/tokens`, `/api/keys`, `/api/credentials` | API key management pages | Literal credential exposure if cached |
+
+---
+
+### Cache-Triggering Suffixes to Test
+
+These extensions and suffixes commonly trigger caching rules on CDNs and reverse proxies. Append to authenticated endpoints and check if the response gets stored.
+
+```
+Extensions:    .js .css .png .jpg .gif .ico .svg .woff .woff2 .ttf .eot
+               .html .htm .xml .json .txt .pdf .zip .mp4 .webp .avif
+Suffixes:      /static /assets /public /resources /media /files
+Combined:      /my-account/static.js
+               /api/user.json
+               /dashboard/../public/style.css
+               /profile;resource.png
+```
+
+---
+
+### Headers That Affect Cache Behavior
+
+Cache behavior is often controlled or influenced by headers — both in terms of what gets cached and how cache keys are constructed.
+
+```
+X-Forwarded-Host     → Some caches include this in the cache key — manipulate to serve
+                       cached content under a different key
+X-Forwarded-Scheme   → Affects cache key construction on some CDNs
+X-Forwarded-Proto    → HTTP vs HTTPS cache key splitting
+Origin               → Cross-origin requests may be keyed differently
+Accept               → Content negotiation — different Accept headers = different cache keys
+Accept-Encoding      → Compression variants may be cached separately
+Accept-Language      → Localized responses cached per language — can expose other users' data
+Cookie               → If cookies are excluded from the cache key, authenticated responses
+                       get served to unauthenticated requesters
+Pragma: no-cache     → Force revalidation — useful for cache busting during testing
+Cache-Control        → Check if origin sets no-store/private — absence is the vulnerability
+```
+
+---
+
+### CDN & Reverse Proxy Specific Surfaces
+
+Different CDN and proxy products have different default caching behaviors and rule syntaxes — knowing the stack helps target the right discrepancy.
+
+| CDN / Proxy | Default Cache Behavior | What to Test |
+|-------------|----------------------|--------------|
+| **Cloudflare** | Caches based on file extension by default | Append static extension to dynamic URLs; test `CF-Cache-Status` header |
+| **AWS CloudFront** | Caches based on configured behaviors (path patterns) | Prefix matching rules — path traversal past the matched prefix |
+| **Fastly** | Caches based on `Surrogate-Control` and path rules | Delimiter handling — Fastly and origin may differ on `;` and `?` |
+| **Akamai** | Aggressive caching of static extensions | Extension spoofing still works; test `X-Check-Cacheable` header |
+| **Nginx (reverse proxy)** | `proxy_cache` rules — often prefix-based | Path traversal past `location` block prefix |
+| **Varnish** | VCL rules — custom logic, often misconfigured | Delimiter and encoding discrepancies between VCL parsing and backend |
+| **Squid** | Extension and MIME-type based | Extension append; check for `X-Cache: HIT` |
+| **Azure CDN** | Rule-based caching on path patterns | Encoding discrepancies — Azure decodes before matching, origin may not |
+
+---
+
+### API Gateway & Microservice Surfaces
+
+Modern architectures add additional caching layers between the client and origin that introduce new discrepancy points.
+
+| Surface | Where the gap appears | What to look for |
+|---------|----------------------|-----------------|
+| API Gateway (Kong, AWS API GW) | Gateway caches response, upstream serves authenticated data | Gateway path matching vs upstream routing differences |
+| GraphQL endpoints | Caching on POST is rare but GET-based GraphQL queries get cached | Persisted queries with `?query=` — authenticated data in cache |
+| gRPC-Web transcoding | Transcoder caches JSON responses | Encoding differences between transcoder and backend path handling |
+| Service mesh (Envoy, Istio) | Sidecar proxy caching rules | Path normalization differences between mesh config and app |
+| BFF (Backend for Frontend) | BFF layer may cache aggregated responses | BFF cache key doesn't include auth state |
+| Edge functions (Cloudflare Workers, Vercel Edge) | Edge function caches fetch() responses | Developer-controlled caching of upstream authenticated responses |
+
+---
+
+### Real-World Application Contexts
+
+| Application Type | High-Value Targets | Why |
+|-----------------|--------------------|-----|
+| SaaS dashboards | `/dashboard`, `/billing`, `/team/members` | Subscription data, team info, payment details |
+| E-commerce | `/account/orders`, `/checkout/confirm`, `/wishlist` | PII, addresses, payment summaries |
+| Banking / fintech | `/accounts`, `/transactions`, `/statements` | Financial data — highest regulatory impact |
+| Healthcare portals | `/records`, `/appointments`, `/prescriptions` | PHI — HIPAA implications |
+| Developer platforms | `/api-keys`, `/tokens`, `/webhooks` | API credentials — leads to full account compromise |
+| Social platforms | `/messages`, `/notifications`, `/connections` | Private messages, social graph |
+| HR / internal tools | `/payroll`, `/employees`, `/reviews` | Salary data, HR records |
+
+---
+
 ## Fix
 
 The root cause in every lab: the cache and origin server don't agree on what a URL means.
@@ -194,7 +295,9 @@ Do them in order. Labs 1–2 build the core mental model — without understandi
 
 Other series in this repo:
 - [SQL Injection](../SQL-Injection/) — 18 labs done
-- [Authentication Vulnerabilities](../Authentication/) — 14 labs done
+- [Authentication Vulnerabilities](../AUTHENTICATION/) — 14 labs done
+- [OS Command Injection](../OS-Command-Injection/) — 5 labs done
+- [Path Traversal](../Path-Traversal/) — 6 labs done
 - XSS — in progress
 - Access Control — in progress
 
