@@ -171,6 +171,114 @@ Every defense fails for the same underlying reason: it operates on the raw input
 
 ---
 
+## Possible Parameters in Modern Applications
+
+Where path traversal vulnerabilities realistically appear in modern applications, APIs, and infrastructure. These are the parameters and input points worth checking specifically when testing for file path issues.
+
+### Common File-Serving Parameters
+
+| Parameter | Context | What to test |
+|-----------|---------|--------------|
+| `filename`, `file`, `name` | File download endpoints, image serving | Direct traversal, encoded variants, null byte |
+| `path`, `filepath`, `file_path` | Document viewers, export endpoints | Absolute path, prefix bypass |
+| `img`, `image`, `photo`, `avatar` | Image rendering, profile pictures | `../` sequences, double encoding |
+| `template`, `view`, `page`, `layout` | Server-side template loading | Traversal to read config files, source code |
+| `include`, `module`, `component` | Dynamic include systems (PHP, legacy stacks) | LFI — `/etc/passwd`, log poisoning, proc/self |
+| `doc`, `document`, `report`, `export` | Report generation, PDF export | Read arbitrary files via traversal in the path arg |
+| `src`, `source`, `resource` | Resource loading, iframe sources | Traverse out of web root |
+| `dir`, `directory`, `folder` | Directory listing endpoints | Escape intended directory |
+| `conf`, `config`, `cfg` | Config file selection (multi-tenant apps) | Traverse to read other tenants' configs or system files |
+
+---
+
+### REST API & Modern Backend Surfaces
+
+| Surface | Parameter / Pattern | What to test |
+|---------|---------------------|--------------|
+| REST path segments | `/api/files/{filename}`, `/static/{path}` | Replace with traversal sequences directly in the URL |
+| Query strings | `?file=report.pdf`, `?template=invoice` | Traversal, encoding, null byte |
+| JSON body | `{"filename": "invoice.pdf"}` | Same traversal payloads inside JSON values |
+| Multipart upload | `Content-Disposition: filename="..."` | Traversal in the filename field of uploaded files |
+| Archive extraction | ZIP/TAR upload endpoints | Zip slip — filenames like `../../shell.php` inside archive |
+| GraphQL | File path arguments in mutations/queries | Traversal inside query variables |
+
+---
+
+### Static File Serving & CDN Configs
+
+Misconfigurations in how static files are served are a common real-world path traversal surface — not just app-layer code.
+
+| Stack / Config | Where to look | What to test |
+|----------------|--------------|--------------|
+| Nginx `alias` directive | `location /files/ { alias /var/www/uploads/; }` | Missing trailing slash on alias causes path confusion |
+| Apache `mod_rewrite` | Rewrite rules passing `%{REQUEST_URI}` to file reads | Encoded traversal in the URI |
+| Express.js `res.sendFile()` | Any route passing user input to `sendFile` | Traverse outside the declared root |
+| Flask `send_from_directory()` | `send_from_directory(upload_dir, filename)` | Relies on Werkzeug sanitization — test anyway |
+| S3 / cloud storage proxies | Object key constructed from user input | Traversal-style key manipulation, sibling bucket access |
+| Docker volume mounts | Container apps serving files from mounted volumes | Escape mount point if path is user-controlled |
+
+---
+
+### File Inclusion Surfaces (LFI Adjacent)
+
+Path traversal and local file inclusion overlap heavily — same root cause, different execution context.
+
+| Parameter | Context | What to test |
+|-----------|---------|--------------|
+| `lang`, `locale`, `language` | Language file loading (`include("lang/$lang.php")`) | Traverse to read sensitive files or include logs |
+| `theme`, `skin`, `style` | Theme file loading | Traverse to arbitrary PHP files |
+| `action`, `controller`, `route` | Legacy MVC routing via file includes | Traverse to include files outside app root |
+| `log`, `logfile` | Log viewing features in admin panels | Read `/var/log/auth.log`, `/proc/self/environ` |
+| `backup`, `restore` | Backup file selection | Traverse to read DB dumps, config backups |
+
+---
+
+### Headers & Non-Body Inputs
+
+These aren't query parameters but can reach filesystem operations if the app logs or acts on them.
+
+```
+Content-Disposition: filename="../../../etc/cron.d/shell"   → file write path on upload
+X-File-Name: ../../../etc/passwd                            → custom upload header some frameworks use
+Referer: https://example.com/files/../../../etc/passwd      → logged referer used in file ops
+User-Agent: ../../../../etc/passwd                          → logged to file, then included (log poisoning)
+Host: ../../../../etc/passwd                                → virtual host config loading in some stacks
+```
+
+---
+
+### Zip Slip — Archive Extraction
+
+A specific path traversal variant that fires on file upload rather than file read. The traversal payload is embedded inside an archive's entry filename.
+
+```
+Archive: malicious.zip
+  Entry: ../../var/www/html/shell.php
+
+Extraction:
+  target_dir + entry_name
+  = /tmp/uploads/ + ../../var/www/html/shell.php
+  = /var/www/html/shell.php          ← written outside extraction dir
+```
+
+Affects: Python `zipfile`, Java `ZipInputStream`, Go `archive/zip`, Node.js `unzipper` — any extractor that doesn't validate entry paths before writing. Test by uploading a crafted archive with traversal filenames.
+
+---
+
+### Modern Stack Reference
+
+| Stack / Framework | Risky function | Safe alternative |
+|-------------------|---------------|-----------------|
+| Python | `open(user_input)`, `os.path.join` without `realpath` | `os.path.realpath()` + prefix check |
+| Node.js | `fs.readFile(req.query.file)`, `res.sendFile` without root | `path.resolve()` + startsWith check |
+| PHP | `include($page)`, `file_get_contents($path)` | Allowlist of valid filenames, no user input in path |
+| Java | `new File(baseDir + userInput)` | `file.getCanonicalPath().startsWith(baseDir)` |
+| Go | `os.Open(filepath.Join(base, input))` | `filepath.Clean()` + prefix validation |
+| Ruby | `File.read(params[:file])` | `File.expand_path` + start_with? check |
+| .NET | `File.ReadAllText(Path.Combine(base, input))` | `Path.GetFullPath()` + StartsWith check |
+
+---
+
 ## Fix
 
 ```python
