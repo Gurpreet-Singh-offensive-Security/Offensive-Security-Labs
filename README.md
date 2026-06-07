@@ -3,7 +3,7 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=FFD700&height=200&section=header&text=Offensive%20Security%20Labs&fontSize=38&fontColor=1a1a1a&fontAlignY=40&desc=Gurpreet%20Singh%20%C2%B7%20PortSwigger%20Web%20Security%20Academy&descSize=14&descAlignY=62&descColor=8B0000" width="100%"/>
 
 [![Author](https://img.shields.io/badge/Author-Gurpreet%20Singh-blue?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security)
-[![Labs](https://img.shields.io/badge/Labs%20Completed-43%2F278-success?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
+[![Labs](https://img.shields.io/badge/Labs%20Completed-48%2F278-success?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
 [![Focus](https://img.shields.io/badge/Current%20Focus-Access%20Control-red?style=for-the-badge)](https://github.com/Gurpreet-Singh-offensive-Security/Offensive-Security-Labs)
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg?style=for-the-badge)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
@@ -32,11 +32,12 @@ Each writeup covers **attack vector identification, payload development, exploit
 
 | Category | Done | Total | Status |
 |:---------|:----:|:-----:|:-------|
-| Authentication | 14 | 14 | Complete |
-| Web Cache Deception | 5 | 5 | Complete |
-| SQL Injection | 18 | 18 | Complete |
-| Path Traversal | 6 | 6 | Complete |
-| OS Command Injection | 5 | 1 | Active |
+| Authentication | 14 | 14 | ✅ Complete |
+| Web Cache Deception | 5 | 5 | ✅ Complete |
+| SQL Injection | 18 | 18 | ✅ Complete |
+| Path Traversal | 6 | 6 | ✅ Complete |
+| OS Command Injection | 5 | 5 | ✅ Complete |
+| Access Control | 0 | 13 | 🔥 Active |
 | XSS | 0 | 30 | Q2 2026 |
 | Clickjacking | 0 | 4 | Q3 2026 |
 | HTTP Request Smuggling | 0 | 21 | 2027 |
@@ -92,6 +93,37 @@ All 14 labs, Apprentice through Expert. Enumeration, brute force bypass, MFA log
 16. Blind SQLi — out-of-band interaction
 17. Blind SQLi — out-of-band exfiltration
 18. Filter bypass via XML encoding
+
+</details>
+
+<details>
+<summary><b>Path Traversal — 6/6</b></summary>
+<br>
+
+**Apprentice (1/1)**
+1. File path traversal, simple case
+
+**Practitioner (5/5)**
+2. Path traversal — traversal sequences blocked with absolute path bypass
+3. Path traversal — traversal sequences stripped non-recursively
+4. Path traversal — traversal sequences stripped with superfluous URL-decode
+5. Path traversal — validation of start of path
+6. Path traversal — validation of file extension with null byte bypass
+
+</details>
+
+<details>
+<summary><b>OS Command Injection — 5/5</b></summary>
+<br>
+
+**Apprentice (1/1)**
+1. OS command injection, simple case
+
+**Practitioner (4/4)**
+2. Blind OS command injection with time delays
+3. Blind OS command injection with output redirection
+4. Blind OS command injection with out-of-band interaction
+5. Blind OS command injection with out-of-band data exfiltration
 
 </details>
 
