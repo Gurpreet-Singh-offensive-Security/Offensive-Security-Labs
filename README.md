@@ -37,7 +37,7 @@ Each writeup covers **attack vector identification, payload development, exploit
 | SQL Injection | 18 | 18 | ✅ Complete |
 | Path Traversal | 6 | 6 | ✅ Complete |
 | OS Command Injection | 5 | 5 | ✅ Complete |
-| Access Control | 0 | 13 | 🔥 Active |
+| Business Logic | 2 | 12 | 🔥 Active |
 | XSS | 0 | 30 | Q2 2026 |
 | Clickjacking | 0 | 4 | Q3 2026 |
 | HTTP Request Smuggling | 0 | 21 | 2027 |
